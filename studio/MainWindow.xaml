@@ -4,6 +4,7 @@
                       xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
                       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
                       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                      xmlns:studio="clr-namespace:studio"
                       Title="newbrush studio"
                       MinWidth="200"
                       MinHeight="200"
@@ -14,52 +15,61 @@
     >
 
     <Window.Resources>
-        <Style x:Key="tabItemStyle" TargetType="TabItem">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate>
-                        <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" ToolTip="Resource name: MaterialDesignRaisedAccentButton">
-                            vertext shader
-                        </Button>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+        <DataTemplate x:Key="listUniformTemplate" DataType="{x:Type studio:UniformItem}">
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Margin="4" ShowGridLines="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Uniform}"/>
+                <TextBox Grid.Column="1" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Value}"/>
+            </Grid>
+        </DataTemplate>
     </Window.Resources>
-                      
-  <Controls:MetroWindow.RightWindowCommands>
-    <Controls:WindowCommands>
-        <Button Content="settings" />
-        <Button>
-            <StackPanel Orientation="Horizontal">
-                <iconPacks:PackIconModern Width="24" Height="24" Kind="FoodCupcake" />
-                <TextBlock Margin="4 0 0 0" VerticalAlignment="Center" Text="deploy cupcakes" />
-            </StackPanel>
-        </Button>
-    </Controls:WindowCommands>
+
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Button Content="settings" />
+            <Button>
+                <StackPanel Orientation="Horizontal">
+                    <iconPacks:PackIconModern Width="24" Height="24" Kind="FoodCupcake" />
+                    <TextBlock Margin="4 0 0 0" VerticalAlignment="Center" Text="deploy cupcakes" />
+                </StackPanel>
+            </Button>
+        </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>
 
     <Grid x:Name="grid">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" MinWidth="300"/>
+            <ColumnDefinition Width="*" MinWidth="350"/>
+            <ColumnDefinition Width="3" />
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="3" />
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        
         <TabControl Margin="10">
             <TabItem Header="vshader" Foreground="Red" >
-                <RichTextBox VerticalScrollBarVisibility="Visible" FontSize="20">
-
-                </RichTextBox>
+                <TextBox x:Name="vshader_code" VerticalScrollBarVisibility="Visible" FontSize="20" PreviewDragOver="vshader_code_PreviewDragOver"/>
             </TabItem>
             <TabItem Header="fshader" Foreground="DarkBlue" >
-                <RichTextBox VerticalScrollBarVisibility="Visible" FontSize="20">
-
-                </RichTextBox>
+                <TextBox x:Name="fshader_code" VerticalScrollBarVisibility="Visible" FontSize="20"/>
             </TabItem>
         </TabControl>
         <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" />
-        <Button Grid.Column="2" Margin="200" Foreground="Blue" FontSize="40" Click="Button_Click">
-            Sync
-        </Button>
+        <GridSplitter Grid.Column="3" Width="5" HorizontalAlignment="Stretch" />
+
+        <ListBox Grid.Column="2" Margin="10" x:Name="uniformList" ItemTemplate="{StaticResource listUniformTemplate}" Loaded="uniformList_Loaded">
+            
+        </ListBox>
+
+        <StackPanel Grid.Column="4">
+            <Button Margin="50" Foreground="Blue" FontSize="40" Click="Button_Click">
+                lanch
+            </Button>
+            <Button Margin="50" Foreground="Blue" FontSize="40" Click="Button_Click_1">
+                send
+            </Button>
+        </StackPanel>
     </Grid>
 </Controls:MetroWindow>
