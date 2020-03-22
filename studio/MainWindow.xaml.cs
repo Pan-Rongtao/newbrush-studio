@@ -22,12 +22,10 @@ namespace studio
     public partial class MainWindow : MetroWindow
     {
         NBApplication nbApp = new NBApplication();
-        TcpServer server = new TcpServer();
 
         public MainWindow()
         {
             InitializeComponent();
-            server.startup();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -38,11 +36,6 @@ namespace studio
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            JObject root = new JObject();
-            root.Add("msg_id", (int)0);
-            root.Add("vshader", vshader_code.Text);
-            root.Add("fshader", fshader_code.Text);
-            server.send(root.ToString());
         }
 
         private void uniformList_Loaded(object sender, RoutedEventArgs e)
