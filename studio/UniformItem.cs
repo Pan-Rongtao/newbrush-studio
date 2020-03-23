@@ -3,18 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NBPlayer;
 
 namespace studio
 {
-    public class UniformItem
+    public class UniformItem1
     {
+        BuildShaderReply.Types.ShaderVarType _type;
         private string _uniform;
         private string _value;
 
-        public UniformItem(string uniform, string value)
+        public UniformItem1(BuildShaderReply.Types.ShaderVarType type, string uniform, string value)
         {
+            this._type = type;
             this._uniform = uniform;
             this._value = value;
+        }
+
+        public BuildShaderReply.Types.ShaderVarType Type
+        {
+            get { return _type; }
+            set { this._type = value; }
         }
 
         public string Uniform

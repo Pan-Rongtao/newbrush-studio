@@ -17,15 +17,21 @@ using MahApps.Metro.Controls;
 using MahApps.Metro.IconPacks;
 using Newtonsoft.Json.Linq;
 
+using Grpc.Core;
+using NBPlayer;
+
 namespace studio
 {
     public partial class MainWindow : MetroWindow
     {
         NBApplication nbApp = new NBApplication();
 
+        Channel channel = new Channel("127.0.0.1:8888", ChannelCredentials.Insecure);
+
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -33,23 +39,25 @@ namespace studio
             nbApp.work();
 
         }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-        }
-
+        
         private void uniformList_Loaded(object sender, RoutedEventArgs e)
         {
-            for(int i = 0; i < 10; ++i)
-            {
-                this.uniformList.Items.Add(new UniformItem("uniform" + i.ToString(), ""));
-            }
         }
 
-        private void vshader_code_PreviewDragOver(object sender, DragEventArgs e)
+        private void btn_buildShader_Click(object sender, RoutedEventArgs e)
         {
-            e.Effects = DragDropEffects.Copy;
-            e.Handled = true;
+            var client = new Shader.ShaderClient(channel);
+            try
+            {
+                var reply = client.BuildShader(new BuildShaderRequest { VShaderCode = vshader_code.Text, FShaderCode = fshader_code.Text });
+                this.uniformList.Items.Clear();
+                foreach (var item in reply.VarInfos)
+                {
+                    this.uniformList.Items.Add(new UniformItem1(item.Value, item.Key, ""));
+                }
+            }
+            catch(Grpc.Core.RpcException){ }
+            
         }
     }
 }

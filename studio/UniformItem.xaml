@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="studio.UniformItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:studio"
+             mc:Ignorable="d" 
+             d:DesignHeight="80" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="0" Source="d:/icons/navi.png" Stretch="Uniform"/>
+        <TextBlock Grid.Column="1" Text="resolution" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+        <ContentControl Grid.Column="2" x:Name="container"/>
+    </Grid>
+</UserControl>

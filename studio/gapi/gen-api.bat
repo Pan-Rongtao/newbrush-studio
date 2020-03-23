@@ -11,12 +11,12 @@ echo 共需处理[%num%]个proto文件
 echo 开始生成API...
 echo.
 
-set /a v=0
+set /a v=1
 for /r "." %%i in (*.proto) do (
 echo 正在处理[!v!/%num%] %%i
 ::提取文件名
 for %%a in ("%%i") do set "file=%%~na.proto"
-%PROTOC_EXE% -I=. --grpc_out=. --plugin=protoc-gen-grpc=%GRPC_PLUGIN% !file!
+%PROTOC_EXE% -I=. --grpc_out=. --csharp_out=. --plugin=protoc-gen-grpc=%GRPC_PLUGIN% !file!
 set /a v+=1
 )
 

@@ -3,3 +3,4 @@ dist
 obj
 *csproj.user
 .vs
+packages
