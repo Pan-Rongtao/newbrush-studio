@@ -11,7 +11,11 @@ namespace studio
     {
         public void work()
         {
-            Process.Start("D:/github/newbrush/dist/win32/lib/nbplayer.exe", "abc");
+            try
+            {
+                Process.Start("D:/github/newbrush/dist/win32/lib/nbplayer.exe", "abc");
+            }
+            catch (Exception) { }
         }
 
     }

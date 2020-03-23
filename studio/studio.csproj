@@ -218,13 +218,69 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="controls\BooleanEdit.xaml.cs">
+      <DependentUpon>BooleanEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\FloatEdit.xaml.cs">
+      <DependentUpon>FloatEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\IntegerEdit.xaml.cs">
+      <DependentUpon>IntegerEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\Mat3x3Edit.xaml.cs">
+      <DependentUpon>Mat3x3Edit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\Mat4x4Edit.xaml.cs">
+      <DependentUpon>Mat4x4Edit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\Vec2Edit.xaml.cs">
+      <DependentUpon>Vec2Edit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\Vec3Edit.xaml.cs">
+      <DependentUpon>Vec3Edit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\Vec4Edit.xaml.cs">
+      <DependentUpon>Vec4Edit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NBApplication.cs" />
-    <Compile Include="Shader.cs" />
-    <Compile Include="ShaderGrpc.cs" />
+    <Compile Include="grpc\Shader.cs" />
+    <Compile Include="grpc\ShaderGrpc.cs" />
     <Compile Include="UniformItem.cs" />
-    <Compile Include="UniformItem.xaml.cs">
+    <Compile Include="controls\UniformItem.xaml.cs">
       <DependentUpon>UniformItem.xaml</DependentUpon>
     </Compile>
+    <Page Include="controls\BooleanEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="controls\FloatEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="controls\IntegerEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="controls\Mat3x3Edit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="controls\Mat4x4Edit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="controls\Vec2Edit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="controls\Vec3Edit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="controls\Vec4Edit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -237,7 +293,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UniformItem.xaml">
+    <Page Include="controls\UniformItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
