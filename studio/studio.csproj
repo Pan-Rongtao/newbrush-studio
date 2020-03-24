@@ -233,6 +233,9 @@
     <Compile Include="controls\Mat4x4Edit.xaml.cs">
       <DependentUpon>Mat4x4Edit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="controls\VarEdit.xaml.cs">
+      <DependentUpon>VarEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="controls\Vec2Edit.xaml.cs">
       <DependentUpon>Vec2Edit.xaml</DependentUpon>
     </Compile>
@@ -266,6 +269,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="controls\Mat4x4Edit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="controls\VarEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

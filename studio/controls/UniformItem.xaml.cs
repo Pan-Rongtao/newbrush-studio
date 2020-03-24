@@ -15,8 +15,9 @@ using System.Windows.Shapes;
 using System.Windows.Controls.Primitives;
 using Grpc.Core;
 using NBPlayer;
+using studio.controls;
 
-namespace studio
+namespace studio.controls
 {
     /// <summary>
     /// UniformItem.xaml 的交互逻辑
@@ -26,6 +27,12 @@ namespace studio
         public UniformItem()
         {
             InitializeComponent();
+        }
+
+        public NBPlayer.BuildShaderReply.Types.ShaderVarType DataType
+        {
+            get { return (NBPlayer.BuildShaderReply.Types.ShaderVarType)GetValue(DataTypeProperty); }
+            set { SetValue(DataTypeProperty, value); }
         }
 
         public static readonly DependencyProperty DataTypeProperty = DependencyProperty.Register("DataType", typeof(NBPlayer.BuildShaderReply.Types.ShaderVarType), 
@@ -40,8 +47,12 @@ namespace studio
             var t = (NBPlayer.BuildShaderReply.Types.ShaderVarType)e.NewValue;
             switch (t)
             {
-                case BuildShaderReply.Types.ShaderVarType.Boolean:  ctrl.container.Content = new ToggleButton(); break;
-            //    case BuildShaderReply.Types.ShaderVarType.Bvec2:    ctrl.container.Content = 
+                case BuildShaderReply.Types.ShaderVarType.Boolean:  ctrl.container.Content = new BooleanEdit(); break;
+                case BuildShaderReply.Types.ShaderVarType.Real:     ctrl.container.Content = new FloatEdit();   break;
+                case BuildShaderReply.Types.ShaderVarType.Integer:  ctrl.container.Content = new IntegerEdit(); break;
+                case BuildShaderReply.Types.ShaderVarType.Vec2:     ctrl.container.Content = new Vec2Edit();    break;
+                case BuildShaderReply.Types.ShaderVarType.Vec3:     ctrl.container.Content = new Vec3Edit();    break;
+                case BuildShaderReply.Types.ShaderVarType.Vec4:     ctrl.container.Content = new Vec4Edit();    break;
             }
         }
 

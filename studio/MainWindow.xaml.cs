@@ -19,6 +19,7 @@ using Newtonsoft.Json.Linq;
 
 using Grpc.Core;
 using NBPlayer;
+using System.Collections.ObjectModel;
 
 namespace studio
 {
@@ -27,21 +28,28 @@ namespace studio
         NBApplication nbApp = new NBApplication();
 
         Channel channel = new Channel("127.0.0.1:8888", ChannelCredentials.Insecure);
+        ObservableCollection<UniformItem1> datas = new ObservableCollection<UniformItem1>();
 
         public MainWindow()
         {
             InitializeComponent();
-
+            uniformGrid.ItemsSource = datas;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            nbApp.work();
-
+            //   nbApp.work();
+            datas[0].Value = "false";
         }
         
         private void uniformList_Loaded(object sender, RoutedEventArgs e)
         {
+            datas.Add(new UniformItem1(BuildShaderReply.Types.ShaderVarType.Boolean, "uniform", "3"));
+            datas.Add(new UniformItem1(BuildShaderReply.Types.ShaderVarType.Real, "uniform", "3"));
+            datas.Add(new UniformItem1(BuildShaderReply.Types.ShaderVarType.Integer, "uniform", "3"));
+            datas.Add(new UniformItem1(BuildShaderReply.Types.ShaderVarType.Vec2, "uniform", "3"));
+            datas.Add(new UniformItem1(BuildShaderReply.Types.ShaderVarType.Vec3, "uniform", "3"));
+            datas.Add(new UniformItem1(BuildShaderReply.Types.ShaderVarType.Vec4, "uniform", "3"));
         }
 
         private void btn_buildShader_Click(object sender, RoutedEventArgs e)
@@ -50,14 +58,19 @@ namespace studio
             try
             {
                 var reply = client.BuildShader(new BuildShaderRequest { VShaderCode = vshader_code.Text, FShaderCode = fshader_code.Text });
-                this.uniformList.Items.Clear();
+                //this.uniformList.Items.Clear();
                 foreach (var item in reply.VarInfos)
                 {
-                    this.uniformList.Items.Add(new UniformItem1(item.Value, item.Key, ""));
+                //    this.uniformList.Items.Add(new UniformItem1(item.Value, item.Key, ""));
                 }
             }
             catch(Grpc.Core.RpcException){ }
             
+        }
+
+        private void VarEdit_ValueChanged(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

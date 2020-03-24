@@ -6,7 +6,13 @@
              xmlns:local="clr-namespace:studio.controls"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Slider x:Name="MessageDurationOverrideSlider" Minimum="1" Maximum="10" Value="5" IsSnapToTickEnabled="True" TickFrequency="0.1" VerticalAlignment="Center" />
+        <TextBlock Text="{Binding ElementName=MessageDurationOverrideSlider, Path=Value, StringFormat={}{0:0}}" Margin="10,0" Grid.Column="1" VerticalAlignment="Center" />
     </Grid>
 </UserControl>

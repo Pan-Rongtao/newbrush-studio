@@ -5,6 +5,7 @@
                       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
                       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
                       xmlns:studio="clr-namespace:studio"
+                      xmlns:local="clr-namespace:studio.controls"
                       Title="newbrush studio"
                       MinWidth="200"
                       MinHeight="200"
@@ -15,16 +16,14 @@
     >
 
     <Window.Resources>
-        <DataTemplate x:Key="listUniformTemplate" DataType="{x:Type studio:UniformItem}">
+        <DataTemplate x:Key="listUniformTemplate" DataType="{x:Type studio:UniformItem1}">
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Margin="4" ShowGridLines="True">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Uniform}"/>
-                <TextBlock Grid.Column="1" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Type}"/>
-                <TextBox Grid.Column="2" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Value}"/>
+                <local:UniformItem Height="50" DataType="{Binding Type}"/>
             </Grid>
         </DataTemplate>
     </Window.Resources>
@@ -85,10 +84,40 @@ void main(void){&#13;
         </TabControl>
         <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" />
         <GridSplitter Grid.Column="3" Width="5" HorizontalAlignment="Stretch" />
-
-        <ListBox Grid.Column="2" Margin="10" x:Name="uniformList" ItemTemplate="{StaticResource listUniformTemplate}">
+<!--
+        <ListBox Grid.Column="2" Margin="10" x:Name="uniformList" ItemTemplate="{StaticResource listUniformTemplate}" Loaded="uniformList_Loaded">
             
         </ListBox>
+-->
+        <!--
+        <ListView x:Name="lv"  Grid.Column="2" Loaded="uniformList_Loaded" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Type}" Header="Type" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Uniform}" Header="Uniform" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Value}" Header="Value" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        -->
+
+        <DataGrid Grid.Column="2" x:Name="uniformGrid"  Margin="0 8 0 0" Loaded="uniformList_Loaded" ItemsSource="{Binding UniformGridData}"
+                  AutoGenerateColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False"
+                  >
+            
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Type"  Binding="{Binding Path=Type, Mode=OneWay}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Uniform" Binding="{Binding Uniform, Mode=OneWay}" IsReadOnly="True"/>
+                <DataGridTemplateColumn  Header="Value" Width="2*" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <!--   <local:VarEdit DataType="{Binding Type}" Value="{Binding Value}" ValueChanged="VarEdit_ValueChanged"></local:VarEdit>-->
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                
+            </DataGrid.Columns>
+        </DataGrid>
 
         <StackPanel Grid.Column="4">
             <Button Margin="50" Foreground="Blue" FontSize="40" Click="Button_Click">
