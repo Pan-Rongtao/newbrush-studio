@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace studio.controls
+namespace studio
 {
     /// <summary>
     /// FloatEdit.xaml 的交互逻辑
@@ -23,6 +23,15 @@ namespace studio.controls
         public FloatEdit()
         {
             InitializeComponent();
+        }
+
+        public static readonly DependencyProperty ValueProperty = DependencyProperty.Register("Value", typeof(float),
+            typeof(FloatEdit), new PropertyMetadata((float)0.0, null));
+
+        public float Value
+        {
+            get { return (float)GetValue(ValueProperty); }
+            set { SetValue(ValueProperty, value); }
         }
     }
 }

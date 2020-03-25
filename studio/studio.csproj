@@ -218,6 +218,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BindingCoverters.cs" />
     <Compile Include="controls\BooleanEdit.xaml.cs">
       <DependentUpon>BooleanEdit.xaml</DependentUpon>
     </Compile>
@@ -233,9 +234,6 @@
     <Compile Include="controls\Mat4x4Edit.xaml.cs">
       <DependentUpon>Mat4x4Edit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="controls\VarEdit.xaml.cs">
-      <DependentUpon>VarEdit.xaml</DependentUpon>
-    </Compile>
     <Compile Include="controls\Vec2Edit.xaml.cs">
       <DependentUpon>Vec2Edit.xaml</DependentUpon>
     </Compile>
@@ -245,13 +243,15 @@
     <Compile Include="controls\Vec4Edit.xaml.cs">
       <DependentUpon>Vec4Edit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NBApplication.cs" />
+    <Compile Include="grpc\Math.cs" />
     <Compile Include="grpc\Shader.cs" />
     <Compile Include="grpc\ShaderGrpc.cs" />
-    <Compile Include="UniformItem.cs" />
-    <Compile Include="controls\UniformItem.xaml.cs">
-      <DependentUpon>UniformItem.xaml</DependentUpon>
+    <Compile Include="grpc\Types.cs" />
+    <Compile Include="NBApplication.cs" />
+    <Compile Include="controls\UniformDataGrid.xaml.cs">
+      <DependentUpon>UniformDataGrid.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UniformModel.cs" />
     <Page Include="controls\BooleanEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -269,10 +269,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="controls\Mat4x4Edit.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="controls\VarEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -300,7 +296,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="controls\UniformItem.xaml">
+    <Page Include="controls\UniformDataGrid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -345,6 +341,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

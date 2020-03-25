@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace studio.controls
+namespace studio
 {
     /// <summary>
     /// Mat4x4Edit.xaml 的交互逻辑

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace studio.controls
+namespace studio
 {
     /// <summary>
     /// IntegerEdit.xaml 的交互逻辑
@@ -23,6 +23,15 @@ namespace studio.controls
         public IntegerEdit()
         {
             InitializeComponent();
+        }
+
+        public static readonly DependencyProperty ValueProperty = DependencyProperty.Register("Value", typeof(int),
+            typeof(IntegerEdit), new PropertyMetadata(0, null));
+
+        public int Value
+        {
+            get { return (int)GetValue(ValueProperty); }
+            set { SetValue(ValueProperty, value); }
         }
     }
 }

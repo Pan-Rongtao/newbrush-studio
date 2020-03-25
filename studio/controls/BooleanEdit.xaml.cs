@@ -13,12 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace studio.controls
+namespace studio
 {
-    class ValueChangedEventArgs : RoutedEventArgs
-    {
-        public Object NewValue { get; set; }
-    }
     /// <summary>
     /// BooleanBar.xaml 的交互逻辑
     /// </summary>
@@ -29,21 +25,14 @@ namespace studio.controls
             InitializeComponent();
         }
 
-        public event RoutedEventHandler ValueChanged
+        public static readonly DependencyProperty ValueProperty = DependencyProperty.Register("Value", typeof(bool),
+            typeof(BooleanEdit), new PropertyMetadata(true, null));
+        
+        public bool Value
         {
-            add { AddHandler(ValueChangedEvent, value); }
-            remove { RemoveHandler(ValueChangedEvent, value); }
+            get { return (bool)GetValue(ValueProperty); }
+            set { SetValue(ValueProperty, value); }
         }
-
-        public static readonly RoutedEvent ValueChangedEvent = EventManager.RegisterRoutedEvent("ValueChangedEvent", RoutingStrategy.Bubble, typeof(EventHandler<ValueChangedEventArgs>), typeof(BooleanEdit));
-
-        private void ToggleButton_Checked(object sender, RoutedEventArgs e)
-        {
-            ValueChangedEventArgs args = new ValueChangedEventArgs();
-            args.NewValue = tb.IsChecked;
-            args.RoutedEvent = ValueChangedEvent;
-            this.RaiseEvent(args);
-        }
-
+        
     }
 }

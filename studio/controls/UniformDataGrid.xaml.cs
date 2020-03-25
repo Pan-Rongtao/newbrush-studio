@@ -12,17 +12,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Nbrpc;
+using System.Collections.ObjectModel;
 
 namespace studio
 {
     /// <summary>
-    /// Mat3x3Edit.xaml 的交互逻辑
+    /// UniformDataGrid.xaml 的交互逻辑
     /// </summary>
-    public partial class Mat3x3Edit : UserControl
+    public partial class UniformDataGrid : UserControl
     {
-        public Mat3x3Edit()
+        public UniformDataGrid()
         {
             InitializeComponent();
+            uniformGrid.ItemsSource = UniformModel.Model;
         }
     }
 }

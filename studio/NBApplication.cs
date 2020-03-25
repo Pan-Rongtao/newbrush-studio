@@ -7,9 +7,9 @@ using System.Diagnostics;
 
 namespace studio
 {
-    class NBApplication
+    class NBPlayer
     {
-        public void work()
+        static public void launch()
         {
             try
             {
