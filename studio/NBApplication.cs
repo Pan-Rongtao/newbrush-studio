@@ -13,7 +13,9 @@ namespace studio
         {
             try
             {
-                Process.Start("D:/github/newbrush/dist/win32/lib/nbplayer.exe", "abc");
+                string s = Environment.CurrentDirectory;
+                string nbPlayerPath = s + "/../../../../newbrush/dist/lib/nbplayer.exe";
+                Process.Start(nbPlayerPath);
             }
             catch (Exception) { }
         }

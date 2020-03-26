@@ -219,6 +219,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BindingCoverters.cs" />
+    <Compile Include="Clients.cs" />
     <Compile Include="controls\BooleanEdit.xaml.cs">
       <DependentUpon>BooleanEdit.xaml</DependentUpon>
     </Compile>

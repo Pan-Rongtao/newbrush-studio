@@ -16,9 +16,9 @@
                 <studio:Vec3VisibilityConverter x:Key="vec3Converter"/>
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Type"  Binding="{Binding Type, Mode=OneWay}" IsReadOnly="True" />
-                <DataGridTextColumn Header="Uniform" Binding="{Binding Uniform, Mode=TwoWay}" IsReadOnly="True"/>
-                <DataGridTemplateColumn Header="Value" Width="2*" IsReadOnly="False">
+                <DataGridTextColumn Header="Type" Width="*" Binding="{Binding Type, Mode=OneWay}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Uniform" Width="*" Binding="{Binding Uniform, Mode=TwoWay}" IsReadOnly="True"/>
+                <DataGridTemplateColumn Header="Value" Width="*" IsReadOnly="False">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
