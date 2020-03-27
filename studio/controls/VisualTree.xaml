@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="studio.VisualTree"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:studio="clr-namespace:studio"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <!--解决遍历时无法深层次遍历的问题：https://www.cnblogs.com/sayo/archive/2008/07/23/1249804.html-->
+    <UserControl.Resources>
+        <Style TargetType="TreeViewItem">
+            <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type TreeViewItem}}}" />
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <TreeView x:Name="tv">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate DataType="{x:Type studio:NodeItem}" ItemsSource="{Binding Children}">
+                    <StackPanel Orientation="Horizontal" Margin="0, 2, 0, 2">
+                        <materialDesign:PackIcon Kind="{Binding IconType}" Margin="1, 0, 3, 0"/>
+                        <TextBlock Text="{Binding Name}" VerticalAlignment="Center"/>
+
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+    </Grid>
+</UserControl>

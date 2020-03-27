@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Threading;
 using MahApps.Metro.Controls;
 using MahApps.Metro.IconPacks;
+using MaterialDesignThemes.Wpf;
 using Newtonsoft.Json.Linq;
 
 using System.Collections.ObjectModel;
@@ -27,19 +28,15 @@ namespace studio
         public MainWindow()
         {
             InitializeComponent();
-            /*
-            UniformModel.Model.Add(new UniformItem(UniformType.Boolean, "uniform"));
-            UniformModel.Model.Add(new UniformItem(UniformType.Real, "uniform"));
-            UniformModel.Model.Add(new UniformItem(UniformType.Integer, "uniform"));
-            UniformModel.Model.Add(new UniformItem(UniformType.Vec2, "uniform"));
-            UniformModel.Model.Add(new UniformItem(UniformType.Vec3, "uniform"));*/
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            vt.ExpandAll(true);
+            return;
             NBPlayer.launch();
         }
-        
+
         private void btn_buildShader_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -51,9 +48,8 @@ namespace studio
                     UniformModel.Model.Add(new UniformItem(item.Value, item.Key));
                 }
             }
-            catch(Grpc.Core.RpcException){ }
-            
+            catch (Grpc.Core.RpcException) { }
+
         }
-        
     }
 }

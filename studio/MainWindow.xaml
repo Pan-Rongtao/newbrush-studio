@@ -1,19 +1,21 @@
-﻿<Controls:MetroWindow x:Class="studio.MainWindow"
-                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                      xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
-                      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-                      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-                      xmlns:studio="clr-namespace:studio"
-                      Title="newbrush studio"
-                      MinWidth="200"
-                      MinHeight="200"
-                      Width="1440"
-                      Height="720"
-                      WindowStartupLocation="CenterScreen" 
-                      GlowBrush="{DynamicResource AccentColorBrush}"
+﻿<Controls:MetroWindow
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:studio="clr-namespace:studio"
+    x:Class="studio.MainWindow"
+    Title="newbrush studio"
+    MinWidth="200"
+    MinHeight="200"
+    Width="1440"
+    Height="720"
+    WindowStartupLocation="CenterScreen" 
+    WindowState="Maximized"
+    GlowBrush="{DynamicResource AccentColorBrush}"
     >
-
+    
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
             <Button Content="settings" />
@@ -34,52 +36,31 @@
             <ColumnDefinition Width="3" />
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
-        <TabControl Margin="10">
+
+        <TabControl Margin="10" Visibility="Hidden">
             <TabItem Header="vshader" Foreground="Red" >
                 <TextBox x:Name="vshader_code" VerticalScrollBarVisibility="Visible" FontSize="20" 
-                         Text="attribute vec4 nbPos;&#13;uniform mat4 nbMvp;&#13;&#13;void main()&#13;{&#13;    gl_Position = nbMvp * nbPos;&#13;}" />
+                         Text="attribute vec4 nbPos;&#xA;uniform mat4 nbMvp;&#xA;&#xA;void main()&#xA;{&#xA;    gl_Position = nbMvp * nbPos;&#xA;}" />
             </TabItem>
             <TabItem Header="fshader" Foreground="DarkBlue" >
                 <TextBox x:Name="fshader_code" VerticalScrollBarVisibility="Visible" FontSize="20" TextWrapping="Wrap" AcceptsReturn="True"
-                         Text="precision mediump float;&#13;
-uniform float time;&#13;
-uniform vec2  resolution;&#13;
-uniform vec2  mouse;&#13;
-
-void main(void){&#13;
-	&#13;
-	float t = time;&#13;
-	vec2 r = resolution;&#13;
-	&#13;
-    vec2 p = (gl_FragCoord.xy * 2.0 - r) / min(r.x, r.y);&#13;
-	vec3 destColor = vec3(mouse.x, mouse.y, 0.7);&#13;
-	float f = 0.0;&#13;
-    for(float i = 0.0; i &lt; 20.0; i++)&#13;
-	{&#13;
-		float s = sin(t + i * 0.314) * 0.5;&#13;
-		float c = cos(t + i * 0.314) * 0.5;&#13;
-		f += 0.002 / abs(length(p + vec2(s, c)) - 1.5*abs(sin(0.3 * t)));&#13;
-    }&#13;
-    gl_FragColor = vec4(vec3(destColor * f), 1.0);&#13;
-
-};"
-                         />
+                         Text="precision mediump float;&#xA; uniform float time;&#xA; uniform vec2  resolution;&#xA; uniform vec2  mouse;&#xA;  void main(void){&#xA;  &#xA;  float t = time;&#xA;  vec2 r = resolution;&#xA;  &#xA;     vec2 p = (gl_FragCoord.xy * 2.0 - r) / min(r.x, r.y);&#xA;  vec3 destColor = vec3(mouse.x, mouse.y, 0.7);&#xA;  float f = 0.0;&#xA;     for(float i = 0.0; i &lt; 20.0; i++)&#xA;  {&#xA;   float s = sin(t + i * 0.314) * 0.5;&#xA;   float c = cos(t + i * 0.314) * 0.5;&#xA;   f += 0.002 / abs(length(p + vec2(s, c)) - 1.5*abs(sin(0.3 * t)));&#xA;     }&#xA;     gl_FragColor = vec4(vec3(destColor * f), 1.0);&#xA;  };"
+                         >
+                </TextBox>
             </TabItem>
         </TabControl>
-        
+
         <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" />
         <GridSplitter Grid.Column="3" Width="5" HorizontalAlignment="Stretch" />
         <studio:UniformDataGrid Grid.Column="2"/>
 
         <StackPanel Grid.Column="4">
-            <Button Margin="50" Foreground="Blue" FontSize="40" Click="Button_Click">
-                启动渲染窗口
-            </Button>
-            <Button x:Name="btn_buildShader" Margin="50" Foreground="Blue" FontSize="40" Click="btn_buildShader_Click">
-                更新着色器
-            </Button>
+            <Button Margin="50" Foreground="Blue" FontSize="40" Click="Button_Click" Content="启动渲染窗口" IsDefault="True"/>
+            <Button x:Name="btn_buildShader" Margin="50" Foreground="Blue" FontSize="40" Click="btn_buildShader_Click" Content="更新着色器"/>
 
         </StackPanel>
+
+        <studio:VisualTree x:Name="vt"/>
+
     </Grid>
 </Controls:MetroWindow>
