@@ -60,7 +60,48 @@
 
         </StackPanel>
 
-        <studio:VisualTree x:Name="vt"/>
-
+        <TreeView x:Name="tv">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                    <Grid ShowGridLines="True">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="35"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Horizontal" Margin="0, 2, 0, 2" VerticalAlignment="Center">
+                            <materialDesign:PackIcon Kind="{Binding IconType}" Margin="1, 0, 3, 0" VerticalAlignment="Center"/>
+                            <TextBlock Text="{Binding Name}" />
+                        </StackPanel>
+                        <ToggleButton x:Name="tb" Grid.Column="1" IsChecked="{Binding Visibility}"  Focusable="False">
+                            <ToggleButton.Resources>
+                                <studio:VisibilityIconConverter x:Key="vPConverter"/>
+                            </ToggleButton.Resources>
+                            <ToggleButton.Template>
+                                <ControlTemplate>
+                                    <Grid>
+                                        <Rectangle>
+                                            <Rectangle.Fill>
+                                                <SolidColorBrush Opacity="0.0"></SolidColorBrush>
+                                            </Rectangle.Fill>
+                                        </Rectangle>
+                                        <materialDesign:PackIcon Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Kind="{Binding IsChecked, ElementName=tb, Converter={StaticResource vPConverter}}"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </ToggleButton.Template>
+                        </ToggleButton>
+                    </Grid>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+            <TreeView.ContextMenu>
+                <ContextMenu >
+                    <MenuItem Header="创建"/>
+                        <Separator/>
+                    <MenuItem Header="复制"/>
+                    <MenuItem Header="剪切"/>
+                    <MenuItem Header="粘贴"/>
+                    
+                </ContextMenu>
+            </TreeView.ContextMenu>
+        </TreeView>
     </Grid>
 </Controls:MetroWindow>

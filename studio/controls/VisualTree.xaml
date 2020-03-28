@@ -15,17 +15,16 @@
         </Style>
     </UserControl.Resources>
 
-    <Grid>
-        <TreeView x:Name="tv">
-            <TreeView.ItemTemplate>
-                <HierarchicalDataTemplate DataType="{x:Type studio:NodeItem}" ItemsSource="{Binding Children}">
-                    <StackPanel Orientation="Horizontal" Margin="0, 2, 0, 2">
-                        <materialDesign:PackIcon Kind="{Binding IconType}" Margin="1, 0, 3, 0"/>
-                        <TextBlock Text="{Binding Name}" VerticalAlignment="Center"/>
-
-                    </StackPanel>
-                </HierarchicalDataTemplate>
-            </TreeView.ItemTemplate>
-        </TreeView>
-    </Grid>
+    <TreeView x:Name="tv">
+        <TreeView.ItemTemplate>
+            <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                <StackPanel Orientation="Horizontal" Margin="0, 2, 0, 2">
+                    <materialDesign:PackIcon Kind="{Binding IconType}" Margin="1, 0, 3, 0"/>
+                    <TextBlock Text="{Binding Name}" />
+                    <materialDesign:PackIcon Grid.Column="1" Kind="Dad" HorizontalAlignment="Right"/>
+                </StackPanel>
+            </HierarchicalDataTemplate>
+        </TreeView.ItemTemplate>
+    </TreeView>
+    
 </UserControl>

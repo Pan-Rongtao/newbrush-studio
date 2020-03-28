@@ -253,6 +253,9 @@
     <Compile Include="grpc\Shader.cs" />
     <Compile Include="grpc\ShaderGrpc.cs" />
     <Compile Include="grpc\Types.cs" />
+    <Compile Include="menus\VisualTreeMenu.xaml.cs">
+      <DependentUpon>VisualTreeMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NBApplication.cs" />
     <Compile Include="controls\UniformDataGrid.xaml.cs">
       <DependentUpon>UniformDataGrid.xaml</DependentUpon>
@@ -308,6 +311,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="controls\UniformDataGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="menus\VisualTreeMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

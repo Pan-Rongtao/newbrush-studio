@@ -79,6 +79,26 @@ namespace studio
             grid.Children.Add(NodeItem.TreeView("TreeView"));
             grid.Children.Add(NodeItem.StatusBar("StatusBar"));
             grid.Children.Add(NodeItem.Menu("Menu"));
+            grid.Children.Add(NodeItem.TextBox("TextBox"));
+            grid.Children.Add(NodeItem.RickTextBox("RickTextBox"));
+            grid.Children.Add(NodeItem.PasswordBox("PasswordBox"));
+            grid.Children.Add(NodeItem.Image("Image"));
+            grid.Children.Add(NodeItem.TextBlock("TextBlock"));
+
+            grid.Children.Add(NodeItem.Line("Line"));
+            grid.Children.Add(NodeItem.Polyline("Polyline"));
+            grid.Children.Add(NodeItem.Polygon("Polygon"));
+            grid.Children.Add(NodeItem.Path("Path"));
+            grid.Children.Add(NodeItem.Rectangle("Rectangle"));
+            grid.Children.Add(NodeItem.Ellipse("Ellipse"));
+
+            grid.Children.Add(NodeItem.Canvas("Canvas"));
+            grid.Children.Add(NodeItem.DockPanel("DockPanel"));
+            grid.Children.Add(NodeItem.WrapPanel("WrapPanel"));
+            grid.Children.Add(NodeItem.StackPanel("StackPanel"));
+            grid.Children.Add(NodeItem.Grid("Grid"));
+            grid.Children.Add(NodeItem.UniformGrid("UniformGrid"));
+
             itemList.Add(root);
             tv.ItemsSource = itemList;
         }
