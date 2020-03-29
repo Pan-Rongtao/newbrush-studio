@@ -5,6 +5,7 @@
     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:studio="clr-namespace:studio"
+    xmlns:ad="http://schemas.xceed.com/wpf/xaml/avalondock"
     x:Class="studio.MainWindow"
     Title="newbrush studio"
     MinWidth="200"
@@ -16,92 +17,38 @@
     GlowBrush="{DynamicResource AccentColorBrush}"
     >
     
-    <Controls:MetroWindow.RightWindowCommands>
-        <Controls:WindowCommands>
-            <Button Content="settings" />
-            <Button>
-                <StackPanel Orientation="Horizontal">
-                    <iconPacks:PackIconModern Width="24" Height="24" Kind="FoodCupcake" />
-                    <TextBlock Margin="4 0 0 0" VerticalAlignment="Center" Text="deploy cupcakes" />
-                </StackPanel>
-            </Button>
-        </Controls:WindowCommands>
-    </Controls:MetroWindow.RightWindowCommands>
+    <Grid>
+        <ad:DockingManager>
+            <ad:DockingManager.Theme>
+                <ad:MetroTheme></ad:MetroTheme>
+            </ad:DockingManager.Theme>
 
-    <Grid x:Name="grid">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" MinWidth="350"/>
-            <ColumnDefinition Width="3" />
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="3" />
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+            <ad:LayoutRoot>
+                <ad:LayoutPanel x:Name="Panel" >
+                    <ad:LayoutAnchorablePane x:Name="Pane1">
+                        <ad:LayoutAnchorable x:Name="Solution1" Title="工程" ContentId="Solution">
+                            <studio:VisualTree/>
+                        </ad:LayoutAnchorable>
+                    </ad:LayoutAnchorablePane>
 
-        <TabControl Margin="10" Visibility="Hidden">
-            <TabItem Header="vshader" Foreground="Red" >
-                <TextBox x:Name="vshader_code" VerticalScrollBarVisibility="Visible" FontSize="20" 
-                         Text="attribute vec4 nbPos;&#xA;uniform mat4 nbMvp;&#xA;&#xA;void main()&#xA;{&#xA;    gl_Position = nbMvp * nbPos;&#xA;}" />
-            </TabItem>
-            <TabItem Header="fshader" Foreground="DarkBlue" >
-                <TextBox x:Name="fshader_code" VerticalScrollBarVisibility="Visible" FontSize="20" TextWrapping="Wrap" AcceptsReturn="True"
-                         Text="precision mediump float;&#xA; uniform float time;&#xA; uniform vec2  resolution;&#xA; uniform vec2  mouse;&#xA;  void main(void){&#xA;  &#xA;  float t = time;&#xA;  vec2 r = resolution;&#xA;  &#xA;     vec2 p = (gl_FragCoord.xy * 2.0 - r) / min(r.x, r.y);&#xA;  vec3 destColor = vec3(mouse.x, mouse.y, 0.7);&#xA;  float f = 0.0;&#xA;     for(float i = 0.0; i &lt; 20.0; i++)&#xA;  {&#xA;   float s = sin(t + i * 0.314) * 0.5;&#xA;   float c = cos(t + i * 0.314) * 0.5;&#xA;   f += 0.002 / abs(length(p + vec2(s, c)) - 1.5*abs(sin(0.3 * t)));&#xA;     }&#xA;     gl_FragColor = vec4(vec3(destColor * f), 1.0);&#xA;  };"
-                         >
-                </TextBox>
-            </TabItem>
-        </TabControl>
-
-        <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" />
-        <GridSplitter Grid.Column="3" Width="5" HorizontalAlignment="Stretch" />
-        <studio:UniformDataGrid Grid.Column="2"/>
-
-        <StackPanel Grid.Column="4">
-            <Button Margin="50" Foreground="Blue" FontSize="40" Click="Button_Click" Content="启动渲染窗口" IsDefault="True"/>
-            <Button x:Name="btn_buildShader" Margin="50" Foreground="Blue" FontSize="40" Click="btn_buildShader_Click" Content="更新着色器"/>
-
-        </StackPanel>
-
-        <TreeView x:Name="tv">
-            <TreeView.ItemTemplate>
-                <HierarchicalDataTemplate ItemsSource="{Binding Children}">
-                    <Grid ShowGridLines="True">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition Width="35"/>
-                        </Grid.ColumnDefinitions>
-                        <StackPanel Orientation="Horizontal" Margin="0, 2, 0, 2" VerticalAlignment="Center">
-                            <materialDesign:PackIcon Kind="{Binding IconType}" Margin="1, 0, 3, 0" VerticalAlignment="Center"/>
-                            <TextBlock Text="{Binding Name}" />
-                        </StackPanel>
-                        <ToggleButton x:Name="tb" Grid.Column="1" IsChecked="{Binding Visibility}"  Focusable="False">
-                            <ToggleButton.Resources>
-                                <studio:VisibilityIconConverter x:Key="vPConverter"/>
-                            </ToggleButton.Resources>
-                            <ToggleButton.Template>
-                                <ControlTemplate>
-                                    <Grid>
-                                        <Rectangle>
-                                            <Rectangle.Fill>
-                                                <SolidColorBrush Opacity="0.0"></SolidColorBrush>
-                                            </Rectangle.Fill>
-                                        </Rectangle>
-                                        <materialDesign:PackIcon Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Kind="{Binding IsChecked, ElementName=tb, Converter={StaticResource vPConverter}}"/>
-                                    </Grid>
-                                </ControlTemplate>
-                            </ToggleButton.Template>
-                        </ToggleButton>
-                    </Grid>
-                </HierarchicalDataTemplate>
-            </TreeView.ItemTemplate>
-            <TreeView.ContextMenu>
-                <ContextMenu >
-                    <MenuItem Header="创建"/>
-                        <Separator/>
-                    <MenuItem Header="复制"/>
-                    <MenuItem Header="剪切"/>
-                    <MenuItem Header="粘贴"/>
+                    <ad:LayoutAnchorablePane x:Name="Pane2">
+                        <ad:LayoutAnchorable x:Name="Solution2" Title="材质" ContentId="Solution">
+                            <studio:UniformDataGrid Grid.Column="2"/>
+                        </ad:LayoutAnchorable>
+                    </ad:LayoutAnchorablePane>
                     
-                </ContextMenu>
-            </TreeView.ContextMenu>
-        </TreeView>
+                    <ad:LayoutAnchorablePane x:Name="Pane3">
+                        <ad:LayoutAnchorable x:Name="Solution3" Title="启动" ContentId="Solution">
+                            <StackPanel Grid.Column="4">
+                                <Button Margin="50" Foreground="Blue" FontSize="40" Click="Button_Click" Content="启动渲染窗口" IsDefault="True"/>
+                                <Button x:Name="btn_buildShader" Margin="50" Foreground="Blue" FontSize="40" Click="btn_buildShader_Click" Content="更新着色器"/>
+                            </StackPanel>
+                        </ad:LayoutAnchorable>
+                    </ad:LayoutAnchorablePane>
+                </ad:LayoutPanel>
+            </ad:LayoutRoot>
+
+        </ad:DockingManager>
     </Grid>
+
 </Controls:MetroWindow>

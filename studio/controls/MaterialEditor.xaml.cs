@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace studio
 {
     /// <summary>
-    /// VisualTreeMenu.xaml 的交互逻辑
+    /// MaterialEditer.xaml 的交互逻辑
     /// </summary>
-    public partial class VisualTreeMenu : UserControl
+    public partial class MaterialEditer : UserControl
     {
-        public VisualTreeMenu()
+        public MaterialEditer()
         {
             InitializeComponent();
         }
