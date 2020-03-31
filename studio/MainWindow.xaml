@@ -3,52 +3,17 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-    xmlns:studio="clr-namespace:studio"
-    xmlns:ad="http://schemas.xceed.com/wpf/xaml/avalondock"
+    xmlns:local="clr-namespace:studio"
     x:Class="studio.MainWindow"
     Title="newbrush studio"
     MinWidth="200"
     MinHeight="200"
-    Width="1440"
-    Height="720"
     WindowStartupLocation="CenterScreen" 
     WindowState="Maximized"
-    GlowBrush="{DynamicResource AccentColorBrush}"
     >
     
     <Grid>
-        <ad:DockingManager>
-            <ad:DockingManager.Theme>
-                <ad:MetroTheme></ad:MetroTheme>
-            </ad:DockingManager.Theme>
-
-            <ad:LayoutRoot>
-                <ad:LayoutPanel x:Name="Panel" >
-                    <ad:LayoutAnchorablePane x:Name="Pane1">
-                        <ad:LayoutAnchorable x:Name="Solution1" Title="工程" ContentId="Solution">
-                            <studio:VisualTree/>
-                        </ad:LayoutAnchorable>
-                    </ad:LayoutAnchorablePane>
-
-                    <ad:LayoutAnchorablePane x:Name="Pane2">
-                        <ad:LayoutAnchorable x:Name="Solution2" Title="材质" ContentId="Solution">
-                            <studio:UniformDataGrid Grid.Column="2"/>
-                        </ad:LayoutAnchorable>
-                    </ad:LayoutAnchorablePane>
-                    
-                    <ad:LayoutAnchorablePane x:Name="Pane3">
-                        <ad:LayoutAnchorable x:Name="Solution3" Title="启动" ContentId="Solution">
-                            <StackPanel Grid.Column="4">
-                                <Button Margin="50" Foreground="Blue" FontSize="40" Click="Button_Click" Content="启动渲染窗口" IsDefault="True"/>
-                                <Button x:Name="btn_buildShader" Margin="50" Foreground="Blue" FontSize="40" Click="btn_buildShader_Click" Content="更新着色器"/>
-                            </StackPanel>
-                        </ad:LayoutAnchorable>
-                    </ad:LayoutAnchorablePane>
-                </ad:LayoutPanel>
-            </ad:LayoutRoot>
-
-        </ad:DockingManager>
+        <local:WorkArea/>
     </Grid>
 
 </Controls:MetroWindow>

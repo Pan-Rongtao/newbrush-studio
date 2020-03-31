@@ -190,6 +190,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Memory.4.5.3\lib\netstandard1.1\System.Memory.dll</HintPath>
       <Private>True</Private>
@@ -198,6 +199,7 @@
       <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\ControlzEx.3.0.2.4\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
@@ -214,6 +216,7 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
     <Reference Include="Xceed.Wpf.AvalonDock, Version=4.0.20076.12200, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
       <HintPath>packages\Xceed.Wpf.AvalonDock.4.0.20076.12200\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
       <Private>True</Private>
@@ -285,9 +288,6 @@
     <Compile Include="controls\Mat4x4Edit.xaml.cs">
       <DependentUpon>Mat4x4Edit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="controls\MaterialEditor.xaml.cs">
-      <DependentUpon>MaterialEditor.xaml</DependentUpon>
-    </Compile>
     <Compile Include="controls\Vec2Edit.xaml.cs">
       <DependentUpon>Vec2Edit.xaml</DependentUpon>
     </Compile>
@@ -308,10 +308,22 @@
       <DependentUpon>VisualTreeMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="NBApplication.cs" />
-    <Compile Include="controls\UniformDataGrid.xaml.cs">
-      <DependentUpon>UniformDataGrid.xaml</DependentUpon>
+    <Compile Include="controls\MaterialEditor.xaml.cs">
+      <DependentUpon>MaterialEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\Preview.xaml.cs">
+      <DependentUpon>Preview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OutputPanel.xaml.cs">
+      <DependentUpon>OutputPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyEditor.xaml.cs">
+      <DependentUpon>PropertyEditor.xaml</DependentUpon>
     </Compile>
     <Compile Include="VisualTreeData.cs" />
+    <Compile Include="WorkArea.xaml.cs">
+      <DependentUpon>WorkArea.xaml</DependentUpon>
+    </Compile>
     <Page Include="controls\BooleanEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -329,10 +341,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="controls\Mat4x4Edit.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="controls\MaterialEditor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -364,11 +372,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="controls\UniformDataGrid.xaml">
+    <Page Include="controls\MaterialEditor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="menus\VisualTreeMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="controls\Preview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OutputPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PropertyEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WorkArea.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

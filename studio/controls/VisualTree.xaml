@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:studio="clr-namespace:studio"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:ad="http://schemas.xceed.com/wpf/xaml/avalondock"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
@@ -20,12 +21,12 @@
             <HierarchicalDataTemplate ItemsSource="{Binding Children}">
                 <Grid ShowGridLines="True">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
+                        <ColumnDefinition/>
                         <ColumnDefinition Width="35"/>
                     </Grid.ColumnDefinitions>
                     <StackPanel Orientation="Horizontal" Margin="0, 2, 0, 2" VerticalAlignment="Center">
                         <materialDesign:PackIcon Kind="{Binding IconType}" Margin="1, 0, 3, 0" VerticalAlignment="Center"/>
-                        <TextBlock Text="{Binding Name}" />
+                        <TextBlock VerticalAlignment="Center" Text="{Binding Name}" HorizontalAlignment="Right"/>
                     </StackPanel>
                     <ToggleButton x:Name="tb" Grid.Column="1" IsChecked="{Binding Visibility}"  Focusable="False">
                         <ToggleButton.Resources>

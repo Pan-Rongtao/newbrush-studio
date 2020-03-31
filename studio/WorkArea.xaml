@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="studio.WorkArea"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:studio"
+    xmlns:ad="http://schemas.xceed.com/wpf/xaml/avalondock"
+                 xmlns:tk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="800">
+    <Grid>
+        <ad:DockingManager x:Name="_dockingManager">
+            <ad:DockingManager.Theme>
+                <ad:AeroTheme></ad:AeroTheme>
+            </ad:DockingManager.Theme>
+
+            <!--一定要设置DockWidth为确定值，否则拖动分割线布局错误-->
+            <ad:LayoutRoot x:Name="layoutRoot">
+                <ad:LayoutPanel>
+
+                    <ad:LayoutPanel Orientation="Vertical" DockWidth="270">
+                        <ad:LayoutAnchorablePane>
+                            <ad:LayoutAnchorable x:Name="visualTreeLayout" Title="工程">
+                                <local:VisualTree />
+                            </ad:LayoutAnchorable>
+                        </ad:LayoutAnchorablePane>
+                        <ad:LayoutAnchorablePane>
+                            <ad:LayoutAnchorable>
+                                <local:MaterialEditor/>
+                            </ad:LayoutAnchorable>
+                        </ad:LayoutAnchorablePane>
+                    </ad:LayoutPanel>
+
+                    <ad:LayoutPanel Orientation="Vertical">
+                        <ad:LayoutAnchorablePane DockWidth="*">
+                            <ad:LayoutAnchorable x:Name="PreviewLayout" Title="预览">
+                                <local:Preview x:Name="pv"/>
+                            </ad:LayoutAnchorable>
+                        </ad:LayoutAnchorablePane>
+                        <ad:LayoutAnchorablePane DockHeight="200">
+                            <ad:LayoutAnchorable Title="输出">
+                                <local:OutputPanel />
+                            </ad:LayoutAnchorable>
+                        </ad:LayoutAnchorablePane>
+                    </ad:LayoutPanel>
+
+                    <ad:LayoutAnchorablePane DockWidth="300" >
+                        <ad:LayoutAnchorable x:Name="ProperiesLayout" Title="属性">
+                            <tk:PropertyGrid NameColumnWidth="210" SelectedObject="{Binding ElementName=_layoutRoot, Path=LastFocusedDocument.Content}"/>
+                        </ad:LayoutAnchorable>
+                    </ad:LayoutAnchorablePane>
+
+                </ad:LayoutPanel>
+            </ad:LayoutRoot>
+
+        </ad:DockingManager>
+    </Grid>
+</UserControl>

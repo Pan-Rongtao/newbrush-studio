@@ -1,12 +1,18 @@
-﻿<UserControl x:Class="studio.MaterialEditer"
+﻿<UserControl x:Class="studio.MaterialEditor"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:studio"
+             xmlns:studio="clr-namespace:studio"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
         <TabControl Margin="10">
             <TabItem Header="vshader" Foreground="Red" >
                 <TextBox x:Name="vshader_code" VerticalScrollBarVisibility="Visible" FontSize="20" 
@@ -19,5 +25,36 @@
                 </TextBox>
             </TabItem>
         </TabControl>
+        
+        <DataGrid x:Name="uniformGrid" Grid.Row="1" Margin="0 8 0 0" ItemsSource="{Binding UniformGridData}" AutoGenerateColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False">
+            <DataGrid.Resources>
+                <studio:BoolVisibilityConverter x:Key="bConverter"/>
+                <studio:FloatVisibilityConverter x:Key="fConverter"/>
+                <studio:IntVisibilityConverter x:Key="iConverter"/>
+                <studio:Vec2VisibilityConverter x:Key="vec2Converter"/>
+                <studio:Vec3VisibilityConverter x:Key="vec3Converter"/>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Type" Width="*" Binding="{Binding Type, Mode=OneWay}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Uniform" Width="*" Binding="{Binding Uniform, Mode=TwoWay}" IsReadOnly="True"/>
+                <DataGridTemplateColumn Header="Value" Width="*" IsReadOnly="False">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <studio:BooleanEdit Value="{Binding BooleanValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding Type, Converter={StaticResource bConverter}}"/>
+                                <studio:FloatEdit Value="{Binding FloatValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding Type, Converter={StaticResource fConverter}}"/>
+                                <studio:IntegerEdit Value="{Binding IntValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding Type, Converter={StaticResource iConverter}}"/>
+                                <studio:Vec2Edit Value="{Binding Vec2Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding Type, Converter={StaticResource vec2Converter}}"/>
+                                <studio:Vec3Edit Value="{Binding Vec3Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding Type, Converter={StaticResource vec3Converter}}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button x:Name="btn_buildShader" Grid.Row="2" Margin="5" Foreground="Blue" Click="btn_buildShader_Click" Content="更新着色器"/>
+        
     </Grid>
 </UserControl>

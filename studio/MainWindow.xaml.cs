@@ -30,24 +30,11 @@ namespace studio
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Solution2_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            NBPlayer.launch();
-        }
-
-        private void btn_buildShader_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                var reply = RpcClients.ShaderStubClient.BuildShader(new BuildShaderRequest { VShaderCode = "", FShaderCode = ""});
-                UniformModel.Model.Clear();
-                foreach (var item in reply.UniformInfos)
-                {
-                    UniformModel.Model.Add(new UniformItem(item.Value, item.Key));
-                }
-            }
-            catch (Grpc.Core.RpcException) { }
-
+          //  Console.WriteLine(e.PropertyName);
+         //   if(pv != null)
+         //       pv.moveTo();
         }
     }
 }
