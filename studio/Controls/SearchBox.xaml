@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="studio.SearchBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:studio"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <Style x:Key="tbStyle" TargetType="TextBox">
+            <Style.Setters>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Border x:Name="bd" BorderBrush="#cccedb" BorderThickness="1" Background="White" CornerRadius="1">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="24"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox x:Name="txt" Margin="0" Background="Transparent" Text="" VerticalAlignment="Center" GotFocus="txt_GotFocus" LostFocus="txt_LostFocus" PreviewMouseDown="txt_PreviewMouseDown"/>
+                                    <Button Grid.Column="1" Padding="-10" >
+                                        <Button.Template>
+                                            <ControlTemplate>
+                                                <Grid>
+                                                    <Rectangle x:Name="bk" Fill="Transparent"/>
+                                                    <materialDesign:PackIcon Kind="Search" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Grid>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="true">
+                                                        <Setter TargetName="bk" Property="Fill" Value="#c9def5"/>
+                                                    </Trigger>
+                                                    <Trigger Property="Button.IsPressed" Value="true">
+                                                        <Setter TargetName="bk" Property="Fill" Value="#007acc"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter TargetName="bd" Property="BorderBrush" Value="#007acc"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+            
+        </Style>
+    </UserControl.Resources>
+    
+    <Grid >
+        <TextBox Style="{StaticResource tbStyle}">
+            
+        </TextBox>
+    </Grid>
+</UserControl>

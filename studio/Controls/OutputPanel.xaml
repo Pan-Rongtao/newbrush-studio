@@ -21,10 +21,13 @@
             </ComboBox>
         </StackPanel>
 
-        <TextBox Grid.Row="1" Margin="5" FontSize="14" TextWrapping="Wrap" Background="Transparent" VerticalScrollBarVisibility="Auto">
-            1>------ 已启动生成: 项目: studio, 配置: Debug Any CPU ------
-1>  studio -> D:\github\newbrush-studio\dist\bin\Debug\studio.exe
-========== 生成: 成功 1 个，失败 0 个，最新 0 个，跳过 0 个 ==========
-        </TextBox>
+        <RichTextBox Grid.Row="1" Margin="5" FontSize="14"  Background="Transparent" AcceptsReturn="True" IsReadOnly="True">
+            <RichTextBox.Document>
+                <FlowDocument>
+                    <Paragraph x:Name="pg">
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox.Document>
+        </RichTextBox>
     </Grid>
 </UserControl>

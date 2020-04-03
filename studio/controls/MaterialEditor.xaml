@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:studio="clr-namespace:studio"
+             xmlns:local="clr-namespace:studio"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
@@ -28,11 +28,11 @@
         
         <DataGrid x:Name="uniformGrid" Grid.Row="1" Margin="0 8 0 0" ItemsSource="{Binding UniformGridData}" AutoGenerateColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False">
             <DataGrid.Resources>
-                <studio:BoolVisibilityConverter x:Key="bConverter"/>
-                <studio:FloatVisibilityConverter x:Key="fConverter"/>
-                <studio:IntVisibilityConverter x:Key="iConverter"/>
-                <studio:Vec2VisibilityConverter x:Key="vec2Converter"/>
-                <studio:Vec3VisibilityConverter x:Key="vec3Converter"/>
+                <local:BoolVisibilityConverter x:Key="bConverter"/>
+                <local:FloatVisibilityConverter x:Key="fConverter"/>
+                <local:IntVisibilityConverter x:Key="iConverter"/>
+                <local:Vec2VisibilityConverter x:Key="vec2Converter"/>
+                <local:Vec3VisibilityConverter x:Key="vec3Converter"/>
             </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Type" Width="*" Binding="{Binding Type, Mode=OneWay}" IsReadOnly="True" />
@@ -41,11 +41,11 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
-                                <studio:BooleanEdit Value="{Binding BooleanValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding Type, Converter={StaticResource bConverter}}"/>
-                                <studio:FloatEdit Value="{Binding FloatValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding Type, Converter={StaticResource fConverter}}"/>
-                                <studio:IntegerEdit Value="{Binding IntValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding Type, Converter={StaticResource iConverter}}"/>
-                                <studio:Vec2Edit Value="{Binding Vec2Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding Type, Converter={StaticResource vec2Converter}}"/>
-                                <studio:Vec3Edit Value="{Binding Vec3Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding Type, Converter={StaticResource vec3Converter}}"/>
+                                <local:BooleanEdit Value="{Binding BooleanValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding Type, Converter={StaticResource bConverter}}"/>
+                                <local:FloatEdit Value="{Binding FloatValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding Type, Converter={StaticResource fConverter}}"/>
+                                <local:IntegerEdit Value="{Binding IntValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding Type, Converter={StaticResource iConverter}}"/>
+                                <local:Vec2Edit Value="{Binding Vec2Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding Type, Converter={StaticResource vec2Converter}}"/>
+                                <local:Vec3Edit Value="{Binding Vec3Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding Type, Converter={StaticResource vec3Converter}}"/>
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

@@ -4,8 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:studio"
-    xmlns:ad="http://schemas.xceed.com/wpf/xaml/avalondock"
-                 xmlns:tk="http://schemas.xceed.com/wpf/xaml/toolkit"
+            xmlns:ad="http://schemas.xceed.com/wpf/xaml/avalondock"
+            xmlns:tk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="800">
     <Grid>
@@ -18,14 +18,14 @@
             <ad:LayoutRoot x:Name="layoutRoot">
                 <ad:LayoutPanel>
 
-                    <ad:LayoutPanel Orientation="Vertical" DockWidth="270">
+                    <ad:LayoutPanel Orientation="Vertical" DockWidth="300">
                         <ad:LayoutAnchorablePane>
                             <ad:LayoutAnchorable x:Name="visualTreeLayout" Title="工程">
-                                <local:VisualTree />
+                                <local:VisualTree Margin="0,3,0,3"/>
                             </ad:LayoutAnchorable>
                         </ad:LayoutAnchorablePane>
                         <ad:LayoutAnchorablePane>
-                            <ad:LayoutAnchorable>
+                            <ad:LayoutAnchorable Title="材质">
                                 <local:MaterialEditor/>
                             </ad:LayoutAnchorable>
                         </ad:LayoutAnchorablePane>
@@ -46,7 +46,7 @@
 
                     <ad:LayoutAnchorablePane DockWidth="300" >
                         <ad:LayoutAnchorable x:Name="ProperiesLayout" Title="属性">
-                            <tk:PropertyGrid NameColumnWidth="210" SelectedObject="{Binding ElementName=_layoutRoot, Path=LastFocusedDocument.Content}"/>
+                            <local:PropertyEditor />
                         </ad:LayoutAnchorable>
                     </ad:LayoutAnchorablePane>
 

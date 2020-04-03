@@ -271,92 +271,90 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BindingCoverters.cs" />
-    <Compile Include="Clients.cs" />
-    <Compile Include="controls\BooleanEdit.xaml.cs">
+    <Compile Include="Data\BindingCoverters.cs" />
+    <Compile Include="Data\Clients.cs" />
+    <Compile Include="Controls\BooleanEdit.xaml.cs">
       <DependentUpon>BooleanEdit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="controls\FloatEdit.xaml.cs">
+    <Compile Include="Controls\FloatEdit.xaml.cs">
       <DependentUpon>FloatEdit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="controls\IntegerEdit.xaml.cs">
+    <Compile Include="Controls\IntegerEdit.xaml.cs">
       <DependentUpon>IntegerEdit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="controls\Mat3x3Edit.xaml.cs">
+    <Compile Include="Controls\Mat3x3Edit.xaml.cs">
       <DependentUpon>Mat3x3Edit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="controls\Mat4x4Edit.xaml.cs">
+    <Compile Include="Controls\Mat4x4Edit.xaml.cs">
       <DependentUpon>Mat4x4Edit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="controls\Vec2Edit.xaml.cs">
+    <Compile Include="Controls\Vec2Edit.xaml.cs">
       <DependentUpon>Vec2Edit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="controls\Vec3Edit.xaml.cs">
+    <Compile Include="Controls\Vec3Edit.xaml.cs">
       <DependentUpon>Vec3Edit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="controls\Vec4Edit.xaml.cs">
+    <Compile Include="Controls\Vec4Edit.xaml.cs">
       <DependentUpon>Vec4Edit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="controls\VisualTree.xaml.cs">
+    <Compile Include="Controls\VisualTree.xaml.cs">
       <DependentUpon>VisualTree.xaml</DependentUpon>
     </Compile>
-    <Compile Include="grpc\Math.cs" />
-    <Compile Include="grpc\Shader.cs" />
-    <Compile Include="grpc\ShaderGrpc.cs" />
-    <Compile Include="grpc\Types.cs" />
-    <Compile Include="menus\VisualTreeMenu.xaml.cs">
-      <DependentUpon>VisualTreeMenu.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="NBApplication.cs" />
-    <Compile Include="controls\MaterialEditor.xaml.cs">
+    <Compile Include="Grpc\Math.cs" />
+    <Compile Include="Grpc\Shader.cs" />
+    <Compile Include="Grpc\ShaderGrpc.cs" />
+    <Compile Include="Grpc\Types.cs" />
+    <Compile Include="Controls\MaterialEditor.xaml.cs">
       <DependentUpon>MaterialEditor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="controls\Preview.xaml.cs">
+    <Compile Include="Controls\Preview.xaml.cs">
       <DependentUpon>Preview.xaml</DependentUpon>
     </Compile>
-    <Compile Include="OutputPanel.xaml.cs">
+    <Compile Include="Controls\OutputPanel.xaml.cs">
       <DependentUpon>OutputPanel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PropertyEditor.xaml.cs">
+    <Compile Include="Controls\PropertyEditor.xaml.cs">
       <DependentUpon>PropertyEditor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="VisualTreeData.cs" />
+    <Compile Include="Controls\SearchBox.xaml.cs">
+      <DependentUpon>SearchBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WorkArea.xaml.cs">
       <DependentUpon>WorkArea.xaml</DependentUpon>
     </Compile>
-    <Page Include="controls\BooleanEdit.xaml">
+    <Page Include="Controls\BooleanEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="controls\FloatEdit.xaml">
+    <Page Include="Controls\FloatEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="controls\IntegerEdit.xaml">
+    <Page Include="Controls\IntegerEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="controls\Mat3x3Edit.xaml">
+    <Page Include="Controls\Mat3x3Edit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="controls\Mat4x4Edit.xaml">
+    <Page Include="Controls\Mat4x4Edit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="controls\Vec2Edit.xaml">
+    <Page Include="Controls\Vec2Edit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="controls\Vec3Edit.xaml">
+    <Page Include="Controls\Vec3Edit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="controls\Vec4Edit.xaml">
+    <Page Include="Controls\Vec4Edit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="controls\VisualTree.xaml">
+    <Page Include="Controls\VisualTree.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -372,23 +370,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="controls\MaterialEditor.xaml">
+    <Page Include="Controls\MaterialEditor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="menus\VisualTreeMenu.xaml">
+    <Page Include="Controls\Preview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="controls\Preview.xaml">
+    <Page Include="Controls\OutputPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="OutputPanel.xaml">
+    <Page Include="Controls\PropertyEditor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PropertyEditor.xaml">
+    <Page Include="Controls\SearchBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

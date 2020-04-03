@@ -4,9 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:studio"
+            xmlns:tk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-            
+        <tk:PropertyGrid NameColumnWidth="210" SelectedObject="{Binding ElementName=_layoutRoot, Path=LastFocusedDocument.Content}"/>
     </Grid>
 </UserControl>
