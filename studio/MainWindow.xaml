@@ -6,14 +6,21 @@
     xmlns:local="clr-namespace:studio"
     x:Class="studio.MainWindow"
     Title="newbrush studio"
-    MinWidth="200"
     MinHeight="200"
     WindowStartupLocation="CenterScreen" 
     WindowState="Maximized"
     >
-    
+
     <Grid>
-        <local:WorkArea/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="28"/>
+        </Grid.RowDefinitions>
+        
+        <local:MainMenu Grid.Row="0"/>
+        <local:WorkArea Grid.Row="1"/>
+        <local:StatusBar Grid.Row="2" />
     </Grid>
 
 </Controls:MetroWindow>
