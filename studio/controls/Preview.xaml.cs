@@ -25,16 +25,7 @@ namespace studio
     public partial class Preview : UserControl
     {
         private Process _process;
-        public Preview()
-        {
-            InitializeComponent();
-        }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            launch();
-        }
-        
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         public static extern int MoveWindow(IntPtr hWnd, int x, int y, int nWidth, int nHeight, bool BRePaint);
         [DllImport("user32.dll", SetLastError = true)]
@@ -42,6 +33,18 @@ namespace studio
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         public static extern bool ShowWindow(IntPtr hWnd, short State);
 
+        public Preview()
+        {
+            InitializeComponent();
+        //    launch();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //            launch();
+            Plugin.update();
+        }
+        
         private void launch()
         {
             string path = Environment.CurrentDirectory + "/../../../../newbrush/dist/lib/nbplayer.exe";

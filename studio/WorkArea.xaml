@@ -18,13 +18,13 @@
             <ad:LayoutRoot x:Name="layoutRoot">
                 <ad:LayoutPanel>
 
-                    <ad:LayoutPanel Orientation="Vertical" DockWidth="300">
+                    <ad:LayoutPanel Orientation="Vertical" DockWidth="960">
                         <ad:LayoutAnchorablePane>
                             <ad:LayoutAnchorable x:Name="visualTreeLayout" Title="工程">
                                 <local:VisualTree Margin="0,3,0,3"/>
                             </ad:LayoutAnchorable>
                         </ad:LayoutAnchorablePane>
-                        <ad:LayoutAnchorablePane>
+                        <ad:LayoutAnchorablePane DockHeight="2*">
                             <ad:LayoutAnchorable Title="材质">
                                 <local:MaterialEditor/>
                             </ad:LayoutAnchorable>

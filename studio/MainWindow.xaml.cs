@@ -16,7 +16,6 @@ using System.Threading;
 using MahApps.Metro.Controls;
 using MahApps.Metro.IconPacks;
 using MaterialDesignThemes.Wpf;
-using Newtonsoft.Json.Linq;
 
 using System.Collections.ObjectModel;
 using Nbrpc;
