@@ -268,7 +268,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Data\BindingCoverters.cs" />
-    <Compile Include="Data\Clients.cs" />
+    <Compile Include="Data\RpcManager.cs" />
     <Compile Include="Controls\BooleanEdit.xaml.cs">
       <DependentUpon>BooleanEdit.xaml</DependentUpon>
     </Compile>
@@ -296,8 +296,11 @@
     <Compile Include="Controls\VisualTree.xaml.cs">
       <DependentUpon>VisualTree.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\NodeData.cs" />
     <Compile Include="Data\Plugin.cs" />
     <Compile Include="Grpc\Math.cs" />
+    <Compile Include="Grpc\Node.cs" />
+    <Compile Include="Grpc\NodeGrpc.cs" />
     <Compile Include="Grpc\Shader.cs" />
     <Compile Include="Grpc\ShaderGrpc.cs" />
     <Compile Include="Grpc\Types.cs" />

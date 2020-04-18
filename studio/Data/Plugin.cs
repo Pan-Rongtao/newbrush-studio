@@ -9,8 +9,6 @@ namespace studio
 {
     class Plugin
     {
-        public static MetaData[] MetaDatas;
-
         [DllImport("NbGuid.dll", EntryPoint = "getClassesCount", ExactSpelling = false, CallingConvention = CallingConvention.Cdecl)]
         public static extern int getClassesCount();
 
@@ -20,17 +18,20 @@ namespace studio
         [StructLayout(LayoutKind.Sequential)]
         public struct MetaData
         {
-            Int64 id;
             [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 64)]
-            public string name;
+            public string Type;
+            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 64)]
+            public string DefaultName;
             [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 256)]
-            public string description;
+            public string Description;
         }
 
-        public static void update()
+        private static MetaData[] _metaDatas;
+
+        public static void Update()
         {
             int count = getClassesCount();
-            MetaDatas = new MetaData[count];
+            _metaDatas = new MetaData[count];
 
             int size = Marshal.SizeOf(typeof(MetaData)) * count;
             IntPtr buffer = Marshal.AllocHGlobal(size);
@@ -38,9 +39,21 @@ namespace studio
             for (int i = 0; i < count; ++i)
             {
                 IntPtr p = new IntPtr(buffer.ToInt64() + Marshal.SizeOf(typeof(MetaData)) * i);
-                MetaDatas[i] = (MetaData)Marshal.PtrToStructure(p, typeof(MetaData));
+                _metaDatas[i] = (MetaData)Marshal.PtrToStructure(p, typeof(MetaData));
             }
             Marshal.FreeHGlobal(buffer);
+        }
+
+        public static MetaData findMetaDataByTypeName(String type)
+        {
+            foreach(MetaData m in _metaDatas)
+            {
+                if(m.Type == type)
+                {
+                    return m;
+                }
+            }
+            return new MetaData();
         }
     }
 }

@@ -8,14 +8,14 @@
 using grpc = global::Grpc.Core;
 
 namespace Nbrpc {
-  public static partial class ShaderStub
+  public static partial class ShaderRpc
   {
-    static readonly string __ServiceName = "nbrpc.ShaderStub";
+    static readonly string __ServiceName = "nbrpc.ShaderRpc";
 
     static readonly grpc::Marshaller<global::Nbrpc.BuildShaderRequest> __Marshaller_nbrpc_BuildShaderRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Nbrpc.BuildShaderRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Nbrpc.BuildShaderReply> __Marshaller_nbrpc_BuildShaderReply = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Nbrpc.BuildShaderReply.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Nbrpc.UniformBoolRequest> __Marshaller_nbrpc_UniformBoolRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Nbrpc.UniformBoolRequest.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::Nbrpc.NoneReply> __Marshaller_nbrpc_NoneReply = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Nbrpc.NoneReply.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Nbrpc.CommonReply> __Marshaller_nbrpc_CommonReply = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Nbrpc.CommonReply.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Nbrpc.UniformFloatRequest> __Marshaller_nbrpc_UniformFloatRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Nbrpc.UniformFloatRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Nbrpc.UniformIntegerRequest> __Marshaller_nbrpc_UniformIntegerRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Nbrpc.UniformIntegerRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Nbrpc.UniformVec2Request> __Marshaller_nbrpc_UniformVec2Request = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Nbrpc.UniformVec2Request.Parser.ParseFrom);
@@ -31,61 +31,61 @@ namespace Nbrpc {
         __Marshaller_nbrpc_BuildShaderRequest,
         __Marshaller_nbrpc_BuildShaderReply);
 
-    static readonly grpc::Method<global::Nbrpc.UniformBoolRequest, global::Nbrpc.NoneReply> __Method_UniformBool = new grpc::Method<global::Nbrpc.UniformBoolRequest, global::Nbrpc.NoneReply>(
+    static readonly grpc::Method<global::Nbrpc.UniformBoolRequest, global::Nbrpc.CommonReply> __Method_UniformBool = new grpc::Method<global::Nbrpc.UniformBoolRequest, global::Nbrpc.CommonReply>(
         grpc::MethodType.Unary,
         __ServiceName,
         "UniformBool",
         __Marshaller_nbrpc_UniformBoolRequest,
-        __Marshaller_nbrpc_NoneReply);
+        __Marshaller_nbrpc_CommonReply);
 
-    static readonly grpc::Method<global::Nbrpc.UniformFloatRequest, global::Nbrpc.NoneReply> __Method_UniformFloat = new grpc::Method<global::Nbrpc.UniformFloatRequest, global::Nbrpc.NoneReply>(
+    static readonly grpc::Method<global::Nbrpc.UniformFloatRequest, global::Nbrpc.CommonReply> __Method_UniformFloat = new grpc::Method<global::Nbrpc.UniformFloatRequest, global::Nbrpc.CommonReply>(
         grpc::MethodType.Unary,
         __ServiceName,
         "UniformFloat",
         __Marshaller_nbrpc_UniformFloatRequest,
-        __Marshaller_nbrpc_NoneReply);
+        __Marshaller_nbrpc_CommonReply);
 
-    static readonly grpc::Method<global::Nbrpc.UniformIntegerRequest, global::Nbrpc.NoneReply> __Method_UniformInteger = new grpc::Method<global::Nbrpc.UniformIntegerRequest, global::Nbrpc.NoneReply>(
+    static readonly grpc::Method<global::Nbrpc.UniformIntegerRequest, global::Nbrpc.CommonReply> __Method_UniformInteger = new grpc::Method<global::Nbrpc.UniformIntegerRequest, global::Nbrpc.CommonReply>(
         grpc::MethodType.Unary,
         __ServiceName,
         "UniformInteger",
         __Marshaller_nbrpc_UniformIntegerRequest,
-        __Marshaller_nbrpc_NoneReply);
+        __Marshaller_nbrpc_CommonReply);
 
-    static readonly grpc::Method<global::Nbrpc.UniformVec2Request, global::Nbrpc.NoneReply> __Method_UniformVec2 = new grpc::Method<global::Nbrpc.UniformVec2Request, global::Nbrpc.NoneReply>(
+    static readonly grpc::Method<global::Nbrpc.UniformVec2Request, global::Nbrpc.CommonReply> __Method_UniformVec2 = new grpc::Method<global::Nbrpc.UniformVec2Request, global::Nbrpc.CommonReply>(
         grpc::MethodType.Unary,
         __ServiceName,
         "UniformVec2",
         __Marshaller_nbrpc_UniformVec2Request,
-        __Marshaller_nbrpc_NoneReply);
+        __Marshaller_nbrpc_CommonReply);
 
-    static readonly grpc::Method<global::Nbrpc.UniformVec3Request, global::Nbrpc.NoneReply> __Method_UniformVec3 = new grpc::Method<global::Nbrpc.UniformVec3Request, global::Nbrpc.NoneReply>(
+    static readonly grpc::Method<global::Nbrpc.UniformVec3Request, global::Nbrpc.CommonReply> __Method_UniformVec3 = new grpc::Method<global::Nbrpc.UniformVec3Request, global::Nbrpc.CommonReply>(
         grpc::MethodType.Unary,
         __ServiceName,
         "UniformVec3",
         __Marshaller_nbrpc_UniformVec3Request,
-        __Marshaller_nbrpc_NoneReply);
+        __Marshaller_nbrpc_CommonReply);
 
-    static readonly grpc::Method<global::Nbrpc.UniformVec4Request, global::Nbrpc.NoneReply> __Method_UniformVec4 = new grpc::Method<global::Nbrpc.UniformVec4Request, global::Nbrpc.NoneReply>(
+    static readonly grpc::Method<global::Nbrpc.UniformVec4Request, global::Nbrpc.CommonReply> __Method_UniformVec4 = new grpc::Method<global::Nbrpc.UniformVec4Request, global::Nbrpc.CommonReply>(
         grpc::MethodType.Unary,
         __ServiceName,
         "UniformVec4",
         __Marshaller_nbrpc_UniformVec4Request,
-        __Marshaller_nbrpc_NoneReply);
+        __Marshaller_nbrpc_CommonReply);
 
-    static readonly grpc::Method<global::Nbrpc.UniformMat3x3Request, global::Nbrpc.NoneReply> __Method_UniformMat3x3 = new grpc::Method<global::Nbrpc.UniformMat3x3Request, global::Nbrpc.NoneReply>(
+    static readonly grpc::Method<global::Nbrpc.UniformMat3x3Request, global::Nbrpc.CommonReply> __Method_UniformMat3x3 = new grpc::Method<global::Nbrpc.UniformMat3x3Request, global::Nbrpc.CommonReply>(
         grpc::MethodType.Unary,
         __ServiceName,
         "UniformMat3x3",
         __Marshaller_nbrpc_UniformMat3x3Request,
-        __Marshaller_nbrpc_NoneReply);
+        __Marshaller_nbrpc_CommonReply);
 
-    static readonly grpc::Method<global::Nbrpc.UniformMat4x4Request, global::Nbrpc.NoneReply> __Method_UniformMat4x4 = new grpc::Method<global::Nbrpc.UniformMat4x4Request, global::Nbrpc.NoneReply>(
+    static readonly grpc::Method<global::Nbrpc.UniformMat4x4Request, global::Nbrpc.CommonReply> __Method_UniformMat4x4 = new grpc::Method<global::Nbrpc.UniformMat4x4Request, global::Nbrpc.CommonReply>(
         grpc::MethodType.Unary,
         __ServiceName,
         "UniformMat4x4",
         __Marshaller_nbrpc_UniformMat4x4Request,
-        __Marshaller_nbrpc_NoneReply);
+        __Marshaller_nbrpc_CommonReply);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -93,77 +93,77 @@ namespace Nbrpc {
       get { return global::Nbrpc.ShaderReflection.Descriptor.Services[0]; }
     }
 
-    /// <summary>Base class for server-side implementations of ShaderStub</summary>
-    [grpc::BindServiceMethod(typeof(ShaderStub), "BindService")]
-    public abstract partial class ShaderStubBase
+    /// <summary>Base class for server-side implementations of ShaderRpc</summary>
+    [grpc::BindServiceMethod(typeof(ShaderRpc), "BindService")]
+    public abstract partial class ShaderRpcBase
     {
       public virtual global::System.Threading.Tasks.Task<global::Nbrpc.BuildShaderReply> BuildShader(global::Nbrpc.BuildShaderRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task<global::Nbrpc.NoneReply> UniformBool(global::Nbrpc.UniformBoolRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Nbrpc.CommonReply> UniformBool(global::Nbrpc.UniformBoolRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task<global::Nbrpc.NoneReply> UniformFloat(global::Nbrpc.UniformFloatRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Nbrpc.CommonReply> UniformFloat(global::Nbrpc.UniformFloatRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task<global::Nbrpc.NoneReply> UniformInteger(global::Nbrpc.UniformIntegerRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Nbrpc.CommonReply> UniformInteger(global::Nbrpc.UniformIntegerRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task<global::Nbrpc.NoneReply> UniformVec2(global::Nbrpc.UniformVec2Request request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Nbrpc.CommonReply> UniformVec2(global::Nbrpc.UniformVec2Request request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task<global::Nbrpc.NoneReply> UniformVec3(global::Nbrpc.UniformVec3Request request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Nbrpc.CommonReply> UniformVec3(global::Nbrpc.UniformVec3Request request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task<global::Nbrpc.NoneReply> UniformVec4(global::Nbrpc.UniformVec4Request request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Nbrpc.CommonReply> UniformVec4(global::Nbrpc.UniformVec4Request request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task<global::Nbrpc.NoneReply> UniformMat3x3(global::Nbrpc.UniformMat3x3Request request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Nbrpc.CommonReply> UniformMat3x3(global::Nbrpc.UniformMat3x3Request request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task<global::Nbrpc.NoneReply> UniformMat4x4(global::Nbrpc.UniformMat4x4Request request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Nbrpc.CommonReply> UniformMat4x4(global::Nbrpc.UniformMat4x4Request request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
     }
 
-    /// <summary>Client for ShaderStub</summary>
-    public partial class ShaderStubClient : grpc::ClientBase<ShaderStubClient>
+    /// <summary>Client for ShaderRpc</summary>
+    public partial class ShaderRpcClient : grpc::ClientBase<ShaderRpcClient>
     {
-      /// <summary>Creates a new client for ShaderStub</summary>
+      /// <summary>Creates a new client for ShaderRpc</summary>
       /// <param name="channel">The channel to use to make remote calls.</param>
-      public ShaderStubClient(grpc::ChannelBase channel) : base(channel)
+      public ShaderRpcClient(grpc::ChannelBase channel) : base(channel)
       {
       }
-      /// <summary>Creates a new client for ShaderStub that uses a custom <c>CallInvoker</c>.</summary>
+      /// <summary>Creates a new client for ShaderRpc that uses a custom <c>CallInvoker</c>.</summary>
       /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
-      public ShaderStubClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      public ShaderRpcClient(grpc::CallInvoker callInvoker) : base(callInvoker)
       {
       }
       /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
-      protected ShaderStubClient() : base()
+      protected ShaderRpcClient() : base()
       {
       }
       /// <summary>Protected constructor to allow creation of configured clients.</summary>
       /// <param name="configuration">The client configuration.</param>
-      protected ShaderStubClient(ClientBaseConfiguration configuration) : base(configuration)
+      protected ShaderRpcClient(ClientBaseConfiguration configuration) : base(configuration)
       {
       }
 
@@ -183,144 +183,144 @@ namespace Nbrpc {
       {
         return CallInvoker.AsyncUnaryCall(__Method_BuildShader, null, options, request);
       }
-      public virtual global::Nbrpc.NoneReply UniformBool(global::Nbrpc.UniformBoolRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Nbrpc.CommonReply UniformBool(global::Nbrpc.UniformBoolRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UniformBool(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::Nbrpc.NoneReply UniformBool(global::Nbrpc.UniformBoolRequest request, grpc::CallOptions options)
+      public virtual global::Nbrpc.CommonReply UniformBool(global::Nbrpc.UniformBoolRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_UniformBool, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::Nbrpc.NoneReply> UniformBoolAsync(global::Nbrpc.UniformBoolRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Nbrpc.CommonReply> UniformBoolAsync(global::Nbrpc.UniformBoolRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UniformBoolAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::Nbrpc.NoneReply> UniformBoolAsync(global::Nbrpc.UniformBoolRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Nbrpc.CommonReply> UniformBoolAsync(global::Nbrpc.UniformBoolRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_UniformBool, null, options, request);
       }
-      public virtual global::Nbrpc.NoneReply UniformFloat(global::Nbrpc.UniformFloatRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Nbrpc.CommonReply UniformFloat(global::Nbrpc.UniformFloatRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UniformFloat(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::Nbrpc.NoneReply UniformFloat(global::Nbrpc.UniformFloatRequest request, grpc::CallOptions options)
+      public virtual global::Nbrpc.CommonReply UniformFloat(global::Nbrpc.UniformFloatRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_UniformFloat, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::Nbrpc.NoneReply> UniformFloatAsync(global::Nbrpc.UniformFloatRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Nbrpc.CommonReply> UniformFloatAsync(global::Nbrpc.UniformFloatRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UniformFloatAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::Nbrpc.NoneReply> UniformFloatAsync(global::Nbrpc.UniformFloatRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Nbrpc.CommonReply> UniformFloatAsync(global::Nbrpc.UniformFloatRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_UniformFloat, null, options, request);
       }
-      public virtual global::Nbrpc.NoneReply UniformInteger(global::Nbrpc.UniformIntegerRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Nbrpc.CommonReply UniformInteger(global::Nbrpc.UniformIntegerRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UniformInteger(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::Nbrpc.NoneReply UniformInteger(global::Nbrpc.UniformIntegerRequest request, grpc::CallOptions options)
+      public virtual global::Nbrpc.CommonReply UniformInteger(global::Nbrpc.UniformIntegerRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_UniformInteger, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::Nbrpc.NoneReply> UniformIntegerAsync(global::Nbrpc.UniformIntegerRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Nbrpc.CommonReply> UniformIntegerAsync(global::Nbrpc.UniformIntegerRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UniformIntegerAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::Nbrpc.NoneReply> UniformIntegerAsync(global::Nbrpc.UniformIntegerRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Nbrpc.CommonReply> UniformIntegerAsync(global::Nbrpc.UniformIntegerRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_UniformInteger, null, options, request);
       }
-      public virtual global::Nbrpc.NoneReply UniformVec2(global::Nbrpc.UniformVec2Request request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Nbrpc.CommonReply UniformVec2(global::Nbrpc.UniformVec2Request request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UniformVec2(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::Nbrpc.NoneReply UniformVec2(global::Nbrpc.UniformVec2Request request, grpc::CallOptions options)
+      public virtual global::Nbrpc.CommonReply UniformVec2(global::Nbrpc.UniformVec2Request request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_UniformVec2, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::Nbrpc.NoneReply> UniformVec2Async(global::Nbrpc.UniformVec2Request request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Nbrpc.CommonReply> UniformVec2Async(global::Nbrpc.UniformVec2Request request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UniformVec2Async(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::Nbrpc.NoneReply> UniformVec2Async(global::Nbrpc.UniformVec2Request request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Nbrpc.CommonReply> UniformVec2Async(global::Nbrpc.UniformVec2Request request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_UniformVec2, null, options, request);
       }
-      public virtual global::Nbrpc.NoneReply UniformVec3(global::Nbrpc.UniformVec3Request request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Nbrpc.CommonReply UniformVec3(global::Nbrpc.UniformVec3Request request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UniformVec3(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::Nbrpc.NoneReply UniformVec3(global::Nbrpc.UniformVec3Request request, grpc::CallOptions options)
+      public virtual global::Nbrpc.CommonReply UniformVec3(global::Nbrpc.UniformVec3Request request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_UniformVec3, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::Nbrpc.NoneReply> UniformVec3Async(global::Nbrpc.UniformVec3Request request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Nbrpc.CommonReply> UniformVec3Async(global::Nbrpc.UniformVec3Request request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UniformVec3Async(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::Nbrpc.NoneReply> UniformVec3Async(global::Nbrpc.UniformVec3Request request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Nbrpc.CommonReply> UniformVec3Async(global::Nbrpc.UniformVec3Request request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_UniformVec3, null, options, request);
       }
-      public virtual global::Nbrpc.NoneReply UniformVec4(global::Nbrpc.UniformVec4Request request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Nbrpc.CommonReply UniformVec4(global::Nbrpc.UniformVec4Request request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UniformVec4(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::Nbrpc.NoneReply UniformVec4(global::Nbrpc.UniformVec4Request request, grpc::CallOptions options)
+      public virtual global::Nbrpc.CommonReply UniformVec4(global::Nbrpc.UniformVec4Request request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_UniformVec4, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::Nbrpc.NoneReply> UniformVec4Async(global::Nbrpc.UniformVec4Request request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Nbrpc.CommonReply> UniformVec4Async(global::Nbrpc.UniformVec4Request request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UniformVec4Async(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::Nbrpc.NoneReply> UniformVec4Async(global::Nbrpc.UniformVec4Request request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Nbrpc.CommonReply> UniformVec4Async(global::Nbrpc.UniformVec4Request request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_UniformVec4, null, options, request);
       }
-      public virtual global::Nbrpc.NoneReply UniformMat3x3(global::Nbrpc.UniformMat3x3Request request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Nbrpc.CommonReply UniformMat3x3(global::Nbrpc.UniformMat3x3Request request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UniformMat3x3(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::Nbrpc.NoneReply UniformMat3x3(global::Nbrpc.UniformMat3x3Request request, grpc::CallOptions options)
+      public virtual global::Nbrpc.CommonReply UniformMat3x3(global::Nbrpc.UniformMat3x3Request request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_UniformMat3x3, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::Nbrpc.NoneReply> UniformMat3x3Async(global::Nbrpc.UniformMat3x3Request request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Nbrpc.CommonReply> UniformMat3x3Async(global::Nbrpc.UniformMat3x3Request request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UniformMat3x3Async(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::Nbrpc.NoneReply> UniformMat3x3Async(global::Nbrpc.UniformMat3x3Request request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Nbrpc.CommonReply> UniformMat3x3Async(global::Nbrpc.UniformMat3x3Request request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_UniformMat3x3, null, options, request);
       }
-      public virtual global::Nbrpc.NoneReply UniformMat4x4(global::Nbrpc.UniformMat4x4Request request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Nbrpc.CommonReply UniformMat4x4(global::Nbrpc.UniformMat4x4Request request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UniformMat4x4(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::Nbrpc.NoneReply UniformMat4x4(global::Nbrpc.UniformMat4x4Request request, grpc::CallOptions options)
+      public virtual global::Nbrpc.CommonReply UniformMat4x4(global::Nbrpc.UniformMat4x4Request request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_UniformMat4x4, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::Nbrpc.NoneReply> UniformMat4x4Async(global::Nbrpc.UniformMat4x4Request request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Nbrpc.CommonReply> UniformMat4x4Async(global::Nbrpc.UniformMat4x4Request request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UniformMat4x4Async(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::Nbrpc.NoneReply> UniformMat4x4Async(global::Nbrpc.UniformMat4x4Request request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Nbrpc.CommonReply> UniformMat4x4Async(global::Nbrpc.UniformMat4x4Request request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_UniformMat4x4, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
-      protected override ShaderStubClient NewInstance(ClientBaseConfiguration configuration)
+      protected override ShaderRpcClient NewInstance(ClientBaseConfiguration configuration)
       {
-        return new ShaderStubClient(configuration);
+        return new ShaderRpcClient(configuration);
       }
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
-    public static grpc::ServerServiceDefinition BindService(ShaderStubBase serviceImpl)
+    public static grpc::ServerServiceDefinition BindService(ShaderRpcBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_BuildShader, serviceImpl.BuildShader)
@@ -338,17 +338,17 @@ namespace Nbrpc {
     /// Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
     /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
-    public static void BindService(grpc::ServiceBinderBase serviceBinder, ShaderStubBase serviceImpl)
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, ShaderRpcBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_BuildShader, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Nbrpc.BuildShaderRequest, global::Nbrpc.BuildShaderReply>(serviceImpl.BuildShader));
-      serviceBinder.AddMethod(__Method_UniformBool, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Nbrpc.UniformBoolRequest, global::Nbrpc.NoneReply>(serviceImpl.UniformBool));
-      serviceBinder.AddMethod(__Method_UniformFloat, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Nbrpc.UniformFloatRequest, global::Nbrpc.NoneReply>(serviceImpl.UniformFloat));
-      serviceBinder.AddMethod(__Method_UniformInteger, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Nbrpc.UniformIntegerRequest, global::Nbrpc.NoneReply>(serviceImpl.UniformInteger));
-      serviceBinder.AddMethod(__Method_UniformVec2, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Nbrpc.UniformVec2Request, global::Nbrpc.NoneReply>(serviceImpl.UniformVec2));
-      serviceBinder.AddMethod(__Method_UniformVec3, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Nbrpc.UniformVec3Request, global::Nbrpc.NoneReply>(serviceImpl.UniformVec3));
-      serviceBinder.AddMethod(__Method_UniformVec4, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Nbrpc.UniformVec4Request, global::Nbrpc.NoneReply>(serviceImpl.UniformVec4));
-      serviceBinder.AddMethod(__Method_UniformMat3x3, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Nbrpc.UniformMat3x3Request, global::Nbrpc.NoneReply>(serviceImpl.UniformMat3x3));
-      serviceBinder.AddMethod(__Method_UniformMat4x4, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Nbrpc.UniformMat4x4Request, global::Nbrpc.NoneReply>(serviceImpl.UniformMat4x4));
+      serviceBinder.AddMethod(__Method_UniformBool, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Nbrpc.UniformBoolRequest, global::Nbrpc.CommonReply>(serviceImpl.UniformBool));
+      serviceBinder.AddMethod(__Method_UniformFloat, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Nbrpc.UniformFloatRequest, global::Nbrpc.CommonReply>(serviceImpl.UniformFloat));
+      serviceBinder.AddMethod(__Method_UniformInteger, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Nbrpc.UniformIntegerRequest, global::Nbrpc.CommonReply>(serviceImpl.UniformInteger));
+      serviceBinder.AddMethod(__Method_UniformVec2, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Nbrpc.UniformVec2Request, global::Nbrpc.CommonReply>(serviceImpl.UniformVec2));
+      serviceBinder.AddMethod(__Method_UniformVec3, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Nbrpc.UniformVec3Request, global::Nbrpc.CommonReply>(serviceImpl.UniformVec3));
+      serviceBinder.AddMethod(__Method_UniformVec4, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Nbrpc.UniformVec4Request, global::Nbrpc.CommonReply>(serviceImpl.UniformVec4));
+      serviceBinder.AddMethod(__Method_UniformMat3x3, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Nbrpc.UniformMat3x3Request, global::Nbrpc.CommonReply>(serviceImpl.UniformMat3x3));
+      serviceBinder.AddMethod(__Method_UniformMat4x4, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Nbrpc.UniformMat4x4Request, global::Nbrpc.CommonReply>(serviceImpl.UniformMat4x4));
     }
 
   }

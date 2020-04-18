@@ -141,10 +141,10 @@
 
         <local:SearchBox Margin="0"/>
 
-        <TreeView x:Name="tv" Grid.Row="1" HorizontalAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+        <TreeView x:Name="tv" Grid.Row="1" HorizontalAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled" TreeViewItem.Selected="treeView1_Selected"
                   Background="Transparent" ItemContainerStyle="{StaticResource StretchTreeViewItemStyle}" Margin="3,5,3,2" >
             <TreeView.ItemTemplate>
-                <HierarchicalDataTemplate ItemsSource="{Binding Children}" >
+                <HierarchicalDataTemplate ItemsSource="{Binding Children}">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
@@ -174,13 +174,23 @@
 
             <TreeView.ContextMenu>
                 <ContextMenu >
+                    <ContextMenu.ItemTemplate>
+                        <DataTemplate>
+                            
+                        </DataTemplate>
+                    </ContextMenu.ItemTemplate>
                     <MenuItem Header="添加" InputGestureText="Ctrl+N">
                         <MenuItem.Icon>
                             <materialDesign:PackIcon Margin="5,0,0,0" Kind="AddCircleOutline" />
                         </MenuItem.Icon>
-                        <MenuItem Header="Grid">
+                        <MenuItem x:Name="createGrid" Header="Grid" Click="createGrid_Click">
                             <MenuItem.Icon>
                                 <materialDesign:PackIcon Margin="5,0,0,0" Kind="Grid" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem x:Name="createRectangle" Header="Rectangle" Click="createRectangle_Click">
+                            <MenuItem.Icon>
+                                <materialDesign:PackIcon Margin="5,0,0,0" Kind="Rectangle" />
                             </MenuItem.Icon>
                         </MenuItem>
                     </MenuItem>

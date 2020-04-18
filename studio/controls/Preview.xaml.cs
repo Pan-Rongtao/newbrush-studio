@@ -36,25 +36,23 @@ namespace studio
         public Preview()
         {
             InitializeComponent();
-        //    launch();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //            launch();
-            Plugin.update();
+            launch();
         }
         
         private void launch()
         {
-            string path = Environment.CurrentDirectory + "/../../../../newbrush/dist/lib/nbplayer.exe";
+            string path = Environment.CurrentDirectory + "/../../../../newbrush/dist/win32/lib/nbplayer.exe";
             try
             {
                 _process = Process.Start(path);
                 Thread.Sleep(500);
                 form1.Child = new System.Windows.Forms.PictureBox();
                 SetParent(_process.MainWindowHandle, form1.Handle); //panel1.Handle为要显示外部程序的容器
-                ShowWindow(_process.MainWindowHandle, 3);
+                ShowWindow(_process.MainWindowHandle, 2);
             }
             catch (Exception) { }
         }

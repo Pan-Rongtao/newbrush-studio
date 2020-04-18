@@ -40,21 +40,21 @@ namespace Nbrpc {
             "ASABKAkSGgoFdmFsdWUYAiABKAsyCy5uYnJwYy5WZWM0IkIKFFVuaWZvcm1N",
             "YXQzeDNSZXF1ZXN0EgwKBG5hbWUYASABKAkSHAoFdmFsdWUYAiABKAsyDS5u",
             "YnJwYy5NYXQzeDMiQgoUVW5pZm9ybU1hdDR4NFJlcXVlc3QSDAoEbmFtZRgB",
-            "IAEoCRIcCgV2YWx1ZRgCIAEoCzINLm5icnBjLk1hdDR4NCILCglOb25lUmVw",
-            "bHky0QQKClNoYWRlclN0dWISQwoLQnVpbGRTaGFkZXISGS5uYnJwYy5CdWls",
-            "ZFNoYWRlclJlcXVlc3QaFy5uYnJwYy5CdWlsZFNoYWRlclJlcGx5IgASPAoL",
-            "VW5pZm9ybUJvb2wSGS5uYnJwYy5Vbmlmb3JtQm9vbFJlcXVlc3QaEC5uYnJw",
-            "Yy5Ob25lUmVwbHkiABI+CgxVbmlmb3JtRmxvYXQSGi5uYnJwYy5Vbmlmb3Jt",
-            "RmxvYXRSZXF1ZXN0GhAubmJycGMuTm9uZVJlcGx5IgASQgoOVW5pZm9ybUlu",
-            "dGVnZXISHC5uYnJwYy5Vbmlmb3JtSW50ZWdlclJlcXVlc3QaEC5uYnJwYy5O",
-            "b25lUmVwbHkiABI8CgtVbmlmb3JtVmVjMhIZLm5icnBjLlVuaWZvcm1WZWMy",
-            "UmVxdWVzdBoQLm5icnBjLk5vbmVSZXBseSIAEjwKC1VuaWZvcm1WZWMzEhku",
-            "bmJycGMuVW5pZm9ybVZlYzNSZXF1ZXN0GhAubmJycGMuTm9uZVJlcGx5IgAS",
-            "PAoLVW5pZm9ybVZlYzQSGS5uYnJwYy5Vbmlmb3JtVmVjNFJlcXVlc3QaEC5u",
-            "YnJwYy5Ob25lUmVwbHkiABJACg1Vbmlmb3JtTWF0M3gzEhsubmJycGMuVW5p",
-            "Zm9ybU1hdDN4M1JlcXVlc3QaEC5uYnJwYy5Ob25lUmVwbHkiABJACg1Vbmlm",
-            "b3JtTWF0NHg0EhsubmJycGMuVW5pZm9ybU1hdDR4NFJlcXVlc3QaEC5uYnJw",
-            "Yy5Ob25lUmVwbHkiAGIGcHJvdG8z"));
+            "IAEoCRIcCgV2YWx1ZRgCIAEoCzINLm5icnBjLk1hdDR4NDLgBAoJU2hhZGVy",
+            "UnBjEkMKC0J1aWxkU2hhZGVyEhkubmJycGMuQnVpbGRTaGFkZXJSZXF1ZXN0",
+            "GhcubmJycGMuQnVpbGRTaGFkZXJSZXBseSIAEj4KC1VuaWZvcm1Cb29sEhku",
+            "bmJycGMuVW5pZm9ybUJvb2xSZXF1ZXN0GhIubmJycGMuQ29tbW9uUmVwbHki",
+            "ABJACgxVbmlmb3JtRmxvYXQSGi5uYnJwYy5Vbmlmb3JtRmxvYXRSZXF1ZXN0",
+            "GhIubmJycGMuQ29tbW9uUmVwbHkiABJECg5Vbmlmb3JtSW50ZWdlchIcLm5i",
+            "cnBjLlVuaWZvcm1JbnRlZ2VyUmVxdWVzdBoSLm5icnBjLkNvbW1vblJlcGx5",
+            "IgASPgoLVW5pZm9ybVZlYzISGS5uYnJwYy5Vbmlmb3JtVmVjMlJlcXVlc3Qa",
+            "Ei5uYnJwYy5Db21tb25SZXBseSIAEj4KC1VuaWZvcm1WZWMzEhkubmJycGMu",
+            "VW5pZm9ybVZlYzNSZXF1ZXN0GhIubmJycGMuQ29tbW9uUmVwbHkiABI+CgtV",
+            "bmlmb3JtVmVjNBIZLm5icnBjLlVuaWZvcm1WZWM0UmVxdWVzdBoSLm5icnBj",
+            "LkNvbW1vblJlcGx5IgASQgoNVW5pZm9ybU1hdDN4MxIbLm5icnBjLlVuaWZv",
+            "cm1NYXQzeDNSZXF1ZXN0GhIubmJycGMuQ29tbW9uUmVwbHkiABJCCg1Vbmlm",
+            "b3JtTWF0NHg0EhsubmJycGMuVW5pZm9ybU1hdDR4NFJlcXVlc3QaEi5uYnJw",
+            "Yy5Db21tb25SZXBseSIAYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Nbrpc.TypesReflection.Descriptor, global::Nbrpc.MathReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -67,8 +67,7 @@ namespace Nbrpc {
             new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.UniformVec3Request), global::Nbrpc.UniformVec3Request.Parser, new[]{ "Name", "Value" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.UniformVec4Request), global::Nbrpc.UniformVec4Request.Parser, new[]{ "Name", "Value" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.UniformMat3x3Request), global::Nbrpc.UniformMat3x3Request.Parser, new[]{ "Name", "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.UniformMat4x4Request), global::Nbrpc.UniformMat4x4Request.Parser, new[]{ "Name", "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.NoneReply), global::Nbrpc.NoneReply.Parser, null, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.UniformMat4x4Request), global::Nbrpc.UniformMat4x4Request.Parser, new[]{ "Name", "Value" }, null, null, null, null)
           }));
     }
     #endregion
@@ -1633,107 +1632,6 @@ namespace Nbrpc {
             input.ReadMessage(Value);
             break;
           }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class NoneReply : pb::IMessage<NoneReply> {
-    private static readonly pb::MessageParser<NoneReply> _parser = new pb::MessageParser<NoneReply>(() => new NoneReply());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<NoneReply> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Nbrpc.ShaderReflection.Descriptor.MessageTypes[10]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public NoneReply() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public NoneReply(NoneReply other) : this() {
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public NoneReply Clone() {
-      return new NoneReply(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as NoneReply);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(NoneReply other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(NoneReply other) {
-      if (other == null) {
-        return;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
         }
       }
     }

@@ -27,6 +27,8 @@ namespace studio
         public MainWindow()
         {
             InitializeComponent();
+            Type t = typeof(Int32);
+            Plugin.Update();
         }
 
         private void Solution2_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
