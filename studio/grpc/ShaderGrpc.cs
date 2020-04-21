@@ -23,6 +23,7 @@ namespace Nbrpc {
     static readonly grpc::Marshaller<global::Nbrpc.UniformVec4Request> __Marshaller_nbrpc_UniformVec4Request = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Nbrpc.UniformVec4Request.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Nbrpc.UniformMat3x3Request> __Marshaller_nbrpc_UniformMat3x3Request = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Nbrpc.UniformMat3x3Request.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Nbrpc.UniformMat4x4Request> __Marshaller_nbrpc_UniformMat4x4Request = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Nbrpc.UniformMat4x4Request.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Nbrpc.LoadModelRequest> __Marshaller_nbrpc_LoadModelRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Nbrpc.LoadModelRequest.Parser.ParseFrom);
 
     static readonly grpc::Method<global::Nbrpc.BuildShaderRequest, global::Nbrpc.BuildShaderReply> __Method_BuildShader = new grpc::Method<global::Nbrpc.BuildShaderRequest, global::Nbrpc.BuildShaderReply>(
         grpc::MethodType.Unary,
@@ -87,6 +88,13 @@ namespace Nbrpc {
         __Marshaller_nbrpc_UniformMat4x4Request,
         __Marshaller_nbrpc_CommonReply);
 
+    static readonly grpc::Method<global::Nbrpc.LoadModelRequest, global::Nbrpc.CommonReply> __Method_LoadModel = new grpc::Method<global::Nbrpc.LoadModelRequest, global::Nbrpc.CommonReply>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "LoadModel",
+        __Marshaller_nbrpc_LoadModelRequest,
+        __Marshaller_nbrpc_CommonReply);
+
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
@@ -138,6 +146,11 @@ namespace Nbrpc {
       }
 
       public virtual global::System.Threading.Tasks.Task<global::Nbrpc.CommonReply> UniformMat4x4(global::Nbrpc.UniformMat4x4Request request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task<global::Nbrpc.CommonReply> LoadModel(global::Nbrpc.LoadModelRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -311,6 +324,22 @@ namespace Nbrpc {
       {
         return CallInvoker.AsyncUnaryCall(__Method_UniformMat4x4, null, options, request);
       }
+      public virtual global::Nbrpc.CommonReply LoadModel(global::Nbrpc.LoadModelRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return LoadModel(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::Nbrpc.CommonReply LoadModel(global::Nbrpc.LoadModelRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_LoadModel, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::Nbrpc.CommonReply> LoadModelAsync(global::Nbrpc.LoadModelRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return LoadModelAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::Nbrpc.CommonReply> LoadModelAsync(global::Nbrpc.LoadModelRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_LoadModel, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       protected override ShaderRpcClient NewInstance(ClientBaseConfiguration configuration)
       {
@@ -331,7 +360,8 @@ namespace Nbrpc {
           .AddMethod(__Method_UniformVec3, serviceImpl.UniformVec3)
           .AddMethod(__Method_UniformVec4, serviceImpl.UniformVec4)
           .AddMethod(__Method_UniformMat3x3, serviceImpl.UniformMat3x3)
-          .AddMethod(__Method_UniformMat4x4, serviceImpl.UniformMat4x4).Build();
+          .AddMethod(__Method_UniformMat4x4, serviceImpl.UniformMat4x4)
+          .AddMethod(__Method_LoadModel, serviceImpl.LoadModel).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -349,6 +379,7 @@ namespace Nbrpc {
       serviceBinder.AddMethod(__Method_UniformVec4, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Nbrpc.UniformVec4Request, global::Nbrpc.CommonReply>(serviceImpl.UniformVec4));
       serviceBinder.AddMethod(__Method_UniformMat3x3, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Nbrpc.UniformMat3x3Request, global::Nbrpc.CommonReply>(serviceImpl.UniformMat3x3));
       serviceBinder.AddMethod(__Method_UniformMat4x4, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Nbrpc.UniformMat4x4Request, global::Nbrpc.CommonReply>(serviceImpl.UniformMat4x4));
+      serviceBinder.AddMethod(__Method_LoadModel, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Nbrpc.LoadModelRequest, global::Nbrpc.CommonReply>(serviceImpl.LoadModel));
     }
 
   }

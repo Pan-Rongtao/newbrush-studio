@@ -16,6 +16,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows.Interop;
 using System.Threading;
+using System.Windows.Threading;
 
 namespace studio
 {
@@ -33,9 +34,21 @@ namespace studio
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         public static extern bool ShowWindow(IntPtr hWnd, short State);
 
+        DispatcherTimer t = new DispatcherTimer();
         public Preview()
         {
             InitializeComponent();
+
+            t.Interval = new TimeSpan(100);
+            t.Tick += T_Tick;
+            t.Start();
+            ResourceDictionary x;
+        }
+
+        private void T_Tick(object sender, EventArgs e)
+        {
+            launch();
+            t.Stop();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -43,19 +56,26 @@ namespace studio
             launch();
         }
         
-        private void launch()
+        public void launch()
         {
+            if(Process.GetProcessesByName("nbPlayer").Length > 0)
+            {
+                return;
+            }
+
             string path = Environment.CurrentDirectory + "/../../../../newbrush/dist/win32/lib/nbplayer.exe";
             try
             {
                 _process = Process.Start(path);
                 Thread.Sleep(500);
-                form1.Child = new System.Windows.Forms.PictureBox();
+                System.Windows.Forms.PictureBox pb = new System.Windows.Forms.PictureBox();
+                form1.Child = pb;
                 SetParent(_process.MainWindowHandle, form1.Handle); //panel1.Handle为要显示外部程序的容器
-                ShowWindow(_process.MainWindowHandle, 2);
+                ShowWindow(_process.MainWindowHandle, 9);
             }
             catch (Exception) { }
         }
+        
         
     }
 }

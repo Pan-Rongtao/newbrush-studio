@@ -40,21 +40,24 @@ namespace Nbrpc {
             "ASABKAkSGgoFdmFsdWUYAiABKAsyCy5uYnJwYy5WZWM0IkIKFFVuaWZvcm1N",
             "YXQzeDNSZXF1ZXN0EgwKBG5hbWUYASABKAkSHAoFdmFsdWUYAiABKAsyDS5u",
             "YnJwYy5NYXQzeDMiQgoUVW5pZm9ybU1hdDR4NFJlcXVlc3QSDAoEbmFtZRgB",
-            "IAEoCRIcCgV2YWx1ZRgCIAEoCzINLm5icnBjLk1hdDR4NDLgBAoJU2hhZGVy",
-            "UnBjEkMKC0J1aWxkU2hhZGVyEhkubmJycGMuQnVpbGRTaGFkZXJSZXF1ZXN0",
-            "GhcubmJycGMuQnVpbGRTaGFkZXJSZXBseSIAEj4KC1VuaWZvcm1Cb29sEhku",
-            "bmJycGMuVW5pZm9ybUJvb2xSZXF1ZXN0GhIubmJycGMuQ29tbW9uUmVwbHki",
-            "ABJACgxVbmlmb3JtRmxvYXQSGi5uYnJwYy5Vbmlmb3JtRmxvYXRSZXF1ZXN0",
-            "GhIubmJycGMuQ29tbW9uUmVwbHkiABJECg5Vbmlmb3JtSW50ZWdlchIcLm5i",
-            "cnBjLlVuaWZvcm1JbnRlZ2VyUmVxdWVzdBoSLm5icnBjLkNvbW1vblJlcGx5",
-            "IgASPgoLVW5pZm9ybVZlYzISGS5uYnJwYy5Vbmlmb3JtVmVjMlJlcXVlc3Qa",
-            "Ei5uYnJwYy5Db21tb25SZXBseSIAEj4KC1VuaWZvcm1WZWMzEhkubmJycGMu",
-            "VW5pZm9ybVZlYzNSZXF1ZXN0GhIubmJycGMuQ29tbW9uUmVwbHkiABI+CgtV",
-            "bmlmb3JtVmVjNBIZLm5icnBjLlVuaWZvcm1WZWM0UmVxdWVzdBoSLm5icnBj",
-            "LkNvbW1vblJlcGx5IgASQgoNVW5pZm9ybU1hdDN4MxIbLm5icnBjLlVuaWZv",
-            "cm1NYXQzeDNSZXF1ZXN0GhIubmJycGMuQ29tbW9uUmVwbHkiABJCCg1Vbmlm",
-            "b3JtTWF0NHg0EhsubmJycGMuVW5pZm9ybU1hdDR4NFJlcXVlc3QaEi5uYnJw",
-            "Yy5Db21tb25SZXBseSIAYgZwcm90bzM="));
+            "IAEoCRIcCgV2YWx1ZRgCIAEoCzINLm5icnBjLk1hdDR4NCI6ChBMb2FkTW9k",
+            "ZWxSZXF1ZXN0EhEKCW1vZGVsUGF0aBgBIAEoCRITCgt0ZXh0dXJlUGF0aBgC",
+            "IAEoCTKcBQoJU2hhZGVyUnBjEkMKC0J1aWxkU2hhZGVyEhkubmJycGMuQnVp",
+            "bGRTaGFkZXJSZXF1ZXN0GhcubmJycGMuQnVpbGRTaGFkZXJSZXBseSIAEj4K",
+            "C1VuaWZvcm1Cb29sEhkubmJycGMuVW5pZm9ybUJvb2xSZXF1ZXN0GhIubmJy",
+            "cGMuQ29tbW9uUmVwbHkiABJACgxVbmlmb3JtRmxvYXQSGi5uYnJwYy5Vbmlm",
+            "b3JtRmxvYXRSZXF1ZXN0GhIubmJycGMuQ29tbW9uUmVwbHkiABJECg5Vbmlm",
+            "b3JtSW50ZWdlchIcLm5icnBjLlVuaWZvcm1JbnRlZ2VyUmVxdWVzdBoSLm5i",
+            "cnBjLkNvbW1vblJlcGx5IgASPgoLVW5pZm9ybVZlYzISGS5uYnJwYy5Vbmlm",
+            "b3JtVmVjMlJlcXVlc3QaEi5uYnJwYy5Db21tb25SZXBseSIAEj4KC1VuaWZv",
+            "cm1WZWMzEhkubmJycGMuVW5pZm9ybVZlYzNSZXF1ZXN0GhIubmJycGMuQ29t",
+            "bW9uUmVwbHkiABI+CgtVbmlmb3JtVmVjNBIZLm5icnBjLlVuaWZvcm1WZWM0",
+            "UmVxdWVzdBoSLm5icnBjLkNvbW1vblJlcGx5IgASQgoNVW5pZm9ybU1hdDN4",
+            "MxIbLm5icnBjLlVuaWZvcm1NYXQzeDNSZXF1ZXN0GhIubmJycGMuQ29tbW9u",
+            "UmVwbHkiABJCCg1Vbmlmb3JtTWF0NHg0EhsubmJycGMuVW5pZm9ybU1hdDR4",
+            "NFJlcXVlc3QaEi5uYnJwYy5Db21tb25SZXBseSIAEjoKCUxvYWRNb2RlbBIX",
+            "Lm5icnBjLkxvYWRNb2RlbFJlcXVlc3QaEi5uYnJwYy5Db21tb25SZXBseSIA",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Nbrpc.TypesReflection.Descriptor, global::Nbrpc.MathReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -67,7 +70,8 @@ namespace Nbrpc {
             new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.UniformVec3Request), global::Nbrpc.UniformVec3Request.Parser, new[]{ "Name", "Value" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.UniformVec4Request), global::Nbrpc.UniformVec4Request.Parser, new[]{ "Name", "Value" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.UniformMat3x3Request), global::Nbrpc.UniformMat3x3Request.Parser, new[]{ "Name", "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.UniformMat4x4Request), global::Nbrpc.UniformMat4x4Request.Parser, new[]{ "Name", "Value" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.UniformMat4x4Request), global::Nbrpc.UniformMat4x4Request.Parser, new[]{ "Name", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.LoadModelRequest), global::Nbrpc.LoadModelRequest.Parser, new[]{ "ModelPath", "TexturePath" }, null, null, null, null)
           }));
     }
     #endregion
@@ -1630,6 +1634,163 @@ namespace Nbrpc {
               Value = new global::Nbrpc.Mat4x4();
             }
             input.ReadMessage(Value);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class LoadModelRequest : pb::IMessage<LoadModelRequest> {
+    private static readonly pb::MessageParser<LoadModelRequest> _parser = new pb::MessageParser<LoadModelRequest>(() => new LoadModelRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<LoadModelRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.ShaderReflection.Descriptor.MessageTypes[10]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LoadModelRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LoadModelRequest(LoadModelRequest other) : this() {
+      modelPath_ = other.modelPath_;
+      texturePath_ = other.texturePath_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LoadModelRequest Clone() {
+      return new LoadModelRequest(this);
+    }
+
+    /// <summary>Field number for the "modelPath" field.</summary>
+    public const int ModelPathFieldNumber = 1;
+    private string modelPath_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ModelPath {
+      get { return modelPath_; }
+      set {
+        modelPath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "texturePath" field.</summary>
+    public const int TexturePathFieldNumber = 2;
+    private string texturePath_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string TexturePath {
+      get { return texturePath_; }
+      set {
+        texturePath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as LoadModelRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(LoadModelRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ModelPath != other.ModelPath) return false;
+      if (TexturePath != other.TexturePath) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ModelPath.Length != 0) hash ^= ModelPath.GetHashCode();
+      if (TexturePath.Length != 0) hash ^= TexturePath.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ModelPath.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(ModelPath);
+      }
+      if (TexturePath.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(TexturePath);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ModelPath.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ModelPath);
+      }
+      if (TexturePath.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TexturePath);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(LoadModelRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ModelPath.Length != 0) {
+        ModelPath = other.ModelPath;
+      }
+      if (other.TexturePath.Length != 0) {
+        TexturePath = other.TexturePath;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            ModelPath = input.ReadString();
+            break;
+          }
+          case 18: {
+            TexturePath = input.ReadString();
             break;
           }
         }

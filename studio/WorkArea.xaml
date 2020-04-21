@@ -18,7 +18,7 @@
             <ad:LayoutRoot x:Name="layoutRoot">
                 <ad:LayoutPanel>
 
-                    <ad:LayoutPanel Orientation="Vertical" DockWidth="960">
+                    <ad:LayoutPanel Orientation="Vertical" DockWidth="460">
                         <ad:LayoutAnchorablePane>
                             <ad:LayoutAnchorable x:Name="visualTreeLayout" Title="工程">
                                 <local:VisualTree Margin="0,3,0,3"/>
