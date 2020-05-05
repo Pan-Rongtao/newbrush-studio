@@ -16,6 +16,7 @@ using MaterialDesignThemes.Wpf;
 using System.Globalization;
 using System.Data;
 using Nbrpc;
+using System.Collections.ObjectModel;
 
 namespace studio
 {
@@ -37,17 +38,18 @@ namespace studio
     public partial class VisualTree : UserControl
     {
         public static String SelectNodePath;
-        public static List<NodeData> Model
+        public static ObservableCollection<NodeData> Model
         {
             get { return _model; }
             set { _model = value; }
         }
-        static private List<NodeData> _model = new List<NodeData>();
+        static private ObservableCollection<NodeData> _model = new ObservableCollection<NodeData>();
 
         public VisualTree()
         {
             InitializeComponent();
             InitData();
+            UpdateAddGroupMenuComponent();
         }
 
         public void ExpandAll(bool expanded)
@@ -122,8 +124,9 @@ namespace studio
             grid.Children.Add(NodeItem.Grid("Grid"));
             grid.Children.Add(NodeItem.UniformGrid("UniformGrid"));
 */
-            Model.Add(w);
             tv.ItemsSource = Model;
+            Model.Add(w);
+
         }
         
         private void TreeViewItem_PreviewMouseRightButtonDown(object sender, MouseButtonEventArgs e)
@@ -135,6 +138,7 @@ namespace studio
                 e.Handled = true;
             }
         }
+
         DependencyObject VisualUpwardSearch<T>(DependencyObject source)
         {
             while (source != null && source.GetType() != typeof(T))
@@ -142,9 +146,8 @@ namespace studio
 
             return source;
         }
-
-
-        private string getFullPath(DependencyObject source)
+        
+        private string GetFullPath(DependencyObject source)
         {
             string path = "";
             while (source != null && source.GetType() != typeof(TreeView))
@@ -166,23 +169,53 @@ namespace studio
 
         private void treeView1_Selected(object sender, RoutedEventArgs e)
         {
-            SelectNodePath = getFullPath(e.OriginalSource as DependencyObject);
+            SelectNodePath = GetFullPath(e.OriginalSource as DependencyObject);
         }
 
         private void createGrid_Click(object sender, RoutedEventArgs e)
         {
-            Plugin.MetaData md = Plugin.findMetaDataByTypeName("nb::Grid");
         }
         
         private void createRectangle_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                Plugin.MetaData md = Plugin.findMetaDataByTypeName("nb::Rectangle");
-                AddNodeRequest request = new AddNodeRequest() { Path = SelectNodePath, ChildType = md.Type, ChildName = "Rectangle" };
+                MetaObject md = PluginManager.FindMetaDataByTypeName("nb::Rectangle");
+                AddNodeRequest request = new AddNodeRequest() { Path = SelectNodePath, ChildType = md.Descriptor.Type, ChildName = "Rectangle" };
                 var reply = RpcManager.NodeClient.AddNode(request);
             }
             catch (Grpc.Core.RpcException ex) { Console.WriteLine(ex.Message); }
+        }
+
+        public void UpdateAddGroupMenuComponent()
+        {
+            foreach(Plugin plugin in PluginManager.Plugins)
+            {
+                foreach(MetaObject m in plugin.MetaObjects)
+                {
+                    MenuItem item = new MenuItem();
+                    item.Header = m.Descriptor.DisplayName;
+                    PackIcon icon = new PackIcon();
+                    icon.Kind = MetaObject.ClassDescriptor.TypeToIcon(m.Descriptor.Type);
+                    icon.Margin = new Thickness(5, 0, 0, 0);
+                    item.Icon = icon;
+                    item.Click += Item_Click;
+                    item.Tag = m;
+                    this.AddGroupMenuItem.Items.Add(item);
+                }
+            }
+
+        }
+
+        private void Item_Click(object sender, RoutedEventArgs e)
+        {
+            MenuItem item = sender as MenuItem;
+            MetaObject metaObj = item.Tag as MetaObject;
+            AddNodeRequest request = new AddNodeRequest() { Path = SelectNodePath, ChildType = metaObj.Descriptor.Type, ChildName = metaObj.Descriptor.DisplayName };
+            var reply = RpcManager.NodeClient.AddNode(request);
+            
+            NodeData node = new NodeData() { TypeName = metaObj.Descriptor.Type, IconType = MetaObject.ClassDescriptor.TypeToIcon(metaObj.Descriptor.Type), Name = "111" };
+            Model.Add(node);
         }
     }
 }

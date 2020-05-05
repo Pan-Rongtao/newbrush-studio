@@ -55,7 +55,7 @@
     </UserControl.Resources>
     
     <Grid >
-        <TextBox Style="{StaticResource tbStyle}">
+        <TextBox Style="{StaticResource tbStyle}" Opacity="0.63">
             
         </TextBox>
     </Grid>

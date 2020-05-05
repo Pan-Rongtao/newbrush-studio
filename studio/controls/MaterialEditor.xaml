@@ -25,7 +25,10 @@
                 </TextBox>
             </TabItem>
         </TabControl>
-        
+
+        <FrameworkElement>
+        </FrameworkElement>
+
         <DataGrid x:Name="uniformGrid" Grid.Row="1" Margin="0 8 0 0" ItemsSource="{Binding UniformGridData}" AutoGenerateColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False">
             <DataGrid.Resources>
                 <local:BoolVisibilityConverter x:Key="bConverter"/>

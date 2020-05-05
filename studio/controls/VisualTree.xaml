@@ -174,15 +174,11 @@
 
             <TreeView.ContextMenu>
                 <ContextMenu >
-                    <ContextMenu.ItemTemplate>
-                        <DataTemplate>
-                            
-                        </DataTemplate>
-                    </ContextMenu.ItemTemplate>
-                    <MenuItem Header="添加" InputGestureText="Ctrl+N">
+                    <MenuItem x:Name="AddGroupMenuItem" Header="添加" InputGestureText="Ctrl+N">
                         <MenuItem.Icon>
                             <materialDesign:PackIcon Margin="5,0,0,0" Kind="AddCircleOutline" />
                         </MenuItem.Icon>
+                        <!--
                         <MenuItem x:Name="createGrid" Header="Grid" Click="createGrid_Click">
                             <MenuItem.Icon>
                                 <materialDesign:PackIcon Margin="5,0,0,0" Kind="Grid" />
@@ -192,7 +188,7 @@
                             <MenuItem.Icon>
                                 <materialDesign:PackIcon Margin="5,0,0,0" Kind="Rectangle" />
                             </MenuItem.Icon>
-                        </MenuItem>
+                        </MenuItem>-->
                     </MenuItem>
                     <Separator/>
                     <MenuItem Header="重命名" InputGestureText="F2">

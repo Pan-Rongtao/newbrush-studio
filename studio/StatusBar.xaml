@@ -8,7 +8,6 @@
              d:DesignHeight="300" d:DesignWidth="300">
 
     <StatusBar Name="sbar" VerticalAlignment="Bottom" Background="#007acc" >
-
         <StatusBarItem>
             <TextBlock>Downloading File</TextBlock>
         </StatusBarItem>

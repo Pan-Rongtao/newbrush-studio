@@ -16,6 +16,7 @@ using System.Threading;
 using MahApps.Metro.Controls;
 using MahApps.Metro.IconPacks;
 using MaterialDesignThemes.Wpf;
+using System.Reflection;
 
 using System.Collections.ObjectModel;
 using Nbrpc;
@@ -26,11 +27,12 @@ namespace studio
     {
         public MainWindow()
         {
+            Plugin plugin = new Plugin("D:/github/newbrush/dist/win32/lib/NbGuid.dll");
+            plugin.Update();
             InitializeComponent();
-            Type t = typeof(Int32);
-            Plugin.Update();
-        }
 
+        }
+        
         private void Solution2_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
           //  Console.WriteLine(e.PropertyName);

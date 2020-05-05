@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using MaterialDesignThemes.Wpf;
+using System.Collections.ObjectModel;
 
 namespace studio
 {
@@ -36,11 +37,11 @@ namespace studio
             }
         }
 
-        public List<NodeData> Children { get; set; }
+        public ObservableCollection<NodeData> Children { get; set; }
 
         public NodeData()
         {
-            Children = new List<NodeData>();
+            Children = new ObservableCollection<NodeData>();
         }
 
         private String _typeName;
