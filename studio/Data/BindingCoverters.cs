@@ -7,6 +7,7 @@ using System.Windows.Data;
 using System.Globalization;
 using System.Windows;
 using Nbrpc;
+using MaterialDesignThemes.Wpf;
 
 namespace studio
 {
@@ -61,6 +62,18 @@ namespace studio
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return (UniformType)value == UniformType.Vec3 ? Visibility.Visible : Visibility.Hidden;
+        }
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class VisibilityIconConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return (bool)value ? PackIconKind.EyeOutline : PackIconKind.EyeOffOutline;
         }
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {

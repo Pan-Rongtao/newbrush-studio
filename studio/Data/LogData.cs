@@ -24,8 +24,9 @@ namespace studio
         public event EventHandler<LogItem> AddEvent;
         public event EventHandler ClearEvent;
 
-        public void Add(LogLevel level, string text)
+        public void Add(LogLevel level, string s, params object[] arg)
         {
+            string text = string.Format(s, arg);
             LogItem item = new LogItem() { Level = level, Text = text };
             _logList.Add(item);
             if(AddEvent != null)

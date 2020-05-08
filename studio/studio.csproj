@@ -308,8 +308,8 @@
     <Compile Include="Controls\OutputPanel.xaml.cs">
       <DependentUpon>OutputPanel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\PropertyEditor.xaml.cs">
-      <DependentUpon>PropertyEditor.xaml</DependentUpon>
+    <Compile Include="Controls\PropertyPanel.xaml.cs">
+      <DependentUpon>PropertyPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\SearchBox.xaml.cs">
       <DependentUpon>SearchBox.xaml</DependentUpon>
@@ -325,6 +325,7 @@
     <Compile Include="MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\PropertyGridData.cs" />
     <Compile Include="StatusBar.xaml.cs">
       <DependentUpon>StatusBar.xaml</DependentUpon>
     </Compile>
@@ -391,7 +392,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\PropertyEditor.xaml">
+    <Page Include="Controls\PropertyPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

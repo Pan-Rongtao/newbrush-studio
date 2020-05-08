@@ -42,7 +42,6 @@ namespace studio
             t.Interval = new TimeSpan(100);
             t.Tick += T_Tick;
             t.Start();
-            ResourceDictionary x;
         }
 
         private void T_Tick(object sender, EventArgs e)

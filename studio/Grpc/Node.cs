@@ -29,17 +29,130 @@ namespace Nbrpc {
             "AiABKAkSEQoJY2hpbGROYW1lGAMgASgJIjQKEVJlbW92ZU5vZGVSZXF1ZXN0",
             "EgwKBHBhdGgYASABKAkSEQoJY2hpbGROYW1lGAIgASgJIk0KEVJlbmFtZU5v",
             "ZGVSZXF1ZXN0EgwKBHBhdGgYASABKAkSFAoMY2hpbGRPbGROYW1lGAIgASgJ",
-            "EhQKDGNoaWxkTmV3TmFtZRgDIAEoCTK9AQoHTm9kZVJwYxI2CgdBZGROb2Rl",
-            "EhUubmJycGMuQWRkTm9kZVJlcXVlc3QaEi5uYnJwYy5Db21tb25SZXBseSIA",
-            "EjwKClJlbW92ZU5vZGUSGC5uYnJwYy5SZW1vdmVOb2RlUmVxdWVzdBoSLm5i",
-            "cnBjLkNvbW1vblJlcGx5IgASPAoKUmVuYW1lTm9kZRIYLm5icnBjLlJlbmFt",
-            "ZU5vZGVSZXF1ZXN0GhIubmJycGMuQ29tbW9uUmVwbHkiAGIGcHJvdG8z"));
+            "EhQKDGNoaWxkTmV3TmFtZRgDIAEoCSI6ChZTZXRQcm9wZXJ0eUJhc2VSZXF1",
+            "ZXN0EgwKBHBhdGgYASABKAkSEgoKcHJvcGVydHlJRBgCIAEoBCJUChZTZXRQ",
+            "cm9wZXJ0eUJvb2xSZXF1ZXN0EisKBGJhc2UYASABKAsyHS5uYnJwYy5TZXRQ",
+            "cm9wZXJ0eUJhc2VSZXF1ZXN0Eg0KBXZhbHVlGAIgASgIIlQKFlNldFByb3Bl",
+            "cnR5SW50OFJlcXVlc3QSKwoEYmFzZRgBIAEoCzIdLm5icnBjLlNldFByb3Bl",
+            "cnR5QmFzZVJlcXVlc3QSDQoFdmFsdWUYAiABKAUiVQoXU2V0UHJvcGVydHlJ",
+            "bnQxNlJlcXVlc3QSKwoEYmFzZRgBIAEoCzIdLm5icnBjLlNldFByb3BlcnR5",
+            "QmFzZVJlcXVlc3QSDQoFdmFsdWUYAiABKAUiVQoXU2V0UHJvcGVydHlJbnQz",
+            "MlJlcXVlc3QSKwoEYmFzZRgBIAEoCzIdLm5icnBjLlNldFByb3BlcnR5QmFz",
+            "ZVJlcXVlc3QSDQoFdmFsdWUYAiABKAUiVQoXU2V0UHJvcGVydHlJbnQ2NFJl",
+            "cXVlc3QSKwoEYmFzZRgBIAEoCzIdLm5icnBjLlNldFByb3BlcnR5QmFzZVJl",
+            "cXVlc3QSDQoFdmFsdWUYAiABKAMiVQoXU2V0UHJvcGVydHlVSW50OFJlcXVl",
+            "c3QSKwoEYmFzZRgBIAEoCzIdLm5icnBjLlNldFByb3BlcnR5QmFzZVJlcXVl",
+            "c3QSDQoFdmFsdWUYAiABKA0iVgoYU2V0UHJvcGVydHlVSW50MTZSZXF1ZXN0",
+            "EisKBGJhc2UYASABKAsyHS5uYnJwYy5TZXRQcm9wZXJ0eUJhc2VSZXF1ZXN0",
+            "Eg0KBXZhbHVlGAIgASgNIlYKGFNldFByb3BlcnR5VUludDMyUmVxdWVzdBIr",
+            "CgRiYXNlGAEgASgLMh0ubmJycGMuU2V0UHJvcGVydHlCYXNlUmVxdWVzdBIN",
+            "CgV2YWx1ZRgCIAEoDSJWChhTZXRQcm9wZXJ0eVVJbnQ2NFJlcXVlc3QSKwoE",
+            "YmFzZRgBIAEoCzIdLm5icnBjLlNldFByb3BlcnR5QmFzZVJlcXVlc3QSDQoF",
+            "dmFsdWUYAiABKAQiVQoXU2V0UHJvcGVydHlGbG9hdFJlcXVlc3QSKwoEYmFz",
+            "ZRgBIAEoCzIdLm5icnBjLlNldFByb3BlcnR5QmFzZVJlcXVlc3QSDQoFdmFs",
+            "dWUYAiABKAIiVgoYU2V0UHJvcGVydHlEb3VibGVSZXF1ZXN0EisKBGJhc2UY",
+            "ASABKAsyHS5uYnJwYy5TZXRQcm9wZXJ0eUJhc2VSZXF1ZXN0Eg0KBXZhbHVl",
+            "GAIgASgBIlYKGFNldFByb3BlcnR5U3RyaW5nUmVxdWVzdBIrCgRiYXNlGAEg",
+            "ASgLMh0ubmJycGMuU2V0UHJvcGVydHlCYXNlUmVxdWVzdBINCgV2YWx1ZRgC",
+            "IAEoCSJhChZTZXRQcm9wZXJ0eVZlYzJSZXF1ZXN0EisKBGJhc2UYASABKAsy",
+            "HS5uYnJwYy5TZXRQcm9wZXJ0eUJhc2VSZXF1ZXN0EhoKBXZhbHVlGAIgASgL",
+            "MgsubmJycGMuVmVjMiJhChZTZXRQcm9wZXJ0eVZlYzNSZXF1ZXN0EisKBGJh",
+            "c2UYASABKAsyHS5uYnJwYy5TZXRQcm9wZXJ0eUJhc2VSZXF1ZXN0EhoKBXZh",
+            "bHVlGAIgASgLMgsubmJycGMuVmVjMyJhChZTZXRQcm9wZXJ0eVZlYzRSZXF1",
+            "ZXN0EisKBGJhc2UYASABKAsyHS5uYnJwYy5TZXRQcm9wZXJ0eUJhc2VSZXF1",
+            "ZXN0EhoKBXZhbHVlGAIgASgLMgsubmJycGMuVmVjNCJjChdTZXRQcm9wZXJ0",
+            "eUNvbG9yUmVxdWVzdBIrCgRiYXNlGAEgASgLMh0ubmJycGMuU2V0UHJvcGVy",
+            "dHlCYXNlUmVxdWVzdBIbCgV2YWx1ZRgCIAEoCzIMLm5icnBjLkNvbG9yImkK",
+            "GlNldFByb3BlcnR5RGF0ZVRpbWVSZXF1ZXN0EisKBGJhc2UYASABKAsyHS5u",
+            "YnJwYy5TZXRQcm9wZXJ0eUJhc2VSZXF1ZXN0Eh4KBXZhbHVlGAIgASgLMg8u",
+            "bmJycGMuRGF0ZVRpbWUiaQoaU2V0UHJvcGVydHlUaW1lU3BhblJlcXVlc3QS",
+            "KwoEYmFzZRgBIAEoCzIdLm5icnBjLlNldFByb3BlcnR5QmFzZVJlcXVlc3QS",
+            "HgoFdmFsdWUYAiABKAsyDy5uYnJwYy5UaW1lU3BhbiJrChtTZXRQcm9wZXJ0",
+            "eVRoaWNrbmVzc1JlcXVlc3QSKwoEYmFzZRgBIAEoCzIdLm5icnBjLlNldFBy",
+            "b3BlcnR5QmFzZVJlcXVlc3QSHwoFdmFsdWUYAiABKAsyEC5uYnJwYy5UaGlj",
+            "a25lc3MiVAoWU2V0UHJvcGVydHlFbnVtUmVxdWVzdBIrCgRiYXNlGAEgASgL",
+            "Mh0ubmJycGMuU2V0UHJvcGVydHlCYXNlUmVxdWVzdBINCgV2YWx1ZRgCIAEo",
+            "BSJtCiFTZXRQcm9wZXJ0eVNvbGlkQ29sb3JCcnVzaFJlcXVlc3QSKwoEYmFz",
+            "ZRgBIAEoCzIdLm5icnBjLlNldFByb3BlcnR5QmFzZVJlcXVlc3QSGwoFdmFs",
+            "dWUYAiABKAsyDC5uYnJwYy5Db2xvciJaChxTZXRQcm9wZXJ0eUltYWdlQnJ1",
+            "c2hSZXF1ZXN0EisKBGJhc2UYASABKAsyHS5uYnJwYy5TZXRQcm9wZXJ0eUJh",
+            "c2VSZXF1ZXN0Eg0KBXZhbHVlGAIgASgJImMKJVNldFByb3BlcnR5TGluZWFy",
+            "R3JhZGllbnRCcnVzaFJlcXVlc3QSKwoEYmFzZRgBIAEoCzIdLm5icnBjLlNl",
+            "dFByb3BlcnR5QmFzZVJlcXVlc3QSDQoFdmFsdWUYAiABKAUyrw8KB05vZGVS",
+            "cGMSNgoHQWRkTm9kZRIVLm5icnBjLkFkZE5vZGVSZXF1ZXN0GhIubmJycGMu",
+            "Q29tbW9uUmVwbHkiABI8CgpSZW1vdmVOb2RlEhgubmJycGMuUmVtb3ZlTm9k",
+            "ZVJlcXVlc3QaEi5uYnJwYy5Db21tb25SZXBseSIAEjwKClJlbmFtZU5vZGUS",
+            "GC5uYnJwYy5SZW5hbWVOb2RlUmVxdWVzdBoSLm5icnBjLkNvbW1vblJlcGx5",
+            "IgASRgoPU2V0UHJvcGVydHlCb29sEh0ubmJycGMuU2V0UHJvcGVydHlCb29s",
+            "UmVxdWVzdBoSLm5icnBjLkNvbW1vblJlcGx5IgASRgoPU2V0UHJvcGVydHlJ",
+            "bnQ4Eh0ubmJycGMuU2V0UHJvcGVydHlJbnQ4UmVxdWVzdBoSLm5icnBjLkNv",
+            "bW1vblJlcGx5IgASSAoQU2V0UHJvcGVydHlJbnQxNhIeLm5icnBjLlNldFBy",
+            "b3BlcnR5SW50MTZSZXF1ZXN0GhIubmJycGMuQ29tbW9uUmVwbHkiABJIChBT",
+            "ZXRQcm9wZXJ0eUludDMyEh4ubmJycGMuU2V0UHJvcGVydHlJbnQzMlJlcXVl",
+            "c3QaEi5uYnJwYy5Db21tb25SZXBseSIAEkgKEFNldFByb3BlcnR5SW50NjQS",
+            "Hi5uYnJwYy5TZXRQcm9wZXJ0eUludDY0UmVxdWVzdBoSLm5icnBjLkNvbW1v",
+            "blJlcGx5IgASSAoQU2V0UHJvcGVydHlVSW50OBIeLm5icnBjLlNldFByb3Bl",
+            "cnR5VUludDhSZXF1ZXN0GhIubmJycGMuQ29tbW9uUmVwbHkiABJKChFTZXRQ",
+            "cm9wZXJ0eVVJbnQxNhIfLm5icnBjLlNldFByb3BlcnR5VUludDE2UmVxdWVz",
+            "dBoSLm5icnBjLkNvbW1vblJlcGx5IgASSgoRU2V0UHJvcGVydHlVSW50MzIS",
+            "Hy5uYnJwYy5TZXRQcm9wZXJ0eVVJbnQzMlJlcXVlc3QaEi5uYnJwYy5Db21t",
+            "b25SZXBseSIAEkoKEVNldFByb3BlcnR5VUludDY0Eh8ubmJycGMuU2V0UHJv",
+            "cGVydHlVSW50NjRSZXF1ZXN0GhIubmJycGMuQ29tbW9uUmVwbHkiABJIChBT",
+            "ZXRQcm9wZXJ0eUZsb2F0Eh4ubmJycGMuU2V0UHJvcGVydHlGbG9hdFJlcXVl",
+            "c3QaEi5uYnJwYy5Db21tb25SZXBseSIAEkoKEVNldFByb3BlcnR5RG91Ymxl",
+            "Eh8ubmJycGMuU2V0UHJvcGVydHlEb3VibGVSZXF1ZXN0GhIubmJycGMuQ29t",
+            "bW9uUmVwbHkiABJKChFTZXRQcm9wZXJ0eVN0cmluZxIfLm5icnBjLlNldFBy",
+            "b3BlcnR5U3RyaW5nUmVxdWVzdBoSLm5icnBjLkNvbW1vblJlcGx5IgASRgoP",
+            "U2V0UHJvcGVydHlWZWMyEh0ubmJycGMuU2V0UHJvcGVydHlWZWMyUmVxdWVz",
+            "dBoSLm5icnBjLkNvbW1vblJlcGx5IgASRgoPU2V0UHJvcGVydHlWZWMzEh0u",
+            "bmJycGMuU2V0UHJvcGVydHlWZWMzUmVxdWVzdBoSLm5icnBjLkNvbW1vblJl",
+            "cGx5IgASRgoPU2V0UHJvcGVydHlWZWM0Eh0ubmJycGMuU2V0UHJvcGVydHlW",
+            "ZWM0UmVxdWVzdBoSLm5icnBjLkNvbW1vblJlcGx5IgASSAoQU2V0UHJvcGVy",
+            "dHlDb2xvchIeLm5icnBjLlNldFByb3BlcnR5Q29sb3JSZXF1ZXN0GhIubmJy",
+            "cGMuQ29tbW9uUmVwbHkiABJOChNTZXRQcm9wZXJ0eURhdGVUaW1lEiEubmJy",
+            "cGMuU2V0UHJvcGVydHlEYXRlVGltZVJlcXVlc3QaEi5uYnJwYy5Db21tb25S",
+            "ZXBseSIAEk4KE1NldFByb3BlcnR5VGltZVNwYW4SIS5uYnJwYy5TZXRQcm9w",
+            "ZXJ0eVRpbWVTcGFuUmVxdWVzdBoSLm5icnBjLkNvbW1vblJlcGx5IgASUAoU",
+            "U2V0UHJvcGVydHlUaGlja25lc3MSIi5uYnJwYy5TZXRQcm9wZXJ0eVRoaWNr",
+            "bmVzc1JlcXVlc3QaEi5uYnJwYy5Db21tb25SZXBseSIAEkYKD1NldFByb3Bl",
+            "cnR5RW51bRIdLm5icnBjLlNldFByb3BlcnR5RW51bVJlcXVlc3QaEi5uYnJw",
+            "Yy5Db21tb25SZXBseSIAElwKGlNldFByb3BlcnR5U29saWRDb2xvckJydXNo",
+            "EigubmJycGMuU2V0UHJvcGVydHlTb2xpZENvbG9yQnJ1c2hSZXF1ZXN0GhIu",
+            "bmJycGMuQ29tbW9uUmVwbHkiABJSChVTZXRQcm9wZXJ0eUltYWdlQnJ1c2gS",
+            "Iy5uYnJwYy5TZXRQcm9wZXJ0eUltYWdlQnJ1c2hSZXF1ZXN0GhIubmJycGMu",
+            "Q29tbW9uUmVwbHkiABJkCh5TZXRQcm9wZXJ0eUxpbmVhckdyYWRpZW50QnJ1",
+            "c2gSLC5uYnJwYy5TZXRQcm9wZXJ0eUxpbmVhckdyYWRpZW50QnJ1c2hSZXF1",
+            "ZXN0GhIubmJycGMuQ29tbW9uUmVwbHkiAGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Nbrpc.TypesReflection.Descriptor, global::Nbrpc.MathReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.AddNodeRequest), global::Nbrpc.AddNodeRequest.Parser, new[]{ "Path", "ChildType", "ChildName" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.RemoveNodeRequest), global::Nbrpc.RemoveNodeRequest.Parser, new[]{ "Path", "ChildName" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.RenameNodeRequest), global::Nbrpc.RenameNodeRequest.Parser, new[]{ "Path", "ChildOldName", "ChildNewName" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.RenameNodeRequest), global::Nbrpc.RenameNodeRequest.Parser, new[]{ "Path", "ChildOldName", "ChildNewName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.SetPropertyBaseRequest), global::Nbrpc.SetPropertyBaseRequest.Parser, new[]{ "Path", "PropertyID" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.SetPropertyBoolRequest), global::Nbrpc.SetPropertyBoolRequest.Parser, new[]{ "Base", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.SetPropertyInt8Request), global::Nbrpc.SetPropertyInt8Request.Parser, new[]{ "Base", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.SetPropertyInt16Request), global::Nbrpc.SetPropertyInt16Request.Parser, new[]{ "Base", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.SetPropertyInt32Request), global::Nbrpc.SetPropertyInt32Request.Parser, new[]{ "Base", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.SetPropertyInt64Request), global::Nbrpc.SetPropertyInt64Request.Parser, new[]{ "Base", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.SetPropertyUInt8Request), global::Nbrpc.SetPropertyUInt8Request.Parser, new[]{ "Base", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.SetPropertyUInt16Request), global::Nbrpc.SetPropertyUInt16Request.Parser, new[]{ "Base", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.SetPropertyUInt32Request), global::Nbrpc.SetPropertyUInt32Request.Parser, new[]{ "Base", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.SetPropertyUInt64Request), global::Nbrpc.SetPropertyUInt64Request.Parser, new[]{ "Base", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.SetPropertyFloatRequest), global::Nbrpc.SetPropertyFloatRequest.Parser, new[]{ "Base", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.SetPropertyDoubleRequest), global::Nbrpc.SetPropertyDoubleRequest.Parser, new[]{ "Base", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.SetPropertyStringRequest), global::Nbrpc.SetPropertyStringRequest.Parser, new[]{ "Base", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.SetPropertyVec2Request), global::Nbrpc.SetPropertyVec2Request.Parser, new[]{ "Base", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.SetPropertyVec3Request), global::Nbrpc.SetPropertyVec3Request.Parser, new[]{ "Base", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.SetPropertyVec4Request), global::Nbrpc.SetPropertyVec4Request.Parser, new[]{ "Base", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.SetPropertyColorRequest), global::Nbrpc.SetPropertyColorRequest.Parser, new[]{ "Base", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.SetPropertyDateTimeRequest), global::Nbrpc.SetPropertyDateTimeRequest.Parser, new[]{ "Base", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.SetPropertyTimeSpanRequest), global::Nbrpc.SetPropertyTimeSpanRequest.Parser, new[]{ "Base", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.SetPropertyThicknessRequest), global::Nbrpc.SetPropertyThicknessRequest.Parser, new[]{ "Base", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.SetPropertyEnumRequest), global::Nbrpc.SetPropertyEnumRequest.Parser, new[]{ "Base", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.SetPropertySolidColorBrushRequest), global::Nbrpc.SetPropertySolidColorBrushRequest.Parser, new[]{ "Base", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.SetPropertyImageBrushRequest), global::Nbrpc.SetPropertyImageBrushRequest.Parser, new[]{ "Base", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Nbrpc.SetPropertyLinearGradientBrushRequest), global::Nbrpc.SetPropertyLinearGradientBrushRequest.Parser, new[]{ "Base", "Value" }, null, null, null, null)
           }));
     }
     #endregion
@@ -565,6 +678,3960 @@ namespace Nbrpc {
           }
           case 26: {
             ChildNewName = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SetPropertyBaseRequest : pb::IMessage<SetPropertyBaseRequest> {
+    private static readonly pb::MessageParser<SetPropertyBaseRequest> _parser = new pb::MessageParser<SetPropertyBaseRequest>(() => new SetPropertyBaseRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetPropertyBaseRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.NodeReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyBaseRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyBaseRequest(SetPropertyBaseRequest other) : this() {
+      path_ = other.path_;
+      propertyID_ = other.propertyID_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyBaseRequest Clone() {
+      return new SetPropertyBaseRequest(this);
+    }
+
+    /// <summary>Field number for the "path" field.</summary>
+    public const int PathFieldNumber = 1;
+    private string path_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Path {
+      get { return path_; }
+      set {
+        path_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "propertyID" field.</summary>
+    public const int PropertyIDFieldNumber = 2;
+    private ulong propertyID_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ulong PropertyID {
+      get { return propertyID_; }
+      set {
+        propertyID_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetPropertyBaseRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetPropertyBaseRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Path != other.Path) return false;
+      if (PropertyID != other.PropertyID) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Path.Length != 0) hash ^= Path.GetHashCode();
+      if (PropertyID != 0UL) hash ^= PropertyID.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Path.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Path);
+      }
+      if (PropertyID != 0UL) {
+        output.WriteRawTag(16);
+        output.WriteUInt64(PropertyID);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Path.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Path);
+      }
+      if (PropertyID != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(PropertyID);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetPropertyBaseRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Path.Length != 0) {
+        Path = other.Path;
+      }
+      if (other.PropertyID != 0UL) {
+        PropertyID = other.PropertyID;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Path = input.ReadString();
+            break;
+          }
+          case 16: {
+            PropertyID = input.ReadUInt64();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SetPropertyBoolRequest : pb::IMessage<SetPropertyBoolRequest> {
+    private static readonly pb::MessageParser<SetPropertyBoolRequest> _parser = new pb::MessageParser<SetPropertyBoolRequest>(() => new SetPropertyBoolRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetPropertyBoolRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.NodeReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyBoolRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyBoolRequest(SetPropertyBoolRequest other) : this() {
+      base_ = other.base_ != null ? other.base_.Clone() : null;
+      value_ = other.value_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyBoolRequest Clone() {
+      return new SetPropertyBoolRequest(this);
+    }
+
+    /// <summary>Field number for the "base" field.</summary>
+    public const int BaseFieldNumber = 1;
+    private global::Nbrpc.SetPropertyBaseRequest base_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.SetPropertyBaseRequest Base {
+      get { return base_; }
+      set {
+        base_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private bool value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetPropertyBoolRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetPropertyBoolRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Base, other.Base)) return false;
+      if (Value != other.Value) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (base_ != null) hash ^= Base.GetHashCode();
+      if (Value != false) hash ^= Value.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (base_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Base);
+      }
+      if (Value != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (base_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Base);
+      }
+      if (Value != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetPropertyBoolRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.base_ != null) {
+        if (base_ == null) {
+          Base = new global::Nbrpc.SetPropertyBaseRequest();
+        }
+        Base.MergeFrom(other.Base);
+      }
+      if (other.Value != false) {
+        Value = other.Value;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (base_ == null) {
+              Base = new global::Nbrpc.SetPropertyBaseRequest();
+            }
+            input.ReadMessage(Base);
+            break;
+          }
+          case 16: {
+            Value = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SetPropertyInt8Request : pb::IMessage<SetPropertyInt8Request> {
+    private static readonly pb::MessageParser<SetPropertyInt8Request> _parser = new pb::MessageParser<SetPropertyInt8Request>(() => new SetPropertyInt8Request());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetPropertyInt8Request> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.NodeReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyInt8Request() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyInt8Request(SetPropertyInt8Request other) : this() {
+      base_ = other.base_ != null ? other.base_.Clone() : null;
+      value_ = other.value_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyInt8Request Clone() {
+      return new SetPropertyInt8Request(this);
+    }
+
+    /// <summary>Field number for the "base" field.</summary>
+    public const int BaseFieldNumber = 1;
+    private global::Nbrpc.SetPropertyBaseRequest base_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.SetPropertyBaseRequest Base {
+      get { return base_; }
+      set {
+        base_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private int value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetPropertyInt8Request);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetPropertyInt8Request other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Base, other.Base)) return false;
+      if (Value != other.Value) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (base_ != null) hash ^= Base.GetHashCode();
+      if (Value != 0) hash ^= Value.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (base_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Base);
+      }
+      if (Value != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (base_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Base);
+      }
+      if (Value != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Value);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetPropertyInt8Request other) {
+      if (other == null) {
+        return;
+      }
+      if (other.base_ != null) {
+        if (base_ == null) {
+          Base = new global::Nbrpc.SetPropertyBaseRequest();
+        }
+        Base.MergeFrom(other.Base);
+      }
+      if (other.Value != 0) {
+        Value = other.Value;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (base_ == null) {
+              Base = new global::Nbrpc.SetPropertyBaseRequest();
+            }
+            input.ReadMessage(Base);
+            break;
+          }
+          case 16: {
+            Value = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SetPropertyInt16Request : pb::IMessage<SetPropertyInt16Request> {
+    private static readonly pb::MessageParser<SetPropertyInt16Request> _parser = new pb::MessageParser<SetPropertyInt16Request>(() => new SetPropertyInt16Request());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetPropertyInt16Request> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.NodeReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyInt16Request() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyInt16Request(SetPropertyInt16Request other) : this() {
+      base_ = other.base_ != null ? other.base_.Clone() : null;
+      value_ = other.value_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyInt16Request Clone() {
+      return new SetPropertyInt16Request(this);
+    }
+
+    /// <summary>Field number for the "base" field.</summary>
+    public const int BaseFieldNumber = 1;
+    private global::Nbrpc.SetPropertyBaseRequest base_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.SetPropertyBaseRequest Base {
+      get { return base_; }
+      set {
+        base_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private int value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetPropertyInt16Request);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetPropertyInt16Request other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Base, other.Base)) return false;
+      if (Value != other.Value) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (base_ != null) hash ^= Base.GetHashCode();
+      if (Value != 0) hash ^= Value.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (base_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Base);
+      }
+      if (Value != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (base_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Base);
+      }
+      if (Value != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Value);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetPropertyInt16Request other) {
+      if (other == null) {
+        return;
+      }
+      if (other.base_ != null) {
+        if (base_ == null) {
+          Base = new global::Nbrpc.SetPropertyBaseRequest();
+        }
+        Base.MergeFrom(other.Base);
+      }
+      if (other.Value != 0) {
+        Value = other.Value;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (base_ == null) {
+              Base = new global::Nbrpc.SetPropertyBaseRequest();
+            }
+            input.ReadMessage(Base);
+            break;
+          }
+          case 16: {
+            Value = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SetPropertyInt32Request : pb::IMessage<SetPropertyInt32Request> {
+    private static readonly pb::MessageParser<SetPropertyInt32Request> _parser = new pb::MessageParser<SetPropertyInt32Request>(() => new SetPropertyInt32Request());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetPropertyInt32Request> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.NodeReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyInt32Request() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyInt32Request(SetPropertyInt32Request other) : this() {
+      base_ = other.base_ != null ? other.base_.Clone() : null;
+      value_ = other.value_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyInt32Request Clone() {
+      return new SetPropertyInt32Request(this);
+    }
+
+    /// <summary>Field number for the "base" field.</summary>
+    public const int BaseFieldNumber = 1;
+    private global::Nbrpc.SetPropertyBaseRequest base_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.SetPropertyBaseRequest Base {
+      get { return base_; }
+      set {
+        base_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private int value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetPropertyInt32Request);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetPropertyInt32Request other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Base, other.Base)) return false;
+      if (Value != other.Value) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (base_ != null) hash ^= Base.GetHashCode();
+      if (Value != 0) hash ^= Value.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (base_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Base);
+      }
+      if (Value != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (base_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Base);
+      }
+      if (Value != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Value);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetPropertyInt32Request other) {
+      if (other == null) {
+        return;
+      }
+      if (other.base_ != null) {
+        if (base_ == null) {
+          Base = new global::Nbrpc.SetPropertyBaseRequest();
+        }
+        Base.MergeFrom(other.Base);
+      }
+      if (other.Value != 0) {
+        Value = other.Value;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (base_ == null) {
+              Base = new global::Nbrpc.SetPropertyBaseRequest();
+            }
+            input.ReadMessage(Base);
+            break;
+          }
+          case 16: {
+            Value = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SetPropertyInt64Request : pb::IMessage<SetPropertyInt64Request> {
+    private static readonly pb::MessageParser<SetPropertyInt64Request> _parser = new pb::MessageParser<SetPropertyInt64Request>(() => new SetPropertyInt64Request());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetPropertyInt64Request> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.NodeReflection.Descriptor.MessageTypes[8]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyInt64Request() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyInt64Request(SetPropertyInt64Request other) : this() {
+      base_ = other.base_ != null ? other.base_.Clone() : null;
+      value_ = other.value_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyInt64Request Clone() {
+      return new SetPropertyInt64Request(this);
+    }
+
+    /// <summary>Field number for the "base" field.</summary>
+    public const int BaseFieldNumber = 1;
+    private global::Nbrpc.SetPropertyBaseRequest base_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.SetPropertyBaseRequest Base {
+      get { return base_; }
+      set {
+        base_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private long value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetPropertyInt64Request);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetPropertyInt64Request other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Base, other.Base)) return false;
+      if (Value != other.Value) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (base_ != null) hash ^= Base.GetHashCode();
+      if (Value != 0L) hash ^= Value.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (base_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Base);
+      }
+      if (Value != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (base_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Base);
+      }
+      if (Value != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Value);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetPropertyInt64Request other) {
+      if (other == null) {
+        return;
+      }
+      if (other.base_ != null) {
+        if (base_ == null) {
+          Base = new global::Nbrpc.SetPropertyBaseRequest();
+        }
+        Base.MergeFrom(other.Base);
+      }
+      if (other.Value != 0L) {
+        Value = other.Value;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (base_ == null) {
+              Base = new global::Nbrpc.SetPropertyBaseRequest();
+            }
+            input.ReadMessage(Base);
+            break;
+          }
+          case 16: {
+            Value = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SetPropertyUInt8Request : pb::IMessage<SetPropertyUInt8Request> {
+    private static readonly pb::MessageParser<SetPropertyUInt8Request> _parser = new pb::MessageParser<SetPropertyUInt8Request>(() => new SetPropertyUInt8Request());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetPropertyUInt8Request> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.NodeReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyUInt8Request() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyUInt8Request(SetPropertyUInt8Request other) : this() {
+      base_ = other.base_ != null ? other.base_.Clone() : null;
+      value_ = other.value_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyUInt8Request Clone() {
+      return new SetPropertyUInt8Request(this);
+    }
+
+    /// <summary>Field number for the "base" field.</summary>
+    public const int BaseFieldNumber = 1;
+    private global::Nbrpc.SetPropertyBaseRequest base_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.SetPropertyBaseRequest Base {
+      get { return base_; }
+      set {
+        base_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private uint value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public uint Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetPropertyUInt8Request);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetPropertyUInt8Request other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Base, other.Base)) return false;
+      if (Value != other.Value) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (base_ != null) hash ^= Base.GetHashCode();
+      if (Value != 0) hash ^= Value.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (base_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Base);
+      }
+      if (Value != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (base_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Base);
+      }
+      if (Value != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Value);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetPropertyUInt8Request other) {
+      if (other == null) {
+        return;
+      }
+      if (other.base_ != null) {
+        if (base_ == null) {
+          Base = new global::Nbrpc.SetPropertyBaseRequest();
+        }
+        Base.MergeFrom(other.Base);
+      }
+      if (other.Value != 0) {
+        Value = other.Value;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (base_ == null) {
+              Base = new global::Nbrpc.SetPropertyBaseRequest();
+            }
+            input.ReadMessage(Base);
+            break;
+          }
+          case 16: {
+            Value = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SetPropertyUInt16Request : pb::IMessage<SetPropertyUInt16Request> {
+    private static readonly pb::MessageParser<SetPropertyUInt16Request> _parser = new pb::MessageParser<SetPropertyUInt16Request>(() => new SetPropertyUInt16Request());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetPropertyUInt16Request> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.NodeReflection.Descriptor.MessageTypes[10]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyUInt16Request() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyUInt16Request(SetPropertyUInt16Request other) : this() {
+      base_ = other.base_ != null ? other.base_.Clone() : null;
+      value_ = other.value_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyUInt16Request Clone() {
+      return new SetPropertyUInt16Request(this);
+    }
+
+    /// <summary>Field number for the "base" field.</summary>
+    public const int BaseFieldNumber = 1;
+    private global::Nbrpc.SetPropertyBaseRequest base_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.SetPropertyBaseRequest Base {
+      get { return base_; }
+      set {
+        base_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private uint value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public uint Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetPropertyUInt16Request);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetPropertyUInt16Request other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Base, other.Base)) return false;
+      if (Value != other.Value) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (base_ != null) hash ^= Base.GetHashCode();
+      if (Value != 0) hash ^= Value.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (base_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Base);
+      }
+      if (Value != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (base_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Base);
+      }
+      if (Value != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Value);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetPropertyUInt16Request other) {
+      if (other == null) {
+        return;
+      }
+      if (other.base_ != null) {
+        if (base_ == null) {
+          Base = new global::Nbrpc.SetPropertyBaseRequest();
+        }
+        Base.MergeFrom(other.Base);
+      }
+      if (other.Value != 0) {
+        Value = other.Value;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (base_ == null) {
+              Base = new global::Nbrpc.SetPropertyBaseRequest();
+            }
+            input.ReadMessage(Base);
+            break;
+          }
+          case 16: {
+            Value = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SetPropertyUInt32Request : pb::IMessage<SetPropertyUInt32Request> {
+    private static readonly pb::MessageParser<SetPropertyUInt32Request> _parser = new pb::MessageParser<SetPropertyUInt32Request>(() => new SetPropertyUInt32Request());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetPropertyUInt32Request> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.NodeReflection.Descriptor.MessageTypes[11]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyUInt32Request() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyUInt32Request(SetPropertyUInt32Request other) : this() {
+      base_ = other.base_ != null ? other.base_.Clone() : null;
+      value_ = other.value_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyUInt32Request Clone() {
+      return new SetPropertyUInt32Request(this);
+    }
+
+    /// <summary>Field number for the "base" field.</summary>
+    public const int BaseFieldNumber = 1;
+    private global::Nbrpc.SetPropertyBaseRequest base_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.SetPropertyBaseRequest Base {
+      get { return base_; }
+      set {
+        base_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private uint value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public uint Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetPropertyUInt32Request);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetPropertyUInt32Request other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Base, other.Base)) return false;
+      if (Value != other.Value) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (base_ != null) hash ^= Base.GetHashCode();
+      if (Value != 0) hash ^= Value.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (base_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Base);
+      }
+      if (Value != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (base_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Base);
+      }
+      if (Value != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Value);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetPropertyUInt32Request other) {
+      if (other == null) {
+        return;
+      }
+      if (other.base_ != null) {
+        if (base_ == null) {
+          Base = new global::Nbrpc.SetPropertyBaseRequest();
+        }
+        Base.MergeFrom(other.Base);
+      }
+      if (other.Value != 0) {
+        Value = other.Value;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (base_ == null) {
+              Base = new global::Nbrpc.SetPropertyBaseRequest();
+            }
+            input.ReadMessage(Base);
+            break;
+          }
+          case 16: {
+            Value = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SetPropertyUInt64Request : pb::IMessage<SetPropertyUInt64Request> {
+    private static readonly pb::MessageParser<SetPropertyUInt64Request> _parser = new pb::MessageParser<SetPropertyUInt64Request>(() => new SetPropertyUInt64Request());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetPropertyUInt64Request> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.NodeReflection.Descriptor.MessageTypes[12]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyUInt64Request() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyUInt64Request(SetPropertyUInt64Request other) : this() {
+      base_ = other.base_ != null ? other.base_.Clone() : null;
+      value_ = other.value_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyUInt64Request Clone() {
+      return new SetPropertyUInt64Request(this);
+    }
+
+    /// <summary>Field number for the "base" field.</summary>
+    public const int BaseFieldNumber = 1;
+    private global::Nbrpc.SetPropertyBaseRequest base_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.SetPropertyBaseRequest Base {
+      get { return base_; }
+      set {
+        base_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private ulong value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ulong Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetPropertyUInt64Request);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetPropertyUInt64Request other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Base, other.Base)) return false;
+      if (Value != other.Value) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (base_ != null) hash ^= Base.GetHashCode();
+      if (Value != 0UL) hash ^= Value.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (base_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Base);
+      }
+      if (Value != 0UL) {
+        output.WriteRawTag(16);
+        output.WriteUInt64(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (base_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Base);
+      }
+      if (Value != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Value);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetPropertyUInt64Request other) {
+      if (other == null) {
+        return;
+      }
+      if (other.base_ != null) {
+        if (base_ == null) {
+          Base = new global::Nbrpc.SetPropertyBaseRequest();
+        }
+        Base.MergeFrom(other.Base);
+      }
+      if (other.Value != 0UL) {
+        Value = other.Value;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (base_ == null) {
+              Base = new global::Nbrpc.SetPropertyBaseRequest();
+            }
+            input.ReadMessage(Base);
+            break;
+          }
+          case 16: {
+            Value = input.ReadUInt64();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SetPropertyFloatRequest : pb::IMessage<SetPropertyFloatRequest> {
+    private static readonly pb::MessageParser<SetPropertyFloatRequest> _parser = new pb::MessageParser<SetPropertyFloatRequest>(() => new SetPropertyFloatRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetPropertyFloatRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.NodeReflection.Descriptor.MessageTypes[13]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyFloatRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyFloatRequest(SetPropertyFloatRequest other) : this() {
+      base_ = other.base_ != null ? other.base_.Clone() : null;
+      value_ = other.value_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyFloatRequest Clone() {
+      return new SetPropertyFloatRequest(this);
+    }
+
+    /// <summary>Field number for the "base" field.</summary>
+    public const int BaseFieldNumber = 1;
+    private global::Nbrpc.SetPropertyBaseRequest base_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.SetPropertyBaseRequest Base {
+      get { return base_; }
+      set {
+        base_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private float value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetPropertyFloatRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetPropertyFloatRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Base, other.Base)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Value, other.Value)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (base_ != null) hash ^= Base.GetHashCode();
+      if (Value != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Value);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (base_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Base);
+      }
+      if (Value != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (base_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Base);
+      }
+      if (Value != 0F) {
+        size += 1 + 4;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetPropertyFloatRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.base_ != null) {
+        if (base_ == null) {
+          Base = new global::Nbrpc.SetPropertyBaseRequest();
+        }
+        Base.MergeFrom(other.Base);
+      }
+      if (other.Value != 0F) {
+        Value = other.Value;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (base_ == null) {
+              Base = new global::Nbrpc.SetPropertyBaseRequest();
+            }
+            input.ReadMessage(Base);
+            break;
+          }
+          case 21: {
+            Value = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SetPropertyDoubleRequest : pb::IMessage<SetPropertyDoubleRequest> {
+    private static readonly pb::MessageParser<SetPropertyDoubleRequest> _parser = new pb::MessageParser<SetPropertyDoubleRequest>(() => new SetPropertyDoubleRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetPropertyDoubleRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.NodeReflection.Descriptor.MessageTypes[14]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyDoubleRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyDoubleRequest(SetPropertyDoubleRequest other) : this() {
+      base_ = other.base_ != null ? other.base_.Clone() : null;
+      value_ = other.value_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyDoubleRequest Clone() {
+      return new SetPropertyDoubleRequest(this);
+    }
+
+    /// <summary>Field number for the "base" field.</summary>
+    public const int BaseFieldNumber = 1;
+    private global::Nbrpc.SetPropertyBaseRequest base_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.SetPropertyBaseRequest Base {
+      get { return base_; }
+      set {
+        base_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private double value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetPropertyDoubleRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetPropertyDoubleRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Base, other.Base)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Value, other.Value)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (base_ != null) hash ^= Base.GetHashCode();
+      if (Value != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Value);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (base_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Base);
+      }
+      if (Value != 0D) {
+        output.WriteRawTag(17);
+        output.WriteDouble(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (base_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Base);
+      }
+      if (Value != 0D) {
+        size += 1 + 8;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetPropertyDoubleRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.base_ != null) {
+        if (base_ == null) {
+          Base = new global::Nbrpc.SetPropertyBaseRequest();
+        }
+        Base.MergeFrom(other.Base);
+      }
+      if (other.Value != 0D) {
+        Value = other.Value;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (base_ == null) {
+              Base = new global::Nbrpc.SetPropertyBaseRequest();
+            }
+            input.ReadMessage(Base);
+            break;
+          }
+          case 17: {
+            Value = input.ReadDouble();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SetPropertyStringRequest : pb::IMessage<SetPropertyStringRequest> {
+    private static readonly pb::MessageParser<SetPropertyStringRequest> _parser = new pb::MessageParser<SetPropertyStringRequest>(() => new SetPropertyStringRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetPropertyStringRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.NodeReflection.Descriptor.MessageTypes[15]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyStringRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyStringRequest(SetPropertyStringRequest other) : this() {
+      base_ = other.base_ != null ? other.base_.Clone() : null;
+      value_ = other.value_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyStringRequest Clone() {
+      return new SetPropertyStringRequest(this);
+    }
+
+    /// <summary>Field number for the "base" field.</summary>
+    public const int BaseFieldNumber = 1;
+    private global::Nbrpc.SetPropertyBaseRequest base_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.SetPropertyBaseRequest Base {
+      get { return base_; }
+      set {
+        base_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private string value_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Value {
+      get { return value_; }
+      set {
+        value_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetPropertyStringRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetPropertyStringRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Base, other.Base)) return false;
+      if (Value != other.Value) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (base_ != null) hash ^= Base.GetHashCode();
+      if (Value.Length != 0) hash ^= Value.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (base_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Base);
+      }
+      if (Value.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (base_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Base);
+      }
+      if (Value.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Value);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetPropertyStringRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.base_ != null) {
+        if (base_ == null) {
+          Base = new global::Nbrpc.SetPropertyBaseRequest();
+        }
+        Base.MergeFrom(other.Base);
+      }
+      if (other.Value.Length != 0) {
+        Value = other.Value;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (base_ == null) {
+              Base = new global::Nbrpc.SetPropertyBaseRequest();
+            }
+            input.ReadMessage(Base);
+            break;
+          }
+          case 18: {
+            Value = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SetPropertyVec2Request : pb::IMessage<SetPropertyVec2Request> {
+    private static readonly pb::MessageParser<SetPropertyVec2Request> _parser = new pb::MessageParser<SetPropertyVec2Request>(() => new SetPropertyVec2Request());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetPropertyVec2Request> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.NodeReflection.Descriptor.MessageTypes[16]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyVec2Request() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyVec2Request(SetPropertyVec2Request other) : this() {
+      base_ = other.base_ != null ? other.base_.Clone() : null;
+      value_ = other.value_ != null ? other.value_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyVec2Request Clone() {
+      return new SetPropertyVec2Request(this);
+    }
+
+    /// <summary>Field number for the "base" field.</summary>
+    public const int BaseFieldNumber = 1;
+    private global::Nbrpc.SetPropertyBaseRequest base_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.SetPropertyBaseRequest Base {
+      get { return base_; }
+      set {
+        base_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private global::Nbrpc.Vec2 value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.Vec2 Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetPropertyVec2Request);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetPropertyVec2Request other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Base, other.Base)) return false;
+      if (!object.Equals(Value, other.Value)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (base_ != null) hash ^= Base.GetHashCode();
+      if (value_ != null) hash ^= Value.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (base_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Base);
+      }
+      if (value_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (base_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Base);
+      }
+      if (value_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Value);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetPropertyVec2Request other) {
+      if (other == null) {
+        return;
+      }
+      if (other.base_ != null) {
+        if (base_ == null) {
+          Base = new global::Nbrpc.SetPropertyBaseRequest();
+        }
+        Base.MergeFrom(other.Base);
+      }
+      if (other.value_ != null) {
+        if (value_ == null) {
+          Value = new global::Nbrpc.Vec2();
+        }
+        Value.MergeFrom(other.Value);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (base_ == null) {
+              Base = new global::Nbrpc.SetPropertyBaseRequest();
+            }
+            input.ReadMessage(Base);
+            break;
+          }
+          case 18: {
+            if (value_ == null) {
+              Value = new global::Nbrpc.Vec2();
+            }
+            input.ReadMessage(Value);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SetPropertyVec3Request : pb::IMessage<SetPropertyVec3Request> {
+    private static readonly pb::MessageParser<SetPropertyVec3Request> _parser = new pb::MessageParser<SetPropertyVec3Request>(() => new SetPropertyVec3Request());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetPropertyVec3Request> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.NodeReflection.Descriptor.MessageTypes[17]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyVec3Request() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyVec3Request(SetPropertyVec3Request other) : this() {
+      base_ = other.base_ != null ? other.base_.Clone() : null;
+      value_ = other.value_ != null ? other.value_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyVec3Request Clone() {
+      return new SetPropertyVec3Request(this);
+    }
+
+    /// <summary>Field number for the "base" field.</summary>
+    public const int BaseFieldNumber = 1;
+    private global::Nbrpc.SetPropertyBaseRequest base_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.SetPropertyBaseRequest Base {
+      get { return base_; }
+      set {
+        base_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private global::Nbrpc.Vec3 value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.Vec3 Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetPropertyVec3Request);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetPropertyVec3Request other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Base, other.Base)) return false;
+      if (!object.Equals(Value, other.Value)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (base_ != null) hash ^= Base.GetHashCode();
+      if (value_ != null) hash ^= Value.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (base_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Base);
+      }
+      if (value_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (base_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Base);
+      }
+      if (value_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Value);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetPropertyVec3Request other) {
+      if (other == null) {
+        return;
+      }
+      if (other.base_ != null) {
+        if (base_ == null) {
+          Base = new global::Nbrpc.SetPropertyBaseRequest();
+        }
+        Base.MergeFrom(other.Base);
+      }
+      if (other.value_ != null) {
+        if (value_ == null) {
+          Value = new global::Nbrpc.Vec3();
+        }
+        Value.MergeFrom(other.Value);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (base_ == null) {
+              Base = new global::Nbrpc.SetPropertyBaseRequest();
+            }
+            input.ReadMessage(Base);
+            break;
+          }
+          case 18: {
+            if (value_ == null) {
+              Value = new global::Nbrpc.Vec3();
+            }
+            input.ReadMessage(Value);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SetPropertyVec4Request : pb::IMessage<SetPropertyVec4Request> {
+    private static readonly pb::MessageParser<SetPropertyVec4Request> _parser = new pb::MessageParser<SetPropertyVec4Request>(() => new SetPropertyVec4Request());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetPropertyVec4Request> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.NodeReflection.Descriptor.MessageTypes[18]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyVec4Request() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyVec4Request(SetPropertyVec4Request other) : this() {
+      base_ = other.base_ != null ? other.base_.Clone() : null;
+      value_ = other.value_ != null ? other.value_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyVec4Request Clone() {
+      return new SetPropertyVec4Request(this);
+    }
+
+    /// <summary>Field number for the "base" field.</summary>
+    public const int BaseFieldNumber = 1;
+    private global::Nbrpc.SetPropertyBaseRequest base_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.SetPropertyBaseRequest Base {
+      get { return base_; }
+      set {
+        base_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private global::Nbrpc.Vec4 value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.Vec4 Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetPropertyVec4Request);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetPropertyVec4Request other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Base, other.Base)) return false;
+      if (!object.Equals(Value, other.Value)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (base_ != null) hash ^= Base.GetHashCode();
+      if (value_ != null) hash ^= Value.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (base_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Base);
+      }
+      if (value_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (base_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Base);
+      }
+      if (value_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Value);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetPropertyVec4Request other) {
+      if (other == null) {
+        return;
+      }
+      if (other.base_ != null) {
+        if (base_ == null) {
+          Base = new global::Nbrpc.SetPropertyBaseRequest();
+        }
+        Base.MergeFrom(other.Base);
+      }
+      if (other.value_ != null) {
+        if (value_ == null) {
+          Value = new global::Nbrpc.Vec4();
+        }
+        Value.MergeFrom(other.Value);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (base_ == null) {
+              Base = new global::Nbrpc.SetPropertyBaseRequest();
+            }
+            input.ReadMessage(Base);
+            break;
+          }
+          case 18: {
+            if (value_ == null) {
+              Value = new global::Nbrpc.Vec4();
+            }
+            input.ReadMessage(Value);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SetPropertyColorRequest : pb::IMessage<SetPropertyColorRequest> {
+    private static readonly pb::MessageParser<SetPropertyColorRequest> _parser = new pb::MessageParser<SetPropertyColorRequest>(() => new SetPropertyColorRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetPropertyColorRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.NodeReflection.Descriptor.MessageTypes[19]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyColorRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyColorRequest(SetPropertyColorRequest other) : this() {
+      base_ = other.base_ != null ? other.base_.Clone() : null;
+      value_ = other.value_ != null ? other.value_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyColorRequest Clone() {
+      return new SetPropertyColorRequest(this);
+    }
+
+    /// <summary>Field number for the "base" field.</summary>
+    public const int BaseFieldNumber = 1;
+    private global::Nbrpc.SetPropertyBaseRequest base_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.SetPropertyBaseRequest Base {
+      get { return base_; }
+      set {
+        base_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private global::Nbrpc.Color value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.Color Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetPropertyColorRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetPropertyColorRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Base, other.Base)) return false;
+      if (!object.Equals(Value, other.Value)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (base_ != null) hash ^= Base.GetHashCode();
+      if (value_ != null) hash ^= Value.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (base_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Base);
+      }
+      if (value_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (base_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Base);
+      }
+      if (value_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Value);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetPropertyColorRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.base_ != null) {
+        if (base_ == null) {
+          Base = new global::Nbrpc.SetPropertyBaseRequest();
+        }
+        Base.MergeFrom(other.Base);
+      }
+      if (other.value_ != null) {
+        if (value_ == null) {
+          Value = new global::Nbrpc.Color();
+        }
+        Value.MergeFrom(other.Value);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (base_ == null) {
+              Base = new global::Nbrpc.SetPropertyBaseRequest();
+            }
+            input.ReadMessage(Base);
+            break;
+          }
+          case 18: {
+            if (value_ == null) {
+              Value = new global::Nbrpc.Color();
+            }
+            input.ReadMessage(Value);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SetPropertyDateTimeRequest : pb::IMessage<SetPropertyDateTimeRequest> {
+    private static readonly pb::MessageParser<SetPropertyDateTimeRequest> _parser = new pb::MessageParser<SetPropertyDateTimeRequest>(() => new SetPropertyDateTimeRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetPropertyDateTimeRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.NodeReflection.Descriptor.MessageTypes[20]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyDateTimeRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyDateTimeRequest(SetPropertyDateTimeRequest other) : this() {
+      base_ = other.base_ != null ? other.base_.Clone() : null;
+      value_ = other.value_ != null ? other.value_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyDateTimeRequest Clone() {
+      return new SetPropertyDateTimeRequest(this);
+    }
+
+    /// <summary>Field number for the "base" field.</summary>
+    public const int BaseFieldNumber = 1;
+    private global::Nbrpc.SetPropertyBaseRequest base_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.SetPropertyBaseRequest Base {
+      get { return base_; }
+      set {
+        base_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private global::Nbrpc.DateTime value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.DateTime Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetPropertyDateTimeRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetPropertyDateTimeRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Base, other.Base)) return false;
+      if (!object.Equals(Value, other.Value)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (base_ != null) hash ^= Base.GetHashCode();
+      if (value_ != null) hash ^= Value.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (base_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Base);
+      }
+      if (value_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (base_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Base);
+      }
+      if (value_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Value);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetPropertyDateTimeRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.base_ != null) {
+        if (base_ == null) {
+          Base = new global::Nbrpc.SetPropertyBaseRequest();
+        }
+        Base.MergeFrom(other.Base);
+      }
+      if (other.value_ != null) {
+        if (value_ == null) {
+          Value = new global::Nbrpc.DateTime();
+        }
+        Value.MergeFrom(other.Value);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (base_ == null) {
+              Base = new global::Nbrpc.SetPropertyBaseRequest();
+            }
+            input.ReadMessage(Base);
+            break;
+          }
+          case 18: {
+            if (value_ == null) {
+              Value = new global::Nbrpc.DateTime();
+            }
+            input.ReadMessage(Value);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SetPropertyTimeSpanRequest : pb::IMessage<SetPropertyTimeSpanRequest> {
+    private static readonly pb::MessageParser<SetPropertyTimeSpanRequest> _parser = new pb::MessageParser<SetPropertyTimeSpanRequest>(() => new SetPropertyTimeSpanRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetPropertyTimeSpanRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.NodeReflection.Descriptor.MessageTypes[21]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyTimeSpanRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyTimeSpanRequest(SetPropertyTimeSpanRequest other) : this() {
+      base_ = other.base_ != null ? other.base_.Clone() : null;
+      value_ = other.value_ != null ? other.value_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyTimeSpanRequest Clone() {
+      return new SetPropertyTimeSpanRequest(this);
+    }
+
+    /// <summary>Field number for the "base" field.</summary>
+    public const int BaseFieldNumber = 1;
+    private global::Nbrpc.SetPropertyBaseRequest base_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.SetPropertyBaseRequest Base {
+      get { return base_; }
+      set {
+        base_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private global::Nbrpc.TimeSpan value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.TimeSpan Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetPropertyTimeSpanRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetPropertyTimeSpanRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Base, other.Base)) return false;
+      if (!object.Equals(Value, other.Value)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (base_ != null) hash ^= Base.GetHashCode();
+      if (value_ != null) hash ^= Value.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (base_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Base);
+      }
+      if (value_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (base_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Base);
+      }
+      if (value_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Value);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetPropertyTimeSpanRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.base_ != null) {
+        if (base_ == null) {
+          Base = new global::Nbrpc.SetPropertyBaseRequest();
+        }
+        Base.MergeFrom(other.Base);
+      }
+      if (other.value_ != null) {
+        if (value_ == null) {
+          Value = new global::Nbrpc.TimeSpan();
+        }
+        Value.MergeFrom(other.Value);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (base_ == null) {
+              Base = new global::Nbrpc.SetPropertyBaseRequest();
+            }
+            input.ReadMessage(Base);
+            break;
+          }
+          case 18: {
+            if (value_ == null) {
+              Value = new global::Nbrpc.TimeSpan();
+            }
+            input.ReadMessage(Value);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SetPropertyThicknessRequest : pb::IMessage<SetPropertyThicknessRequest> {
+    private static readonly pb::MessageParser<SetPropertyThicknessRequest> _parser = new pb::MessageParser<SetPropertyThicknessRequest>(() => new SetPropertyThicknessRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetPropertyThicknessRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.NodeReflection.Descriptor.MessageTypes[22]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyThicknessRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyThicknessRequest(SetPropertyThicknessRequest other) : this() {
+      base_ = other.base_ != null ? other.base_.Clone() : null;
+      value_ = other.value_ != null ? other.value_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyThicknessRequest Clone() {
+      return new SetPropertyThicknessRequest(this);
+    }
+
+    /// <summary>Field number for the "base" field.</summary>
+    public const int BaseFieldNumber = 1;
+    private global::Nbrpc.SetPropertyBaseRequest base_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.SetPropertyBaseRequest Base {
+      get { return base_; }
+      set {
+        base_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private global::Nbrpc.Thickness value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.Thickness Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetPropertyThicknessRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetPropertyThicknessRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Base, other.Base)) return false;
+      if (!object.Equals(Value, other.Value)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (base_ != null) hash ^= Base.GetHashCode();
+      if (value_ != null) hash ^= Value.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (base_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Base);
+      }
+      if (value_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (base_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Base);
+      }
+      if (value_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Value);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetPropertyThicknessRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.base_ != null) {
+        if (base_ == null) {
+          Base = new global::Nbrpc.SetPropertyBaseRequest();
+        }
+        Base.MergeFrom(other.Base);
+      }
+      if (other.value_ != null) {
+        if (value_ == null) {
+          Value = new global::Nbrpc.Thickness();
+        }
+        Value.MergeFrom(other.Value);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (base_ == null) {
+              Base = new global::Nbrpc.SetPropertyBaseRequest();
+            }
+            input.ReadMessage(Base);
+            break;
+          }
+          case 18: {
+            if (value_ == null) {
+              Value = new global::Nbrpc.Thickness();
+            }
+            input.ReadMessage(Value);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SetPropertyEnumRequest : pb::IMessage<SetPropertyEnumRequest> {
+    private static readonly pb::MessageParser<SetPropertyEnumRequest> _parser = new pb::MessageParser<SetPropertyEnumRequest>(() => new SetPropertyEnumRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetPropertyEnumRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.NodeReflection.Descriptor.MessageTypes[23]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyEnumRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyEnumRequest(SetPropertyEnumRequest other) : this() {
+      base_ = other.base_ != null ? other.base_.Clone() : null;
+      value_ = other.value_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyEnumRequest Clone() {
+      return new SetPropertyEnumRequest(this);
+    }
+
+    /// <summary>Field number for the "base" field.</summary>
+    public const int BaseFieldNumber = 1;
+    private global::Nbrpc.SetPropertyBaseRequest base_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.SetPropertyBaseRequest Base {
+      get { return base_; }
+      set {
+        base_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private int value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetPropertyEnumRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetPropertyEnumRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Base, other.Base)) return false;
+      if (Value != other.Value) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (base_ != null) hash ^= Base.GetHashCode();
+      if (Value != 0) hash ^= Value.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (base_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Base);
+      }
+      if (Value != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (base_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Base);
+      }
+      if (Value != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Value);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetPropertyEnumRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.base_ != null) {
+        if (base_ == null) {
+          Base = new global::Nbrpc.SetPropertyBaseRequest();
+        }
+        Base.MergeFrom(other.Base);
+      }
+      if (other.Value != 0) {
+        Value = other.Value;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (base_ == null) {
+              Base = new global::Nbrpc.SetPropertyBaseRequest();
+            }
+            input.ReadMessage(Base);
+            break;
+          }
+          case 16: {
+            Value = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SetPropertySolidColorBrushRequest : pb::IMessage<SetPropertySolidColorBrushRequest> {
+    private static readonly pb::MessageParser<SetPropertySolidColorBrushRequest> _parser = new pb::MessageParser<SetPropertySolidColorBrushRequest>(() => new SetPropertySolidColorBrushRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetPropertySolidColorBrushRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.NodeReflection.Descriptor.MessageTypes[24]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertySolidColorBrushRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertySolidColorBrushRequest(SetPropertySolidColorBrushRequest other) : this() {
+      base_ = other.base_ != null ? other.base_.Clone() : null;
+      value_ = other.value_ != null ? other.value_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertySolidColorBrushRequest Clone() {
+      return new SetPropertySolidColorBrushRequest(this);
+    }
+
+    /// <summary>Field number for the "base" field.</summary>
+    public const int BaseFieldNumber = 1;
+    private global::Nbrpc.SetPropertyBaseRequest base_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.SetPropertyBaseRequest Base {
+      get { return base_; }
+      set {
+        base_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private global::Nbrpc.Color value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.Color Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetPropertySolidColorBrushRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetPropertySolidColorBrushRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Base, other.Base)) return false;
+      if (!object.Equals(Value, other.Value)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (base_ != null) hash ^= Base.GetHashCode();
+      if (value_ != null) hash ^= Value.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (base_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Base);
+      }
+      if (value_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (base_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Base);
+      }
+      if (value_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Value);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetPropertySolidColorBrushRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.base_ != null) {
+        if (base_ == null) {
+          Base = new global::Nbrpc.SetPropertyBaseRequest();
+        }
+        Base.MergeFrom(other.Base);
+      }
+      if (other.value_ != null) {
+        if (value_ == null) {
+          Value = new global::Nbrpc.Color();
+        }
+        Value.MergeFrom(other.Value);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (base_ == null) {
+              Base = new global::Nbrpc.SetPropertyBaseRequest();
+            }
+            input.ReadMessage(Base);
+            break;
+          }
+          case 18: {
+            if (value_ == null) {
+              Value = new global::Nbrpc.Color();
+            }
+            input.ReadMessage(Value);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SetPropertyImageBrushRequest : pb::IMessage<SetPropertyImageBrushRequest> {
+    private static readonly pb::MessageParser<SetPropertyImageBrushRequest> _parser = new pb::MessageParser<SetPropertyImageBrushRequest>(() => new SetPropertyImageBrushRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetPropertyImageBrushRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.NodeReflection.Descriptor.MessageTypes[25]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyImageBrushRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyImageBrushRequest(SetPropertyImageBrushRequest other) : this() {
+      base_ = other.base_ != null ? other.base_.Clone() : null;
+      value_ = other.value_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyImageBrushRequest Clone() {
+      return new SetPropertyImageBrushRequest(this);
+    }
+
+    /// <summary>Field number for the "base" field.</summary>
+    public const int BaseFieldNumber = 1;
+    private global::Nbrpc.SetPropertyBaseRequest base_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.SetPropertyBaseRequest Base {
+      get { return base_; }
+      set {
+        base_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private string value_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Value {
+      get { return value_; }
+      set {
+        value_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetPropertyImageBrushRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetPropertyImageBrushRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Base, other.Base)) return false;
+      if (Value != other.Value) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (base_ != null) hash ^= Base.GetHashCode();
+      if (Value.Length != 0) hash ^= Value.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (base_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Base);
+      }
+      if (Value.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (base_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Base);
+      }
+      if (Value.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Value);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetPropertyImageBrushRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.base_ != null) {
+        if (base_ == null) {
+          Base = new global::Nbrpc.SetPropertyBaseRequest();
+        }
+        Base.MergeFrom(other.Base);
+      }
+      if (other.Value.Length != 0) {
+        Value = other.Value;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (base_ == null) {
+              Base = new global::Nbrpc.SetPropertyBaseRequest();
+            }
+            input.ReadMessage(Base);
+            break;
+          }
+          case 18: {
+            Value = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SetPropertyLinearGradientBrushRequest : pb::IMessage<SetPropertyLinearGradientBrushRequest> {
+    private static readonly pb::MessageParser<SetPropertyLinearGradientBrushRequest> _parser = new pb::MessageParser<SetPropertyLinearGradientBrushRequest>(() => new SetPropertyLinearGradientBrushRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetPropertyLinearGradientBrushRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Nbrpc.NodeReflection.Descriptor.MessageTypes[26]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyLinearGradientBrushRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyLinearGradientBrushRequest(SetPropertyLinearGradientBrushRequest other) : this() {
+      base_ = other.base_ != null ? other.base_.Clone() : null;
+      value_ = other.value_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetPropertyLinearGradientBrushRequest Clone() {
+      return new SetPropertyLinearGradientBrushRequest(this);
+    }
+
+    /// <summary>Field number for the "base" field.</summary>
+    public const int BaseFieldNumber = 1;
+    private global::Nbrpc.SetPropertyBaseRequest base_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Nbrpc.SetPropertyBaseRequest Base {
+      get { return base_; }
+      set {
+        base_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private int value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetPropertyLinearGradientBrushRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetPropertyLinearGradientBrushRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Base, other.Base)) return false;
+      if (Value != other.Value) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (base_ != null) hash ^= Base.GetHashCode();
+      if (Value != 0) hash ^= Value.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (base_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Base);
+      }
+      if (Value != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (base_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Base);
+      }
+      if (Value != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Value);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetPropertyLinearGradientBrushRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.base_ != null) {
+        if (base_ == null) {
+          Base = new global::Nbrpc.SetPropertyBaseRequest();
+        }
+        Base.MergeFrom(other.Base);
+      }
+      if (other.Value != 0) {
+        Value = other.Value;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (base_ == null) {
+              Base = new global::Nbrpc.SetPropertyBaseRequest();
+            }
+            input.ReadMessage(Base);
+            break;
+          }
+          case 16: {
+            Value = input.ReadInt32();
             break;
           }
         }

@@ -20,41 +20,28 @@ using System.Collections.ObjectModel;
 
 namespace studio
 {
-    public class VisibilityIconConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            return (bool)value ? PackIconKind.EyeOutline : PackIconKind.EyeOffOutline;
-        }
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
     /// <summary>
     /// VisualTree.xaml 的交互逻辑
     /// </summary>
     public partial class VisualTree : UserControl
     {
         public static String SelectNodePath;
-        public static ObservableCollection<NodeData> Model
+        public static NodeData Model
         {
             get { return _model; }
             set { _model = value; }
         }
-        static private ObservableCollection<NodeData> _model = new ObservableCollection<NodeData>();
+        static private NodeData _model = new NodeData();
 
         public VisualTree()
         {
             InitializeComponent();
-            InitData();
-            UpdateAddGroupMenuComponent();
+            InitTree();
         }
 
-        public void ExpandAll(bool expanded)
+        public void ExpandAll(ItemsControl c, bool expanded)
         {
-            loopExpand(tv, expanded);
+            loopExpand(c, expanded);
         }
 
         private void loopExpand(ItemsControl ctrl, bool expanded)
@@ -76,57 +63,14 @@ namespace studio
                 loopExpand(treeItem, expanded);
             }
         }
-
-        private void InitData()
+        
+        private void InitTree()
         {
-            Window w = new Window();
-/*            NodeItem grid = NodeItem.Grid("Grid");
-            NodeItem grid1 = NodeItem.Grid("Grid1");
+            tv.ItemsSource = Model.Children;
+            NodeData w = new NodeData("nb::Window", "Window");
+            Model.Children.Add(w);
 
-            root.Children.Add(grid);
-            root.Children.Add(grid1);
-            grid.Children.Add(NodeItem.ButtonNode("Button"));
-            grid.Children.Add(NodeItem.ToggleButtonNode("ToggleButton"));
-            grid.Children.Add(NodeItem.RadioButton("RadioButton"));
-            grid.Children.Add(NodeItem.CheckBox("CheckBox"));
-            grid.Children.Add(NodeItem.Label("Label"));
-            grid.Children.Add(NodeItem.ToolTip("ToopTip"));
-            grid.Children.Add(NodeItem.ScrollViewer("ScrollViewer"));
-            grid.Children.Add(NodeItem.UserControl("UserControl"));
-            grid.Children.Add(NodeItem.ComboBoxItem("ComboBoxItem"));
-            grid.Children.Add(NodeItem.ListBoxItem("ListBoxItem"));
-            grid.Children.Add(NodeItem.GropBox("GropBox"));
-            grid.Children.Add(NodeItem.Expander("Expander"));
-            grid.Children.Add(NodeItem.TabItem("TabItem"));
-            grid.Children.Add(NodeItem.ListBox("ListBox"));
-            grid.Children.Add(NodeItem.ListView("ListView"));
-            grid.Children.Add(NodeItem.TabControl("TabControl"));
-            grid.Children.Add(NodeItem.TreeView("TreeView"));
-            grid.Children.Add(NodeItem.StatusBar("StatusBar"));
-            grid.Children.Add(NodeItem.Menu("Menu"));
-            grid.Children.Add(NodeItem.TextBox("TextBox"));
-            grid.Children.Add(NodeItem.RickTextBox("RickTextBox"));
-            grid.Children.Add(NodeItem.PasswordBox("PasswordBox"));
-            grid.Children.Add(NodeItem.Image("Image"));
-            grid.Children.Add(NodeItem.TextBlock("TextBlock"));
-
-            grid.Children.Add(NodeItem.Line("Line"));
-            grid.Children.Add(NodeItem.Polyline("Polyline"));
-            grid.Children.Add(NodeItem.Polygon("Polygon"));
-            grid.Children.Add(NodeItem.Path("Path"));
-            grid.Children.Add(NodeItem.Rectangle("Rectangle"));
-            grid.Children.Add(NodeItem.Ellipse("Ellipse"));
-
-            grid.Children.Add(NodeItem.Canvas("Canvas"));
-            grid.Children.Add(NodeItem.DockPanel("DockPanel"));
-            grid.Children.Add(NodeItem.WrapPanel("WrapPanel"));
-            grid.Children.Add(NodeItem.StackPanel("StackPanel"));
-            grid.Children.Add(NodeItem.Grid("Grid"));
-            grid.Children.Add(NodeItem.UniformGrid("UniformGrid"));
-*/
-            tv.ItemsSource = Model;
-            Model.Add(w);
-
+            UpdateAddGroupMenuComponent();
         }
         
         private void TreeViewItem_PreviewMouseRightButtonDown(object sender, MouseButtonEventArgs e)
@@ -155,7 +99,7 @@ namespace studio
                 if (source.GetType() == typeof(TreeViewItem))
                 {
                     NodeData dc = ((TreeViewItem)source).DataContext as NodeData;
-                    path = dc.Name + ".";
+                    path = dc.Name + "." + path;
                 }
                 source = VisualTreeHelper.GetParent(source);
             }
@@ -166,56 +110,92 @@ namespace studio
 
             return path;
         }
-
+        
         private void treeView1_Selected(object sender, RoutedEventArgs e)
         {
             SelectNodePath = GetFullPath(e.OriginalSource as DependencyObject);
+            NodeData dc = (e.OriginalSource as TreeViewItem).DataContext as NodeData;
+            UpdatePropertyieData(dc.Type);
         }
 
-        private void createGrid_Click(object sender, RoutedEventArgs e)
+        private void UpdatePropertyieData(string type)
         {
+            MetaObject m = PluginManager.FindMetaObject(type);
+            if(m == null)
+            {
+                PropertyPanel.PropertiesData.Data = null;
+                OutputPanel.LogData.Add(LogLevel.Error, "无法找到元对象[{0}]", type);
+            }
+            else
+            {
+                PropertyCollection pc = new PropertyCollection();
+                foreach (MetaObject.PropertyDescriptor p in m.Properties)
+                {
+                    object defaultValue;
+                    if(p.ValueType == typeof(String))
+                    {
+                        defaultValue = string.Empty;
+                    }
+                    else if(p.ValueType == typeof(List<string>))
+                    {
+                        string[] enums = p.Extra.Split('|');
+                        defaultValue = enums;
+                    }
+                    else if (p.ValueType == typeof(Brush))
+                    {
+                        defaultValue = new SolidColorBrush();
+                    }
+                    else
+                    {
+                        defaultValue = System.Activator.CreateInstance(p.ValueType);
+                    }
+                    PropertyAttr pa = new PropertyAttr(p.Type, p.Category, p.Name, p.Description, defaultValue);
+                    pc.Add(pa);
+                }
+                PropertyPanel.PropertiesData.Data = pc;
+            }
         }
         
-        private void createRectangle_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                MetaObject md = PluginManager.FindMetaDataByTypeName("nb::Rectangle");
-                AddNodeRequest request = new AddNodeRequest() { Path = SelectNodePath, ChildType = md.Descriptor.Type, ChildName = "Rectangle" };
-                var reply = RpcManager.NodeClient.AddNode(request);
-            }
-            catch (Grpc.Core.RpcException ex) { Console.WriteLine(ex.Message); }
-        }
-
         public void UpdateAddGroupMenuComponent()
         {
             foreach(Plugin plugin in PluginManager.Plugins)
             {
                 foreach(MetaObject m in plugin.MetaObjects)
                 {
-                    MenuItem item = new MenuItem();
-                    item.Header = m.Descriptor.DisplayName;
                     PackIcon icon = new PackIcon();
                     icon.Kind = MetaObject.ClassDescriptor.TypeToIcon(m.Descriptor.Type);
-                    icon.Margin = new Thickness(5, 0, 0, 0);
-                    item.Icon = icon;
-                    item.Click += Item_Click;
-                    item.Tag = m;
-                    this.AddGroupMenuItem.Items.Add(item);
+                    icon.Margin = new System.Windows.Thickness(5, 0, 0, 0);
+                    MenuItem menuItem = new MenuItem();
+                    menuItem.Header = m.Descriptor.DisplayName;
+                    menuItem.Icon = icon;
+                    menuItem.Click += MenuItem_Click;
+                    menuItem.Tag = m;
+                    this.AddGroupMenuItem.Items.Add(menuItem);
                 }
             }
 
         }
 
-        private void Item_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            MenuItem item = sender as MenuItem;
-            MetaObject metaObj = item.Tag as MetaObject;
-            AddNodeRequest request = new AddNodeRequest() { Path = SelectNodePath, ChildType = metaObj.Descriptor.Type, ChildName = metaObj.Descriptor.DisplayName };
-            var reply = RpcManager.NodeClient.AddNode(request);
+            MetaObject metaObj = (sender as MenuItem).Tag as MetaObject;
+            AddNodeRequest request = new AddNodeRequest();
+            request.Path = SelectNodePath;
+            request.ChildType = metaObj.Descriptor.Type;
+            request.ChildName = metaObj.Descriptor.DisplayName;
+            try
+            {
+                var reply = RpcManager.NodeClient.AddNode(request);
+            }
+            catch (Exception ex)
+            {
+                OutputPanel.LogData.Add(LogLevel.Error, ex.Message);
+            }
             
-            NodeData node = new NodeData() { TypeName = metaObj.Descriptor.Type, IconType = MetaObject.ClassDescriptor.TypeToIcon(metaObj.Descriptor.Type), Name = "111" };
-            Model.Add(node);
+            NodeData node = new NodeData(request.ChildType, request.ChildName);
+            NodeData parent = Model.Find(SelectNodePath);
+            parent.Children.Add(node);
+            ExpandAll(tv, true);
         }
     }
 }

@@ -44,9 +44,9 @@
                         </ad:LayoutAnchorablePane>
                     </ad:LayoutPanel>
 
-                    <ad:LayoutAnchorablePane DockWidth="450" >
+                    <ad:LayoutAnchorablePane DockWidth="400" >
                         <ad:LayoutAnchorable x:Name="ProperiesLayout" Title="属性">
-                            <local:PropertyEditor />
+                            <local:PropertyPanel/>
                         </ad:LayoutAnchorable>
                     </ad:LayoutAnchorablePane>
 
