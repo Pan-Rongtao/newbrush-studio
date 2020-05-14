@@ -32,7 +32,25 @@ namespace studio
             InitializeComponent();
 
         }
-        
+
+        private void TreeViewItem_PreviewMouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var treeViewItem = VisualUpwardSearch<TreeViewItem>(e.OriginalSource as DependencyObject) as TreeViewItem;
+            if (treeViewItem != null)
+            {
+                treeViewItem.IsSelected = true;
+                e.Handled = true;
+            }
+        }
+
+        DependencyObject VisualUpwardSearch<T>(DependencyObject source)
+        {
+            while (source != null && source.GetType() != typeof(T))
+                source = VisualTreeHelper.GetParent(source);
+
+            return source;
+        }
+
         private void Solution2_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
           //  Console.WriteLine(e.PropertyName);

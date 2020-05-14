@@ -154,7 +154,7 @@ namespace studio
                 return;
             }
 
-            const string metho0 = "GetMetaObjectCount";
+            const string metho0 = "getMetaObjectCount";
             const string metho1 = "getMetaObjects";
             IntPtr intPtr0 = GetProcAddress(dllHandle, metho0);
             IntPtr intPtr1 = GetProcAddress(dllHandle, metho1);

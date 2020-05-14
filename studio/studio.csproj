@@ -326,6 +326,10 @@
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\PropertyGridData.cs" />
+    <Compile Include="ResourceFiles.cs" />
+    <Compile Include="ResourceFilesTree.xaml.cs">
+      <DependentUpon>ResourceFilesTree.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StatusBar.xaml.cs">
       <DependentUpon>StatusBar.xaml</DependentUpon>
     </Compile>
@@ -404,6 +408,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ResourceFilesTree.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StatusBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -457,9 +465,6 @@
     <Folder Include="Resources\Audio\" />
     <Folder Include="Resources\Icons\" />
     <Folder Include="Resources\Images\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Controls\5.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

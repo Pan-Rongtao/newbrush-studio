@@ -5,13 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.ComponentModel;
+using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
+using System.Collections;
 
 namespace studio
 {
-    public class NotifyProperyCollection
+    public class NotifyProperyDescriptorCollection
     {
-        public event EventHandler<PropertyCollection> Changed;
-        public PropertyCollection Data
+        public event EventHandler<MyPropertyDescriptorCollection> Changed;
+        public MyPropertyDescriptorCollection Data
         {
             get { return _data; }
             set
@@ -23,9 +25,9 @@ namespace studio
                 }
             }
         }
-        private PropertyCollection _data;
+        private MyPropertyDescriptorCollection _data;
     }
-
+    
     public class PropertyAttr
     {
         public UInt32 PropertyID { get; set; }
@@ -47,75 +49,39 @@ namespace studio
     //定义自己的属性描述
     public class MyPropertyDescriptor : PropertyDescriptor
     {
-        private PropertyAttr _attr;
         public MyPropertyDescriptor(PropertyAttr attr, Attribute[] propertyAttributes) : base(attr.Name, propertyAttributes)
         {
             _attr = attr;
         }
+        
+        public PropertyAttr Attr { get { return _attr; } }
+        private PropertyAttr _attr;
 
-        public override bool CanResetValue(object component)
-        {
-            return true;
-        }
+        public override bool CanResetValue(object component){return true;}
 
-        public override object GetValue(object component)
-        {
-            return _attr.Value;
-        }
+        public override object GetValue(object component) { return _attr.Value; }
+        public override void ResetValue(object component) { }
+        public override void SetValue(object component, object value) { _attr.Value = value; }
 
-        public override void ResetValue(object component)
-        {
-        }
+        public override bool ShouldSerializeValue(object component) { return false; }
 
-        public override void SetValue(object component, object value)
-        {
-            _attr.Value = value;
-        }
-
-        public override bool ShouldSerializeValue(object component)
-        {
-            return false;
-        }
-
-        public override Type ComponentType
-        {
-            get { return this.GetType(); }
-        }
-
-        public override bool IsReadOnly
-        {
-            get { return false; }
-        }
-
-        public override Type PropertyType
-        {
-            get { return _attr.Value.GetType(); }
-        }
+        public override Type ComponentType { get { return this.GetType(); } }
+        public override bool IsReadOnly { get { return false; } }
+        public override Type PropertyType { get { return _attr.Value.GetType(); } }
 
         public override string Category { get { return _attr.Category; } }
-
         public override string Description { get { return _attr.Description; } }
-
+        
     }
 
     //定义属性集合描述
-    public class PropertyCollection : ICustomTypeDescriptor
+    public class MyPropertyDescriptorCollection : Dictionary<string, PropertyAttr>, ICustomTypeDescriptor
     {
         public void Add(PropertyAttr attr)
         {
-            if (!_dc.ContainsKey(attr.Name))
-            {
-                _dc.Add(attr.Name, attr);
-            }
+            Add(attr.Name, attr);
         }
-
-        public void Clear()
-        {
-            _dc.Clear();
-        }
-
-        private Dictionary<string, PropertyAttr> _dc = new Dictionary<string, PropertyAttr>();
-
+        
         PropertyDescriptorCollection ICustomTypeDescriptor.GetProperties()
         {
             return GetProperties(new Attribute[0]);
@@ -123,10 +89,9 @@ namespace studio
 
         public PropertyDescriptorCollection GetProperties(Attribute[] attributes)
         {
-            int count = _dc.Values.Count;
-            PropertyDescriptor[] pds = new PropertyDescriptor[count];
+            PropertyDescriptor[] pds = new PropertyDescriptor[Count];
             int index = 0;
-            foreach (PropertyAttr item in _dc.Values)
+            foreach (PropertyAttr item in Values)
             {
                 pds[index] = new MyPropertyDescriptor(item, attributes);
                 index++;

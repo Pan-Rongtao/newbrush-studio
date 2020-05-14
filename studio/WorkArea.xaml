@@ -18,19 +18,6 @@
             <ad:LayoutRoot x:Name="layoutRoot">
                 <ad:LayoutPanel>
 
-                    <ad:LayoutPanel Orientation="Vertical" DockWidth="460">
-                        <ad:LayoutAnchorablePane>
-                            <ad:LayoutAnchorable x:Name="visualTreeLayout" Title="工程">
-                                <local:VisualTree Margin="0,3,0,3"/>
-                            </ad:LayoutAnchorable>
-                        </ad:LayoutAnchorablePane>
-                        <ad:LayoutAnchorablePane DockHeight="2*">
-                            <ad:LayoutAnchorable Title="材质">
-                                <local:MaterialEditor/>
-                            </ad:LayoutAnchorable>
-                        </ad:LayoutAnchorablePane>
-                    </ad:LayoutPanel>
-
                     <ad:LayoutPanel Orientation="Vertical">
                         <ad:LayoutAnchorablePane DockWidth="*">
                             <ad:LayoutAnchorable x:Name="PreviewLayout" Title="预览">
@@ -40,6 +27,20 @@
                         <ad:LayoutAnchorablePane DockHeight="200">
                             <ad:LayoutAnchorable Title="输出">
                                 <local:OutputPanel />
+                            </ad:LayoutAnchorable>
+                        </ad:LayoutAnchorablePane>
+                    </ad:LayoutPanel>
+
+                    <ad:LayoutPanel Orientation="Vertical" DockWidth="460">
+                        <ad:LayoutAnchorablePane>
+                            <ad:LayoutAnchorable x:Name="visualTreeLayout" Title="工程">
+                                <local:VisualTree Margin="0,3,0,3"/>
+                            </ad:LayoutAnchorable>
+                            <ad:LayoutAnchorable Title="资源材质">
+                                <local:ResourceFilesTree/>
+                            </ad:LayoutAnchorable>
+                            <ad:LayoutAnchorable Title="材质">
+                                <local:MaterialEditor/>
                             </ad:LayoutAnchorable>
                         </ad:LayoutAnchorablePane>
                     </ad:LayoutPanel>

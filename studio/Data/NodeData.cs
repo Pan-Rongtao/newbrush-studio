@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using MaterialDesignThemes.Wpf;
 using System.Collections.ObjectModel;
+using System.Windows.Media;
 
 namespace studio
 {
@@ -16,6 +17,30 @@ namespace studio
             _type = type;
             _name = name;
             _iconType = MetaObject.ClassDescriptor.TypeToIcon(type);
+            MetaObject meta = PluginManager.FindMetaObject(type);
+            foreach (MetaObject.PropertyDescriptor p in meta.Properties)
+            {
+                object defaultValue;
+                if (p.ValueType == typeof(String))
+                {
+                    defaultValue = string.Empty;
+                }
+                else if (p.ValueType == typeof(List<string>))
+                {
+                    string[] enums = p.Extra.Split('|');
+                    defaultValue = enums;
+                }
+                else if (p.ValueType == typeof(Brush))
+                {
+                    defaultValue = new SolidColorBrush();
+                }
+                else
+                {
+                    defaultValue = System.Activator.CreateInstance(p.ValueType);
+                }
+                string category = p.Category;
+                PropertyGridData.Data.Add(new PropertyAttr(p.Type, category, p.Name, p.Description, defaultValue));
+            }
         }
 
         public String Type
@@ -47,6 +72,8 @@ namespace studio
                 _visibility = value;
             }
         }
+
+        public NotifyProperyDescriptorCollection PropertyGridData = new NotifyProperyDescriptorCollection() { Data = new MyPropertyDescriptorCollection() };
 
         public NodeData GetChild(string name)
         {

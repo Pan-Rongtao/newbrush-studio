@@ -25,7 +25,19 @@ namespace studio
     /// </summary>
     public partial class VisualTree : UserControl
     {
-        public static String SelectNodePath;
+        public static SelectItemInfo SelectItem
+        {
+            get { return _selectItem; }
+            set { _selectItem = value; }
+        }
+        public static SelectItemInfo _selectItem = new SelectItemInfo();
+
+        public class SelectItemInfo
+        {
+            public string Path { get; set; }
+            public MetaObject.ClassDescriptor MetaObjectDescriptor { get; set; }
+        }
+
         public static NodeData Model
         {
             get { return _model; }
@@ -113,49 +125,11 @@ namespace studio
         
         private void treeView1_Selected(object sender, RoutedEventArgs e)
         {
-            SelectNodePath = GetFullPath(e.OriginalSource as DependencyObject);
+            SelectItem.Path = GetFullPath(e.OriginalSource as DependencyObject);
             NodeData dc = (e.OriginalSource as TreeViewItem).DataContext as NodeData;
-            UpdatePropertyieData(dc.Type);
+            PropertyPanel.PropertiesData.Data = dc.PropertyGridData.Data;
         }
-
-        private void UpdatePropertyieData(string type)
-        {
-            MetaObject m = PluginManager.FindMetaObject(type);
-            if(m == null)
-            {
-                PropertyPanel.PropertiesData.Data = null;
-                OutputPanel.LogData.Add(LogLevel.Error, "无法找到元对象[{0}]", type);
-            }
-            else
-            {
-                PropertyCollection pc = new PropertyCollection();
-                foreach (MetaObject.PropertyDescriptor p in m.Properties)
-                {
-                    object defaultValue;
-                    if(p.ValueType == typeof(String))
-                    {
-                        defaultValue = string.Empty;
-                    }
-                    else if(p.ValueType == typeof(List<string>))
-                    {
-                        string[] enums = p.Extra.Split('|');
-                        defaultValue = enums;
-                    }
-                    else if (p.ValueType == typeof(Brush))
-                    {
-                        defaultValue = new SolidColorBrush();
-                    }
-                    else
-                    {
-                        defaultValue = System.Activator.CreateInstance(p.ValueType);
-                    }
-                    PropertyAttr pa = new PropertyAttr(p.Type, p.Category, p.Name, p.Description, defaultValue);
-                    pc.Add(pa);
-                }
-                PropertyPanel.PropertiesData.Data = pc;
-            }
-        }
-        
+                
         public void UpdateAddGroupMenuComponent()
         {
             foreach(Plugin plugin in PluginManager.Plugins)
@@ -180,7 +154,7 @@ namespace studio
         {
             MetaObject metaObj = (sender as MenuItem).Tag as MetaObject;
             AddNodeRequest request = new AddNodeRequest();
-            request.Path = SelectNodePath;
+            request.Path = SelectItem.Path;
             request.ChildType = metaObj.Descriptor.Type;
             request.ChildName = metaObj.Descriptor.DisplayName;
             try
@@ -193,7 +167,7 @@ namespace studio
             }
             
             NodeData node = new NodeData(request.ChildType, request.ChildName);
-            NodeData parent = Model.Find(SelectNodePath);
+            NodeData parent = Model.Find(SelectItem.Path);
             parent.Children.Add(node);
             ExpandAll(tv, true);
         }

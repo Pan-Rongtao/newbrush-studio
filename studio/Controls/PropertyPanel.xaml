@@ -9,8 +9,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <tk:PropertyGrid x:Name="propertyGrid" NameColumnWidth="150"
-                         PropertyValueChanged="propertyGrid_PropertyValueChanged">
+        <tk:PropertyGrid x:Name="propertyGrid" NameColumnWidth="150" ShowDescriptionByTooltip="True"
+                         PropertyValueChanged="propertyGrid_PropertyValueChanged"
+                         >
         </tk:PropertyGrid>
     </Grid>
 </UserControl>
