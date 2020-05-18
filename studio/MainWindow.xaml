@@ -4,137 +4,25 @@
     xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     xmlns:local="clr-namespace:studio"
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
     x:Class="studio.MainWindow"
     Title="newbrush studio"
     MinHeight="200"
     WindowStartupLocation="CenterScreen" 
     WindowState="Maximized"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
     >
 
-    <!--解决遍历时无法深层次遍历的问题：https://www.cnblogs.com/sayo/archive/2008/07/23/1249804.html-->
-    <Window.Resources>
-        <Style TargetType="TreeViewItem">
-            <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type TreeViewItem}}}" />
-        </Style>
-        <Style x:Key="TreeViewItemFocusVisual">
-            <Setter Property="Control.Template">
-                <Setter.Value>
-                    <ControlTemplate>
-                        <Rectangle/>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <PathGeometry x:Key="TreeArrow" Figures="M0,0 L0,6 L6,0 z"/>
-        <Style x:Key="ExpandCollapseToggleStyle" TargetType="{x:Type ToggleButton}">
-            <Setter Property="Focusable" Value="False"/>
-            <Setter Property="Width" Value="16"/>
-            <Setter Property="Height" Value="16"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ToggleButton}">
-                        <Border Background="Transparent" Height="16" Padding="5,5,5,5" Width="16">
-                            <Path x:Name="ExpandPath" Data="{StaticResource TreeArrow}" Fill="Transparent" Stroke="#FF989898">
-                                <Path.RenderTransform>
-                                    <RotateTransform Angle="135" CenterY="3" CenterX="3"/>
-                                </Path.RenderTransform>
-                            </Path>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Stroke" TargetName="ExpandPath" Value="#FF1BBBFA"/>
-                                <Setter Property="Fill" TargetName="ExpandPath" Value="Transparent"/>
-                            </Trigger>
-                            <Trigger Property="IsChecked" Value="True">
-                                <Setter Property="RenderTransform" TargetName="ExpandPath">
-                                    <Setter.Value>
-                                        <RotateTransform Angle="180" CenterY="3" CenterX="3"/>
-                                    </Setter.Value>
-                                </Setter>
-                                <Setter Property="Fill" TargetName="ExpandPath" Value="#FF595959"/>
-                                <Setter Property="Stroke" TargetName="ExpandPath" Value="#FF262626"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style x:Key="StretchTreeViewItemStyle" TargetType="{x:Type TreeViewItem}" xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-            <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
-            <Setter Property="Padding" Value="1,0,0,0"/>
-            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-            <Setter Property="FocusVisualStyle" Value="{StaticResource TreeViewItemFocusVisual}"/>
-            <EventSetter Event="TreeViewItem.PreviewMouseRightButtonDown" Handler="TreeViewItem_PreviewMouseRightButtonDown"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type TreeViewItem}">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition MinWidth="19" Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-                            <ToggleButton x:Name="Expander" ClickMode="Press" IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}" Style="{StaticResource ExpandCollapseToggleStyle}"/>
-                            <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.Column="1" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="true">
-                                <ContentPresenter x:Name="PART_Header" ContentSource="Header" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-                            </Border>
-                            <ItemsPresenter x:Name="ItemsHost" Grid.Column="1" Grid.Row="1"/>
-                        </Grid>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsExpanded" Value="false">
-                                <Setter Property="Visibility" TargetName="ItemsHost" Value="Collapsed"/>
-                            </Trigger>
-                            <Trigger Property="HasItems" Value="false">
-                                <Setter Property="Visibility" TargetName="Expander" Value="Hidden"/>
-                            </Trigger>
-                            <Trigger Property="IsSelected" Value="true">
-                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
-                            </Trigger>
-                            <MultiTrigger>
-                                <MultiTrigger.Conditions>
-                                    <Condition Property="IsSelected" Value="true"/>
-                                    <Condition Property="IsSelectionActive" Value="false"/>
-                                </MultiTrigger.Conditions>
-                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
-                            </MultiTrigger>
-                            <MultiTrigger>
-                                <MultiTrigger.Conditions>
-                                    <Condition Property="IsFocused" Value="False"/>
-                                    <Condition Property="IsSelected" Value="False"/>
-                                    <Condition Property="IsMouseOver" Value="True" SourceName="Bd" />
-                                </MultiTrigger.Conditions>
-                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}" />
-                            </MultiTrigger>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="VirtualizingStackPanel.IsVirtualizing" Value="true">
-                    <Setter Property="ItemsPanel">
-                        <Setter.Value>
-                            <ItemsPanelTemplate>
-                                <VirtualizingStackPanel/>
-                            </ItemsPanelTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-
-    </Window.Resources>
-
+    <Window.CommandBindings>
+        <CommandBinding Command="local:Commands.InputFolderName" Executed="CommandBinding_Executed_InputImageFolderName"/>
+        <CommandBinding Command="local:Commands.NewFolder" Executed="CommandBinding_Executed_NewFolder"/>
+        <CommandBinding Command="local:Commands.ImportFile" Executed="CommandBinding_Executed_ImportFile"/>
+        <CommandBinding Command="local:Commands.RemoveResourceNode" Executed="CommandBinding_Executed_RemoveResourceNode"/>
+        <CommandBinding Command="local:Commands.RenameResourceNode" Executed="CommandBinding_Executed_RenameResourceNode"/>
+        <CommandBinding Command="local:Commands.RenameResourceNodeDlg" Executed="CommandBinding_Executed_RenameResourceNodeDlg"/>
+    </Window.CommandBindings>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="28"/>
@@ -145,6 +33,9 @@
         <local:MainMenu Grid.Row="0"/>
         <local:WorkArea Grid.Row="1"/>
         <local:StatusBar Grid.Row="2" />
+
+        <materialDesign:DialogHost x:Name="dh" Grid.RowSpan="9">
+        </materialDesign:DialogHost>
     </Grid>
 
 </Controls:MetroWindow>

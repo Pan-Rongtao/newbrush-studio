@@ -20,20 +20,14 @@ namespace studio
     /// </summary>
     public partial class OutputPanel : UserControl
     {
-        static public LogData LogData
-        {
-            get { return _logData; }
-            set { _logData = value; }
-        }
-
         public OutputPanel()
         {
             InitializeComponent();
 
-            LogData.AddEvent += OutputLog_AddEvent;
-            LogData.ClearEvent += OutputLog_ClearEvent;
+            ViewModel.LogData.AddEvent += OutputLog_AddEvent;
+            ViewModel.LogData.ClearEvent += OutputLog_ClearEvent;
 
-            foreach(LogItem item in LogData.Items)
+            foreach(LogItem item in ViewModel.LogData.Items)
             {
                 Log(item.Level, item.Text);
             }
@@ -54,14 +48,11 @@ namespace studio
         {
             string s = "[" + DateTime.Now.ToString("MM-dd hh:mm:ss.fff") + "] " + msg;
             Run run = new Run(s);
-            Color c = level == LogLevel.Info ? Colors.Black : level == LogLevel.Warn ? Colors.Orange : Colors.Red;
+            Color c = level == LogLevel.Info ? Colors.Black : level == LogLevel.Warn ? Colors.Yellow : Colors.Red;
             run.Foreground = new SolidColorBrush(c);
             this.pg.Inlines.Add(run);
             this.pg.Inlines.Add(new LineBreak());
         }
-
-        #region Data
-        static private LogData _logData = new LogData();
-        #endregion
+        
     }
 }

@@ -17,7 +17,6 @@ using System.IO;
 using System.ComponentModel;
 using System.Collections;
 using System.Reflection;
-using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
 using System.Dynamic;
 using Xceed.Wpf.Toolkit.PropertyGrid;
 using Nbrpc;
@@ -47,7 +46,7 @@ namespace studio
         public PropertyPanel()
         {
             InitializeComponent();
-            PropertiesData.Changed += PropertiesData_Changed;
+            ViewModel.PropertiesData.Changed += PropertiesData_Changed;
         }
 
         private void PropertiesData_Changed(object sender, MyPropertyDescriptorCollection e)
@@ -74,8 +73,6 @@ namespace studio
             t.Stop();
         }
         
-        static public NotifyProperyDescriptorCollection PropertiesData = new NotifyProperyDescriptorCollection();
-
         private void propertyGrid_PropertyValueChanged(object sender, Xceed.Wpf.Toolkit.PropertyGrid.PropertyValueChangedEventArgs e)
         {
             PropertyItem item = e.OriginalSource as PropertyItem;

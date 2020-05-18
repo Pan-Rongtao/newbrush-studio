@@ -145,11 +145,11 @@ namespace studio
             {
                 if (!File.Exists(DllPath))
                 {
-                    OutputPanel.LogData.Add(LogLevel.Error, "无法找到[{0}]文件", DllPath);
+                    ViewModel.LogData.Add(LogLevel.Error, "无法找到[{0}]文件", DllPath);
                 }
                 else
                 {
-                    OutputPanel.LogData.Add(LogLevel.Error, "无法加载[{0}]，可能的原因是，所依赖的库不在同一个目录", DllPath);
+                    ViewModel.LogData.Add(LogLevel.Error, "无法加载[{0}]，可能的原因是，所依赖的库不在同一个目录", DllPath);
                 }
                 return;
             }
@@ -160,7 +160,7 @@ namespace studio
             IntPtr intPtr1 = GetProcAddress(dllHandle, metho1);
             if(intPtr0 == IntPtr.Zero || intPtr1 == IntPtr.Zero)
             {
-                OutputPanel.LogData.Add(LogLevel.Error, "[{0}]不是一个合法的Newbrush Studio插件，请检查DLL是否定义了[{1}]和[{2}]", DllPath, metho0, metho1);
+                ViewModel.LogData.Add(LogLevel.Error, "[{0}]不是一个合法的Newbrush Studio插件，请检查DLL是否定义了[{1}]和[{2}]", DllPath, metho0, metho1);
                 return;
             }
 
@@ -233,7 +233,7 @@ namespace studio
             //bool x = FreeLibrary(dllHandle);  先去掉，待SDK修复registerPorperty的问题，否则挂死
             Environment.CurrentDirectory = oldEnv;
 
-            OutputPanel.LogData.Add(LogLevel.Info, "更新插件[ {0} ]完毕", DllPath);
+            ViewModel.LogData.Add(LogLevel.Info, "更新插件[ {0} ]完毕", DllPath);
         }
 
         [StructLayout(LayoutKind.Sequential)]

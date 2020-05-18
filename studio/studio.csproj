@@ -214,52 +214,19 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="WindowsFormsIntegration" />
     <Reference Include="Xceed.Wpf.AvalonDock, Version=4.0.20076.12200, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
-      <HintPath>packages\Xceed.Wpf.AvalonDock.4.0.20076.12200\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\wpftoolkit\sourceCode\sourceCode\Main\Source\ExtendedWPFToolkitSolution\Src\Xceed.Wpf.AvalonDock\bin\Debug\Xceed.Wpf.AvalonDock.dll</HintPath>
     </Reference>
     <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=4.0.20076.12200, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
-      <HintPath>packages\Xceed.Wpf.AvalonDock.Themes.Aero.4.0.20076.12200\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\wpftoolkit\sourceCode\sourceCode\Main\Source\ExtendedWPFToolkitSolution\Src\Xceed.Wpf.AvalonDock.Themes.Aero\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
     </Reference>
-    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=4.0.20076.12200, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
-      <HintPath>packages\Xceed.Wpf.AvalonDock.Themes.Metro.4.0.20076.12200\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Xceed.Wpf.AvalonDock.Themes.MetroAccent, Version=4.0.20076.12200, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
-      <HintPath>packages\Xceed.Wpf.AvalonDock.Themes.MetroAccent.4.0.20076.12200\lib\net40\Xceed.Wpf.AvalonDock.Themes.MetroAccent.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Office2007, Version=4.0.20076.12200, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
-      <HintPath>packages\Xceed.Wpf.AvalonDock.Themes.Office2007.4.0.20076.12200\lib\net40\Xceed.Wpf.AvalonDock.Themes.Office2007.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=4.0.20076.12200, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
-      <HintPath>packages\Xceed.Wpf.AvalonDock.Themes.VS2010.4.0.20076.12200\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Windows10, Version=4.0.20076.12200, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
-      <HintPath>packages\Xceed.Wpf.AvalonDock.Themes.Windows10.4.0.20076.12200\lib\net40\Xceed.Wpf.AvalonDock.Themes.Windows10.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Xceed.Wpf.Themes, Version=4.0.20076.12200, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
-      <HintPath>packages\Xceed.Wpf.Themes.4.0.20076.12200\lib\net40\Xceed.Wpf.Themes.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Xceed.Wpf.Themes.Metro, Version=4.0.20076.12200, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
-      <HintPath>packages\Xceed.Wpf.Themes.Metro.4.0.20076.12200\lib\net40\Xceed.Wpf.Themes.Metro.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Xceed.Wpf.Themes.Office2007, Version=4.0.20076.12200, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
-      <HintPath>packages\Xceed.Wpf.Themes.Office2007.4.0.20076.12200\lib\net40\Xceed.Wpf.Themes.Office2007.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Xceed.Wpf.Themes.Windows10, Version=4.0.20076.12200, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
-      <HintPath>packages\Xceed.Wpf.Themes.Windows10.4.0.20076.12200\lib\net40\Xceed.Wpf.Themes.Windows10.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Xceed.Wpf.DataGrid">
+      <HintPath>E:\wpftoolkit\sourceCode\sourceCode\Main\Source\ExtendedWPFToolkitSolution\Src\Xceed.Wpf.DataGrid\bin\Debug\Xceed.Wpf.DataGrid.dll</HintPath>
     </Reference>
     <Reference Include="Xceed.Wpf.Toolkit, Version=4.0.20076.12200, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
-      <HintPath>packages\Xceed.Wpf.Toolkit.4.0.20076.12200\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\wpftoolkit\sourceCode\sourceCode\Main\Source\ExtendedWPFToolkitSolution\Src\Xceed.Wpf.Toolkit\bin\Debug\Xceed.Wpf.Toolkit.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -267,6 +234,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data\Commands.cs" />
     <Compile Include="Data\BindingCoverters.cs" />
     <Compile Include="Data\LogData.cs" />
     <Compile Include="Data\RpcManager.cs" />
@@ -322,20 +290,28 @@
     <Compile Include="Grpc\Shader.cs" />
     <Compile Include="Grpc\ShaderGrpc.cs" />
     <Compile Include="Grpc\Types.cs" />
-    <Compile Include="MainMenu.xaml.cs">
+    <Compile Include="Data\Library.cs" />
+    <Compile Include="Controls\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\PropertyGridData.cs" />
-    <Compile Include="ResourceFiles.cs" />
-    <Compile Include="ResourceFilesTree.xaml.cs">
+    <Compile Include="Controls\MessageDialog.xaml.cs">
+      <DependentUpon>MessageDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ResourceFiles.cs" />
+    <Compile Include="Controls\ResourceFilesTree.xaml.cs">
       <DependentUpon>ResourceFilesTree.xaml</DependentUpon>
     </Compile>
-    <Compile Include="StatusBar.xaml.cs">
+    <Compile Include="Controls\RenameDialog.xaml.cs">
+      <DependentUpon>RenameDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\StatusBar.xaml.cs">
       <DependentUpon>StatusBar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WorkArea.xaml.cs">
+    <Compile Include="Controls\WorkArea.xaml.cs">
       <DependentUpon>WorkArea.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\ViewModel.cs" />
     <Page Include="Controls\BooleanEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -404,19 +380,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainMenu.xaml">
+    <Page Include="Controls\MainMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ResourceFilesTree.xaml">
+    <Page Include="Controls\MessageDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="StatusBar.xaml">
+    <Page Include="Controls\ResourceFilesTree.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WorkArea.xaml">
+    <Page Include="Controls\RenameDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\StatusBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\WorkArea.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -461,11 +445,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\Audio\" />
-    <Folder Include="Resources\Icons\" />
-    <Folder Include="Resources\Images\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

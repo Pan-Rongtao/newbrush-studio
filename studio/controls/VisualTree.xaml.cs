@@ -38,13 +38,6 @@ namespace studio
             public MetaObject.ClassDescriptor MetaObjectDescriptor { get; set; }
         }
 
-        public static NodeData Model
-        {
-            get { return _model; }
-            set { _model = value; }
-        }
-        static private NodeData _model = new NodeData();
-
         public VisualTree()
         {
             InitializeComponent();
@@ -78,9 +71,9 @@ namespace studio
         
         private void InitTree()
         {
-            tv.ItemsSource = Model.Children;
+            tv.ItemsSource = ViewModel.VisualTreeModel.Children;
             NodeData w = new NodeData("nb::Window", "Window");
-            Model.Children.Add(w);
+            ViewModel.VisualTreeModel.Children.Add(w);
 
             UpdateAddGroupMenuComponent();
         }
@@ -127,9 +120,9 @@ namespace studio
         {
             SelectItem.Path = GetFullPath(e.OriginalSource as DependencyObject);
             NodeData dc = (e.OriginalSource as TreeViewItem).DataContext as NodeData;
-            PropertyPanel.PropertiesData.Data = dc.PropertyGridData.Data;
+            ViewModel.PropertiesData.Data = dc.PropertyGridData.Data;
         }
-                
+
         public void UpdateAddGroupMenuComponent()
         {
             foreach(Plugin plugin in PluginManager.Plugins)
@@ -163,13 +156,14 @@ namespace studio
             }
             catch (Exception ex)
             {
-                OutputPanel.LogData.Add(LogLevel.Error, ex.Message);
+                ViewModel.LogData.Add(LogLevel.Error, ex.Message);
             }
             
             NodeData node = new NodeData(request.ChildType, request.ChildName);
-            NodeData parent = Model.Find(SelectItem.Path);
+            NodeData parent = ViewModel.VisualTreeModel.Find(SelectItem.Path);
             parent.Children.Add(node);
             ExpandAll(tv, true);
         }
+        
     }
 }

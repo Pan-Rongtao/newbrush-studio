@@ -141,7 +141,7 @@
         <local:SearchBox Margin="0"/>
 
         <TreeView x:Name="tv" Grid.Row="1" HorizontalAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled" TreeViewItem.Selected="treeView1_Selected"
-                  Background="Transparent" ItemContainerStyle="{StaticResource StretchTreeViewItemStyle}" Margin="3,5,3,2" >
+                  Background="Transparent" ItemContainerStyle="{StaticResource StretchTreeViewItemStyle}" Margin="3,5,3,2">
             <TreeView.ItemTemplate>
                 <HierarchicalDataTemplate ItemsSource="{Binding Children}">
                     <Grid>

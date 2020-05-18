@@ -13,5 +13,6 @@ namespace studio
     /// </summary>
     public partial class App : Application
     {
+        public static Library Library = new Library();
     }
 }

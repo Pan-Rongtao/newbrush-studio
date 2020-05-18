@@ -10,6 +10,46 @@
 
     <!--解决遍历时无法深层次遍历的问题：https://www.cnblogs.com/sayo/archive/2008/07/23/1249804.html-->
     <UserControl.Resources>
+        <!--<Thickness x:Key="mg" Left="5" Top="0" Right="0" Bottom="0"/>
+        <ContextMenu x:Key="ImageFolderContextMenu">
+            <MenuItem Header="导入图片" Command="local:Commands.ImportImageFile">
+                <MenuItem.Icon>
+                    <materialDesign:PackIcon Margin="{StaticResource mg}" Kind="ImageAdd" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="新建文件夹" Command="local:Commands.NewImageFolder">
+                <MenuItem.Icon>
+                    <materialDesign:PackIcon Margin="{StaticResource mg}" Kind="CreateNewFolderOutline" />
+                </MenuItem.Icon>
+            </MenuItem>
+        </ContextMenu>
+        <ContextMenu x:Key="FontFolderContextMenu">
+            <MenuItem Header="导入字体" Command="local:Commands.ImportImageFile">
+                <MenuItem.Icon>
+                    <materialDesign:PackIcon Margin="{StaticResource mg}" Kind="ImageAdd" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="新建文件夹" Command="local:Commands.NewImageFolder">
+                <MenuItem.Icon>
+                    <materialDesign:PackIcon Margin="{StaticResource mg}" Kind="CreateNewFolderOutline" />
+                </MenuItem.Icon>
+            </MenuItem>
+        </ContextMenu>
+
+        <ContextMenu x:Key="ImageContextMenu">
+            <MenuItem Header="删除" Command="ApplicationCommands.New">
+                <MenuItem.Icon>
+                    <materialDesign:PackIcon Margin="5,0,0,0" Kind="AddCircleOutline" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="重命名" Command="ApplicationCommands.New">
+                <MenuItem.Icon>
+                    <materialDesign:PackIcon Margin="5,0,0,0" Kind="AddCircleOutline" />
+                </MenuItem.Icon>
+            </MenuItem>
+        </ContextMenu>-->
+
+
         <Style TargetType="TreeViewItem">
             <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type TreeViewItem}}}" />
         </Style>
@@ -137,7 +177,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TreeView x:Name="tv" Grid.Row="1" HorizontalAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled" TreeViewItem.Selected="treeView1_Selected"
+        <TreeView x:Name="tree" Grid.Row="1" HorizontalAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled" TreeViewItem.Selected="treeView1_Selected"
                   Background="Transparent" ItemContainerStyle="{StaticResource StretchTreeViewItemStyle}" Margin="3,5,3,2" MouseRightButtonDown="tv_MouseRightButtonDown">
             <TreeView.ItemTemplate>
                 <HierarchicalDataTemplate ItemsSource="{Binding Children}">
@@ -151,7 +191,7 @@
                                 <local:ResourceTypeIconConverter x:Key="converter"/>
                             </StackPanel.Resources>
                             <materialDesign:PackIcon Kind="{Binding ResourceType, Converter={StaticResource converter}}" Margin="1, 0, 3, 0" VerticalAlignment="Center"/>
-                            <TextBlock VerticalAlignment="Center" Text="{Binding Name}" HorizontalAlignment="Right"/>
+                            <TextBlock VerticalAlignment="Center" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Right"/>
                         </StackPanel>
                     </Grid>
                 </HierarchicalDataTemplate>

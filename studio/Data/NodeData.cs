@@ -18,28 +18,31 @@ namespace studio
             _name = name;
             _iconType = MetaObject.ClassDescriptor.TypeToIcon(type);
             MetaObject meta = PluginManager.FindMetaObject(type);
-            foreach (MetaObject.PropertyDescriptor p in meta.Properties)
+            if (meta != null)
             {
-                object defaultValue;
-                if (p.ValueType == typeof(String))
+                foreach (MetaObject.PropertyDescriptor p in meta.Properties)
                 {
-                    defaultValue = string.Empty;
+                    object defaultValue;
+                    if (p.ValueType == typeof(String))
+                    {
+                        defaultValue = string.Empty;
+                    }
+                    else if (p.ValueType == typeof(List<string>))
+                    {
+                        string[] enums = p.Extra.Split('|');
+                        defaultValue = enums;
+                    }
+                    else if (p.ValueType == typeof(Brush))
+                    {
+                        defaultValue = new SolidColorBrush();
+                    }
+                    else
+                    {
+                        defaultValue = System.Activator.CreateInstance(p.ValueType);
+                    }
+                    string category = p.Category;
+                    PropertyGridData.Data.Add(new PropertyAttr(p.Type, category, p.Name, p.Description, defaultValue));
                 }
-                else if (p.ValueType == typeof(List<string>))
-                {
-                    string[] enums = p.Extra.Split('|');
-                    defaultValue = enums;
-                }
-                else if (p.ValueType == typeof(Brush))
-                {
-                    defaultValue = new SolidColorBrush();
-                }
-                else
-                {
-                    defaultValue = System.Activator.CreateInstance(p.ValueType);
-                }
-                string category = p.Category;
-                PropertyGridData.Data.Add(new PropertyAttr(p.Type, category, p.Name, p.Description, defaultValue));
             }
         }
 
