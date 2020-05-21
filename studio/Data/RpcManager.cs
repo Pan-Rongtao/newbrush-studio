@@ -8,19 +8,11 @@ using Nbrpc;
 
 namespace studio
 {
-    class RpcManager
+    class Rpc
     {
-        static public ShaderRpc.ShaderRpcClient ShaderClient
-        {
-            get { return _shaderClient; }
-            set { _shaderClient = value; }
-        }
+        static public ShaderRpc.ShaderRpcClient ShaderClient { get { return _shaderClient; } }
 
-        static public NodeRpc.NodeRpcClient NodeClient
-        {
-            get { return _nodeClient; }
-            set { _nodeClient = value; }
-        }
+        static public NodeRpc.NodeRpcClient NodeClient { get { return _nodeClient; } }
 
         static private Channel _channel = new Channel("127.0.0.1:8888", ChannelCredentials.Insecure);
         static private ShaderRpc.ShaderRpcClient _shaderClient = new ShaderRpc.ShaderRpcClient(_channel);

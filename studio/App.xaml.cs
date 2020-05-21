@@ -13,6 +13,12 @@ namespace studio
     /// </summary>
     public partial class App : Application
     {
-        public static Library Library = new Library();
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            Plugin plugin = new Plugin() { DllPath = "D:/github/newbrush/dist/win32/lib/NbGuid.dll" };
+            plugin.Update();
+            ViewModel.Plugins.Add(plugin);
+            ViewModel.VisualTreeModel.Children.Add(new NodeData("nb::Window", "Window"));
+        }
     }
 }

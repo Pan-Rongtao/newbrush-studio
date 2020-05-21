@@ -33,7 +33,7 @@ namespace studio
         {
             try
             {
-                var reply = RpcManager.ShaderClient.BuildShader(new BuildShaderRequest { VShaderCode = vshader_code.Text, FShaderCode = fshader_code.Text });
+                var reply = Rpc.ShaderClient.BuildShader(new BuildShaderRequest { VShaderCode = vshader_code.Text, FShaderCode = fshader_code.Text });
                 UniformModel.Model.Clear();
                 foreach (var item in reply.UniformInfos)
                 {
@@ -84,7 +84,7 @@ namespace studio
             set
             {
                 this._boolValue = value;
-                RpcManager.ShaderClient.UniformBool(new UniformBoolRequest { Name = Uniform, Value = _boolValue });
+                Rpc.ShaderClient.UniformBool(new UniformBoolRequest { Name = Uniform, Value = _boolValue });
             }
         }
         public float FloatValue
@@ -93,7 +93,7 @@ namespace studio
             set
             {
                 this._floatValue = value;
-                RpcManager.ShaderClient.UniformFloat(new UniformFloatRequest { Name = Uniform, Value = _floatValue });
+                Rpc.ShaderClient.UniformFloat(new UniformFloatRequest { Name = Uniform, Value = _floatValue });
             }
         }
 
@@ -103,7 +103,7 @@ namespace studio
             set
             {
                 this._intValue = value;
-                RpcManager.ShaderClient.UniformInteger(new UniformIntegerRequest { Name = Uniform, Value = _intValue });
+                Rpc.ShaderClient.UniformInteger(new UniformIntegerRequest { Name = Uniform, Value = _intValue });
             }
         }
 
@@ -114,7 +114,7 @@ namespace studio
             {
                 this._vec2Value = value;
                 Nbrpc.Vec2 vec2 = new Vec2() { X = (float)_vec2Value.X, Y = (float)_vec2Value.Y };
-                RpcManager.ShaderClient.UniformVec2(new UniformVec2Request { Name = Uniform, Value = vec2 });
+                Rpc.ShaderClient.UniformVec2(new UniformVec2Request { Name = Uniform, Value = vec2 });
             }
         }
 
@@ -125,7 +125,7 @@ namespace studio
             {
                 this._vec3Value = value;
                 Nbrpc.Vec3 vec3 = new Vec3() { X = (float)_vec3Value.X, Y = (float)_vec3Value.Y, Z = (float)_vec3Value.Z };
-                RpcManager.ShaderClient.UniformVec3(new UniformVec3Request { Name = Uniform, Value = vec3 });
+                Rpc.ShaderClient.UniformVec3(new UniformVec3Request { Name = Uniform, Value = vec3 });
             }
         }
 

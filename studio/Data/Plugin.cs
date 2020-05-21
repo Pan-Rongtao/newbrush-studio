@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Media3D;
 using System.Windows;
 using System.Reflection;
+using System.ComponentModel;
+using System.Collections.ObjectModel;
 
 namespace studio
 {
@@ -84,14 +86,11 @@ namespace studio
     }
 
 
-    class PluginManager
+    public class PluginCollection : ObservableCollection<Plugin>
     {
-        static public List<Plugin> Plugins { get { return _plugins; } }
-        static private List<Plugin> _plugins = new List<Plugin>();
-
-        public static MetaObject FindMetaObject(String type)
+        public MetaObject FindMetaObject(String type)
         {
-            foreach (Plugin plugin in Plugins)
+            foreach (Plugin plugin in Items)
             {
                 foreach(MetaObject m in plugin.MetaObjects)
                 {
@@ -106,7 +105,7 @@ namespace studio
 
     }
 
-    class Plugin
+    public class Plugin
     {
         [DllImport("kernel32.dll", EntryPoint = "LoadLibrary")]
         public static extern int LoadLibrary([MarshalAs(UnmanagedType.LPStr)] string lpLibFileName);
@@ -122,17 +121,18 @@ namespace studio
 
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         delegate void getMetaObjects(IntPtr classes, int count);
-
-        public Plugin(string dllPath)
-        {
-            DllPath = dllPath;
-            PluginManager.Plugins.Add(this);
-        }
-
+        
         public string DllPath { get; set; }
 
         public List<MetaObject> MetaObjects { get { return _metaObjs; } }
         private List<MetaObject> _metaObjs = new List<MetaObject>();
+
+        private Dictionary<string, string> _propertyCategoryDic = new Dictionary<string, string>
+        {
+            { "画笔", "a画笔" }, { "外观", "b外观" }, { "公共", "c公共" }, { "自动化", "d自动化" }, { "布局", "e布局" },
+            { "文本", "f文本" }, { "转换", "g转换" }, { "杂项", "h杂项" }, 
+        };
+
 
         public void Update()
         {
@@ -223,7 +223,13 @@ namespace studio
                             case 32: t = typeof(List<Point>); break;
                             default: break;
                         }
-                        properties.Add(new MetaObject.PropertyDescriptor(pd.Type, pd.Category, pd.DisplayName, pd.Description, t, pd.Extra));
+                        string category = "z其他";
+                        try
+                        {
+                            category = _propertyCategoryDic[pd.Category];
+                        }
+                        catch (Exception) { }
+                        properties.Add(new MetaObject.PropertyDescriptor(pd.Type, category, pd.DisplayName, pd.Description, t, pd.Extra));
                     }
                 }
                 _metaObjs.Add(new MetaObject(descriptor, properties));

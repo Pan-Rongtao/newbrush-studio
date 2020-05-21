@@ -7,6 +7,7 @@ using System.IO;
 using System.ComponentModel;
 using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
 using System.Collections;
+using Xceed.Wpf.Toolkit;
 
 namespace studio
 {
@@ -47,7 +48,7 @@ namespace studio
     }
 
     //定义自己的属性描述
-    public class MyPropertyDescriptor : PropertyDescriptor
+    class MyPropertyDescriptor : PropertyDescriptor
     {
         public MyPropertyDescriptor(PropertyAttr attr, Attribute[] propertyAttributes) : base(attr.Name, propertyAttributes)
         {
@@ -84,6 +85,9 @@ namespace studio
         
         PropertyDescriptorCollection ICustomTypeDescriptor.GetProperties()
         {
+            Attribute[] a = new Attribute[1];
+            System.ComponentModel.EditorAttribute ea = new EditorAttribute(typeof(StringListComboboxEditor), typeof(StringListComboboxEditor));
+            a[0] = ea;
             return GetProperties(new Attribute[0]);
         }
 

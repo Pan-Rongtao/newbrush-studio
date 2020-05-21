@@ -25,23 +25,15 @@ namespace studio
     /// </summary>
     public partial class VisualTree : UserControl
     {
-        public static SelectItemInfo SelectItem
-        {
-            get { return _selectItem; }
-            set { _selectItem = value; }
-        }
-        public static SelectItemInfo _selectItem = new SelectItemInfo();
-
-        public class SelectItemInfo
-        {
-            public string Path { get; set; }
-            public MetaObject.ClassDescriptor MetaObjectDescriptor { get; set; }
-        }
+        public static string SelectItemPath { get { return _selectItemPath; } }
+        private static string _selectItemPath;
 
         public VisualTree()
         {
             InitializeComponent();
-            InitTree();
+            tv.ItemsSource = ViewModel.VisualTreeModel.Children;
+
+            UpdateAddGroupMenuComponent();
         }
 
         public void ExpandAll(ItemsControl c, bool expanded)
@@ -67,15 +59,6 @@ namespace studio
                 treeItem.IsExpanded = expanded;
                 loopExpand(treeItem, expanded);
             }
-        }
-        
-        private void InitTree()
-        {
-            tv.ItemsSource = ViewModel.VisualTreeModel.Children;
-            NodeData w = new NodeData("nb::Window", "Window");
-            ViewModel.VisualTreeModel.Children.Add(w);
-
-            UpdateAddGroupMenuComponent();
         }
         
         private void TreeViewItem_PreviewMouseRightButtonDown(object sender, MouseButtonEventArgs e)
@@ -118,14 +101,14 @@ namespace studio
         
         private void treeView1_Selected(object sender, RoutedEventArgs e)
         {
-            SelectItem.Path = GetFullPath(e.OriginalSource as DependencyObject);
+            _selectItemPath = GetFullPath(e.OriginalSource as DependencyObject);
             NodeData dc = (e.OriginalSource as TreeViewItem).DataContext as NodeData;
-            ViewModel.PropertiesData.Data = dc.PropertyGridData.Data;
+            ViewModel.PropertiesGridPanelData.Data = dc.PropertyGridData.Data;
         }
 
         public void UpdateAddGroupMenuComponent()
         {
-            foreach(Plugin plugin in PluginManager.Plugins)
+            foreach(Plugin plugin in ViewModel.Plugins)
             {
                 foreach(MetaObject m in plugin.MetaObjects)
                 {
@@ -147,12 +130,12 @@ namespace studio
         {
             MetaObject metaObj = (sender as MenuItem).Tag as MetaObject;
             AddNodeRequest request = new AddNodeRequest();
-            request.Path = SelectItem.Path;
+            request.Path = SelectItemPath;
             request.ChildType = metaObj.Descriptor.Type;
             request.ChildName = metaObj.Descriptor.DisplayName;
             try
             {
-                var reply = RpcManager.NodeClient.AddNode(request);
+                var reply = Rpc.NodeClient.AddNode(request);
             }
             catch (Exception ex)
             {
@@ -160,7 +143,7 @@ namespace studio
             }
             
             NodeData node = new NodeData(request.ChildType, request.ChildName);
-            NodeData parent = ViewModel.VisualTreeModel.Find(SelectItem.Path);
+            NodeData parent = ViewModel.VisualTreeModel.Find(SelectItemPath);
             parent.Children.Add(node);
             ExpandAll(tv, true);
         }

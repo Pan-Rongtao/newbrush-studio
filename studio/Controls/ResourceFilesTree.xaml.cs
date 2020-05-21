@@ -26,7 +26,7 @@ namespace studio
         public ResourceFilesTree()
         {
             InitializeComponent();
-            tree.ItemsSource = App.Library.ResouceFilesRoot.Children;
+            tree.ItemsSource = ViewModel.Library.ResouceFilesRoot.Children;
         }
         
         private MenuItem MakeMenuItem(PackIconKind iconk, string hearder, RoutedUICommand cmd, object cmdParam)
@@ -68,7 +68,7 @@ namespace studio
                 treeViewItem.IsSelected = true;
                 e.Handled = true;
             }
-            ResourceNode n = App.Library.ResouceFilesRoot.Find(SelectItemPath);
+            ResourceNode n = ViewModel.Library.ResouceFilesRoot.Find(SelectItemPath);
             ContextMenu cm = CreateContextMenu(n);
             tree.ContextMenu = cm;
 

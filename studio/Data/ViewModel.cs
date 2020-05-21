@@ -8,26 +8,19 @@ namespace studio
 {
     class ViewModel
     {
-        static public LogData LogData
-        {
-            get { return _logData; }
-            set { _logData = value; }
-        }
-        static private LogData _logData = new LogData();
+        public static LogData LogData { get { return _logData; } }
+        private static LogData _logData = new LogData();
 
-        static public NotifyProperyDescriptorCollection PropertiesData
-        {
-            get { return _propertieData; }
-            set { _propertieData = value; }
-        }
-        static private NotifyProperyDescriptorCollection _propertieData = new NotifyProperyDescriptorCollection();
+        public static NotifyProperyDescriptorCollection PropertiesGridPanelData { get { return _propertieData; } }
+        private static NotifyProperyDescriptorCollection _propertieData = new NotifyProperyDescriptorCollection();
 
-        public static NodeData VisualTreeModel
-        {
-            get { return _visualTreeModel; }
-            set { _visualTreeModel = value; }
-        }
-        static private NodeData _visualTreeModel = new NodeData();
+        public static NodeData VisualTreeModel { get { return _visualTreeModel; } }
+        private static NodeData _visualTreeModel = new NodeData();
 
+        public static PluginCollection Plugins { get { return _plugins; } }
+        private static PluginCollection _plugins = new PluginCollection();
+
+        public static Library Library { get { return _library; } }
+        private static Library _library = new Library();
     }
 }

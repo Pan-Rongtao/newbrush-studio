@@ -46,7 +46,7 @@ namespace studio
             LoadModelRequest request = new LoadModelRequest() { ModelPath = filePath, TexturePath = fileDir };
             try
             {
-                RpcManager.ShaderClient.LoadModel(request);
+                Rpc.ShaderClient.LoadModel(request);
             }
             catch (Grpc.Core.RpcException) { }
         }

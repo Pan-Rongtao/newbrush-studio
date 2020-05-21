@@ -17,7 +17,7 @@ namespace studio
             _type = type;
             _name = name;
             _iconType = MetaObject.ClassDescriptor.TypeToIcon(type);
-            MetaObject meta = PluginManager.FindMetaObject(type);
+            MetaObject meta = ViewModel.Plugins.FindMetaObject(type);
             if (meta != null)
             {
                 foreach (MetaObject.PropertyDescriptor p in meta.Properties)
@@ -40,8 +40,7 @@ namespace studio
                     {
                         defaultValue = System.Activator.CreateInstance(p.ValueType);
                     }
-                    string category = p.Category;
-                    PropertyGridData.Data.Add(new PropertyAttr(p.Type, category, p.Name, p.Description, defaultValue));
+                    PropertyGridData.Data.Add(new PropertyAttr(p.Type, p.Category, p.Name, p.Description, defaultValue));
                 }
             }
         }

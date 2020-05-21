@@ -6,12 +6,45 @@
              xmlns:local="clr-namespace:studio"
             xmlns:tk="http://schemas.xceed.com/wpf/xaml/toolkit"
              xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="studio.PropertyPanel"
+                xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <tk:PropertyGrid x:Name="propertyGrid" NameColumnWidth="150" ShowDescriptionByTooltip="True"
-                         PropertyValueChanged="propertyGrid_PropertyValueChanged"
-                         >
+                         PropertyValueChanged="propertyGrid_PropertyValueChanged" >
+            <tk:PropertyGrid.EditorDefinitions>
+
+                <!--<tk:EditorTemplateDefinition >
+                    <tk:EditorTemplateDefinition.TargetProperties>
+                    <tk:TargetPropertyType Type="{x:Type sys:Boolean}" />
+                    <tk:TargetPropertyType Type="{x:Type HorizontalAlignment}" />
+                    <tk:TargetPropertyType Type="{x:Type FontFamily}" />
+                </tk:EditorTemplateDefinition.TargetProperties>
+                
+                    <tk:EditorTemplateDefinition.EditingTemplate>
+                        <DataTemplate>
+                            <ComboBox ItemsSource="{Binding Value}"/>
+                        </DataTemplate>
+                    </tk:EditorTemplateDefinition.EditingTemplate>
+
+                    </tk:EditorTemplateDefinition >-->
+                        <!--
+                <tk:EditorTemplateDefinition TargetProperties="Opacity">
+                    <tk:EditorTemplateDefinition.EditingTemplate>
+                        <DataTemplate>
+                            <TextBlock Background="Yellow" Text="{Binding Value}" />
+                        </DataTemplate>
+                    </tk:EditorTemplateDefinition.EditingTemplate>
+                </tk:EditorTemplateDefinition>
+            -->
+                <tk:EditorTemplateDefinition TargetProperties="Visibility">
+                    <tk:EditorTemplateDefinition.EditingTemplate>
+                        <DataTemplate>
+                            <local:StringListComboboxEditor />
+                        </DataTemplate>
+                    </tk:EditorTemplateDefinition.EditingTemplate>
+                </tk:EditorTemplateDefinition>
+            </tk:PropertyGrid.EditorDefinitions>
         </tk:PropertyGrid>
     </Grid>
 </UserControl>

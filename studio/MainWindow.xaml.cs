@@ -12,8 +12,6 @@ namespace studio
     {
         public MainWindow()
         {
-            Plugin plugin = new Plugin("D:/github/newbrush/dist/win32/lib/NbGuid.dll");
-            plugin.Update();
             InitializeComponent();
 
         }
@@ -28,12 +26,12 @@ namespace studio
         private void CommandBinding_Executed_NewFolder(object sender, ExecutedRoutedEventArgs e)
         {
             var selectPath = ResourceFilesTree.SelectItemPath;
-            var parentNode = App.Library.ResouceFilesRoot.Find(selectPath);
+            var parentNode = ViewModel.Library.ResouceFilesRoot.Find(selectPath);
             string newFolderName = (string)(e.Parameter);
             ResourceNode sourceNode = (e.OriginalSource as Button).Tag as ResourceNode;
             if (parentNode == null)
             {
-                parentNode = App.Library.ResourceFilesSubRoot(sourceNode.ResourceType);
+                parentNode = ViewModel.Library.ResourceFilesSubRoot(sourceNode.ResourceType);
             }
             if(parentNode.GetChild(newFolderName) == null)
             {
@@ -68,10 +66,10 @@ namespace studio
                 string name = Path.GetFileName(ofd.FileName);
                 FileStream fs = new FileStream(ofd.FileName, FileMode.Open, FileAccess.Read);
                 var selectPath = ResourceFilesTree.SelectItemPath;
-                var parentNode = App.Library.ResouceFilesRoot.Find(selectPath);
+                var parentNode = ViewModel.Library.ResouceFilesRoot.Find(selectPath);
                 if (parentNode == null)
                 {
-                    parentNode = App.Library.ResourceFilesSubRoot(ResourceType.Image);
+                    parentNode = ViewModel.Library.ResourceFilesSubRoot(ResourceType.Image);
                 }
 
                 Byte[] bytes = new byte[fs.Length];
@@ -99,7 +97,7 @@ namespace studio
                 return;
 
             string parentPath = Path.GetDirectoryName(selectPath).Replace('\\', '/');
-            ResourceNode parentNode = App.Library.ResouceFilesRoot.Find(parentPath);
+            ResourceNode parentNode = ViewModel.Library.ResouceFilesRoot.Find(parentPath);
             ResourceNode childNode = e.Parameter as ResourceNode;
             parentNode.Children.Remove(childNode);
         }
@@ -110,7 +108,7 @@ namespace studio
             if (ResourceFilesTree.SelectItemPath == null)
                 return;
             
-            ResourceNode targetNode = App.Library.ResouceFilesRoot.Find(selectPath);
+            ResourceNode targetNode = ViewModel.Library.ResouceFilesRoot.Find(selectPath);
             string ext = Path.GetExtension(selectPath);
             string newName = (string)(e.Parameter);
             if (!targetNode.Is(ResourceType.Folder))
