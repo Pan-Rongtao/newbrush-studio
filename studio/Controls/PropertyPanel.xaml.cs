@@ -46,7 +46,7 @@ namespace studio
         {
             PropertyItem item = e.OriginalSource as PropertyItem;
             string path = VisualTree.SelectItemPath;
-            UInt64 propertyID = (item.PropertyDescriptor as MyPropertyDescriptor).Attr.PropertyID;
+            UInt64 propertyID = (item.PropertyDescriptor as MyPropertyDescriptor).PropertyID;
             Type t = item.PropertyType;
             object v = item.Value;
             if (t == typeof(bool))
@@ -110,6 +110,17 @@ namespace studio
                 Nbrpc.Color c = new Nbrpc.Color() { A = mc.A, R = mc.R, G = mc.G, B = mc.B };
                 SetPropertyColorRequest request = new SetPropertyColorRequest() { Base = new SetPropertyBaseRequest() { Path = path, PropertyID = propertyID }, Value = c };
                 var reply = Rpc.NodeClient.SetPropertyColor(request);
+            }
+            else if(t == typeof(string[]))
+            {
+                ArrayList itemsSource = (item.PropertyDescriptor as MyPropertyDescriptor).ItemsSource;
+                int index = itemsSource.IndexOf(v);
+                SetPropertyEnumRequest request = new SetPropertyEnumRequest() { Base = new SetPropertyBaseRequest() { Path = path, PropertyID = propertyID }, Value = index };
+                var reply = Rpc.NodeClient.SetPropertyEnum(request);
+                if(!reply.Success)
+                {
+                    ViewModel.LogData.Add(LogLevel.Error, reply.Msg);
+                }
             }
         }
 

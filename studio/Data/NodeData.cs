@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using MaterialDesignThemes.Wpf;
 using System.Collections.ObjectModel;
 using System.Windows.Media;
+using System.Collections;
 
 namespace studio
 {
@@ -23,14 +24,20 @@ namespace studio
                 foreach (MetaObject.PropertyDescriptor p in meta.Properties)
                 {
                     object defaultValue;
+                    ArrayList itemsSource = null;
                     if (p.ValueType == typeof(String))
                     {
                         defaultValue = string.Empty;
                     }
-                    else if (p.ValueType == typeof(List<string>))
+                    else if (p.ValueType == typeof(string[]))
                     {
-                        string[] enums = p.Extra.Split('|');
-                        defaultValue = enums;
+                        var strs = p.Extra.Split('|');
+                        ArrayList items = new ArrayList();
+                        foreach (string s in strs)
+                            items.Add(s);
+                        
+                        defaultValue = strs[0];
+                        itemsSource = items;
                     }
                     else if (p.ValueType == typeof(Brush))
                     {
@@ -40,7 +47,8 @@ namespace studio
                     {
                         defaultValue = System.Activator.CreateInstance(p.ValueType);
                     }
-                    PropertyGridData.Data.Add(new PropertyAttr(p.Type, p.Category, p.Name, p.Description, defaultValue));
+                    MyPropertyDescriptor pds = new MyPropertyDescriptor(p.Type, p.Category, p.Name, p.Description, p.ValueType, defaultValue, itemsSource);
+                    PropertyGridData.Data.Add(pds.DisplayName, pds);
                 }
             }
         }

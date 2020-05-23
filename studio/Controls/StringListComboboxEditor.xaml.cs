@@ -49,7 +49,9 @@ namespace studio
 
         private void Selector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            BindingExpression be = this.GetBindingExpression(ValueProperty);
+            if (be != null)
+                be.UpdateSource();
         }
     }
 }

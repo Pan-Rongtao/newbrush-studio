@@ -312,9 +312,10 @@
       <DependentUpon>WorkArea.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\ViewModel.cs" />
-    <Compile Include="StringListComboboxEditor.xaml.cs">
+    <Compile Include="Controls\StringListComboboxEditor.xaml.cs">
       <DependentUpon>StringListComboboxEditor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StringCombox.cs" />
     <Page Include="Controls\BooleanEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -407,7 +408,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="StringListComboboxEditor.xaml">
+    <Page Include="Controls\StringListComboboxEditor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

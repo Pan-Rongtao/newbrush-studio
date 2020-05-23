@@ -11,10 +11,15 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <tk:PropertyGrid x:Name="propertyGrid" NameColumnWidth="150" ShowDescriptionByTooltip="True"
-                         PropertyValueChanged="propertyGrid_PropertyValueChanged" >
-            <tk:PropertyGrid.EditorDefinitions>
+                         PropertyValueChanged="propertyGrid_PropertyValueChanged" 
+                         IsMiscCategoryLabelHidden="False"
+                         ShowAdvancedOptions="False"
+                         ShowPreview="True"
+                               ShowSummary="False" >
+            
+            <!--<tk:PropertyGrid.EditorDefinitions>
 
-                <!--<tk:EditorTemplateDefinition >
+                --><!--<tk:EditorTemplateDefinition >
                     <tk:EditorTemplateDefinition.TargetProperties>
                     <tk:TargetPropertyType Type="{x:Type sys:Boolean}" />
                     <tk:TargetPropertyType Type="{x:Type HorizontalAlignment}" />
@@ -37,14 +42,14 @@
                     </tk:EditorTemplateDefinition.EditingTemplate>
                 </tk:EditorTemplateDefinition>
             -->
-                <tk:EditorTemplateDefinition TargetProperties="Visibility">
+                <!--<tk:EditorTemplateDefinition TargetProperties="Visibility">
                     <tk:EditorTemplateDefinition.EditingTemplate>
                         <DataTemplate>
                             <local:StringListComboboxEditor />
                         </DataTemplate>
                     </tk:EditorTemplateDefinition.EditingTemplate>
-                </tk:EditorTemplateDefinition>
-            </tk:PropertyGrid.EditorDefinitions>
+                </tk:EditorTemplateDefinition>--><!--
+            </tk:PropertyGrid.EditorDefinitions>-->
         </tk:PropertyGrid>
     </Grid>
 </UserControl>

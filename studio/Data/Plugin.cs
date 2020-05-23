@@ -216,7 +216,7 @@ namespace studio
                             case 25: t = typeof(DateTime); break;
                             case 26: t = typeof(TimeSpan); break;
                             case 27: t = typeof(Thickness); break;
-                            case 28: t = typeof(List<String>); break;
+                            case 28: t = typeof(string[]); break;
                             case 29: t = typeof(Brush); break;
                             case 30: t = typeof(int); break;
                             case 31: t = typeof(List<Single>); break;
