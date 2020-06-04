@@ -1,17 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
 using System.ComponentModel;
 using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
 using System.Collections;
-using Xceed.Wpf.Toolkit;
 using Xceed.Wpf.Toolkit.PropertyGrid.Editors;
 using System.Windows.Media;
 using System.Windows;
-using System.Collections.ObjectModel;
 
 namespace studio
 {
@@ -24,10 +18,7 @@ namespace studio
             set
             {
                 _data = value;
-                if(Changed != null)
-                {
-                    Changed(this, _data);
-                }
+                Changed?.Invoke(this, _data);
             }
         }
         private MyPropertyDescriptorCollection _data;
@@ -36,58 +27,33 @@ namespace studio
     //定义自己的属性描述
     public class MyPropertyDescriptor : PropertyDescriptor
     {
-        public MyPropertyDescriptor(UInt64 propertyID, string category, string displayName, string description, Type propertyType, object defaultValue, ArrayList itemsSource)
+        public MyPropertyDescriptor(UInt64 propertyID, string category, string displayName, int order, string description, Type propertyType, object defaultValue, ArrayList itemsSource)
             : base(displayName, new Attribute[0])
         {
             PropertyID = propertyID;
             _category = category;
             _displayName = displayName;
+            _order = order;
             _description = description;
             _value = defaultValue;
             _propertyType = propertyType;
             ItemsSource = itemsSource;
+
             Affirm(propertyType);
         }
 
         public UInt64 PropertyID { get; }
         private string _category;
         private string _displayName;
+        private int _order;
         private string _description;
         private object _value;
         private Type _propertyType;
-        private Attribute[] _attributes;
+        private Type _editorType;
         public ArrayList ItemsSource { get; }
-        /*
-        class StringListCollection : IItemsSource
-        {
-            private List<string> _items = new List<string>();
 
-            public StringListCollection()
-            {
-
-            }
-
-            public StringListCollection(List<string> items)
-            {
-                _items = items;
-            }
-
-            public ItemCollection GetValues()
-            {
-                var ret = new ItemCollection();
-                //foreach(string s in _items)
-                    ret.Add("Visible");
-                ret.Add("Collapsed");
-                ret.Add("Hidden");
-                return ret;
-            }
-        }
-        */
         private void Affirm(Type propertyType)
         {
-            Type _editorType = null;
-            Type _itemsSourceType = null;
-
             if (propertyType == typeof(string))
             {
                 _editorType = typeof(TextBoxEditor);
@@ -182,10 +148,6 @@ namespace studio
                 //throw new Exception();
             }
 
-            List<Attribute> ac = new List<Attribute>();
-            if (_editorType != null) ac.Add(new EditorAttribute(_editorType, _editorType));
-            if (_itemsSourceType != null) ac.Add(new ItemsSourceAttribute(_itemsSourceType));
-            _attributes = ac.ToArray();
         }
 
         public override bool CanResetValue(object component){return true;}
@@ -203,11 +165,25 @@ namespace studio
         public override string Category { get { return _category; } }
         public override string Description { get { return _description; } }
         
-        protected override Attribute[] AttributeArray { get { return _attributes; } set { _attributes = value; } }
+        protected override Attribute[] AttributeArray
+        {
+            get
+            {
+                List<Attribute> ac = new List<Attribute>() { new PropertyOrderAttribute(_order) };
+                if (_editorType != null)
+                {
+                    ac.Add(new EditorAttribute(_editorType, _editorType));
+                }
+                return ac.ToArray();
+            }
+        }
 
     }
 
     //定义属性集合描述
+    //[CategoryOrder("Information", 0)]
+    //[CategoryOrder("Conections", 1)]
+    //[CategoryOrder("Other", 2)]
     public class MyPropertyDescriptorCollection : Dictionary<string, MyPropertyDescriptor>, ICustomTypeDescriptor
     {
         PropertyDescriptorCollection ICustomTypeDescriptor.GetProperties()

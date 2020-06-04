@@ -5,6 +5,10 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Reflection;
+using System.Reflection.Emit;
+using System.Threading;
+using System.ComponentModel;
 
 namespace studio
 {
@@ -19,6 +23,7 @@ namespace studio
             plugin.Update();
             ViewModel.Plugins.Add(plugin);
             ViewModel.VisualTreeModel.Children.Add(new NodeData("nb::Window", "Window"));
+
         }
     }
 }

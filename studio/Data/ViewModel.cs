@@ -15,10 +15,10 @@ namespace studio
         private static NotifyProperyDescriptorCollection _propertieData = new NotifyProperyDescriptorCollection();
 
         public static NodeData VisualTreeModel { get { return _visualTreeModel; } }
-        private static NodeData _visualTreeModel = new NodeData();
+        private static NodeData _visualTreeModel = NodeData.Empty;
 
-        public static PluginCollection Plugins { get { return _plugins; } }
-        private static PluginCollection _plugins = new PluginCollection();
+        public static List<Plugin> Plugins { get { return _plugins; } }
+        private static List<Plugin> _plugins = new List<Plugin>();
 
         public static Library Library { get { return _library; } }
         private static Library _library = new Library();

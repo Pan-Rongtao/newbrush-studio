@@ -46,9 +46,9 @@ namespace studio
         
         private void Log(LogLevel level, string msg)
         {
-            string s = "[" + DateTime.Now.ToString("MM-dd hh:mm:ss.fff") + "] " + msg;
+            string s = string.Format("[{0}][{1}] {2}", DateTime.Now.ToString("MM月dd日 hh:mm:ss.fff"), level == LogLevel.Info ? "信息" : level == LogLevel.Warn ? "警告" : "错误", msg);
             Run run = new Run(s);
-            Color c = level == LogLevel.Info ? Colors.Black : level == LogLevel.Warn ? Colors.Yellow : Colors.Red;
+            Color c = level == LogLevel.Info ? Colors.Black : level == LogLevel.Warn ? Colors.DarkOrange : Colors.Red;
             run.Foreground = new SolidColorBrush(c);
             this.pg.Inlines.Add(run);
             this.pg.Inlines.Add(new LineBreak());

@@ -18,6 +18,7 @@
                 <ComboBoxItem>综合</ComboBoxItem>
                 <ComboBoxItem>工具</ComboBoxItem>
                 <ComboBoxItem>外部</ComboBoxItem>
+                <WrapPanel />
             </ComboBox>
         </StackPanel>
 

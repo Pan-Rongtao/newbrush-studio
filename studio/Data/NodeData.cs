@@ -9,66 +9,84 @@ namespace studio
 {
     public class NodeData
     {
-        public NodeData()
+        static public NodeData Empty { get { return new NodeData(); } }
+
+        public NodeData(string typeName, string name)
         {
+            _typeName = typeName;
+            _name = name;
+            _iconType = CppCShapeTypeParser.TypeNameToIcon(typeName);
+            InitPropertyGridData(typeName);
         }
 
-        public NodeData(string type, string name)
+        public MetaClass FindMetaClass(String typeName)
         {
-            _type = type;
-            _name = name;
-            _iconType = MetaObject.ClassDescriptor.TypeToIcon(type);
-            MetaObject meta = ViewModel.Plugins.FindMetaObject(type);
-            if (meta != null)
+            foreach (Plugin plugin in ViewModel.Plugins)
             {
-                foreach (MetaObject.PropertyDescriptor p in meta.Properties)
+                foreach (var mc in plugin.MetaClasses)
                 {
-                    object defaultValue;
-                    ArrayList itemsSource = null;
-                    if (p.ValueType == typeof(String))
+                    if (mc.Descriptor.TypeName == typeName)
                     {
-                        defaultValue = string.Empty;
+                        return mc;
                     }
-                    else if (p.ValueType == typeof(string[]))
-                    {
-                        var strs = p.Extra.Split('|');
-                        ArrayList items = new ArrayList();
-                        foreach (string s in strs)
-                            items.Add(s);
-                        
-                        defaultValue = strs[0];
-                        itemsSource = items;
-                    }
-                    else if (p.ValueType == typeof(Brush))
-                    {
-                        defaultValue = new SolidColorBrush();
-                    }
-                    else
-                    {
-                        defaultValue = System.Activator.CreateInstance(p.ValueType);
-                    }
-                    MyPropertyDescriptor pds = new MyPropertyDescriptor(p.Type, p.Category, p.Name, p.Description, p.ValueType, defaultValue, itemsSource);
-                    PropertyGridData.Data.Add(pds.DisplayName, pds);
                 }
             }
+            return null;
         }
 
-        public String Type
+        private void InitPropertyGridData(string typeName)
         {
-            get { return _type; }
-            set { _type = value; IconType = MetaObject.ClassDescriptor.TypeToIcon(value); }
-        }
-
-        public PackIconKind IconType
-        {
-            get { return _iconType; }
-            set
+            var mc = FindMetaClass(typeName);
+            if (mc == null)
             {
-                _iconType = value;
+                ViewModel.LogData.Add(LogLevel.Error, "{0}不是一个已注册的类型", typeName);
+                return;
+            }
+
+            foreach (var p in mc.Properties)
+            {
+                Type propertyType = null;
+                object defaultValue = null;
+                ArrayList itemsSource = null;
+                if (p.IsEnumType())
+                {
+                    var strs = p.EnumSource.Split('|');
+                    ArrayList items = new ArrayList();
+                    foreach (string s in strs)
+                        items.Add(s);
+
+                    defaultValue = strs[0];
+                    itemsSource = items;
+                    propertyType = typeof(string[]);
+                }
+                else
+                {
+                    Tuple<Type, object> ret = CppCShapeTypeParser.ValueTypeCppToShape(p.ValueTypeName);
+                    if (ret == null)
+                    {
+                        ViewModel.LogData.Add(LogLevel.Warn, "元件{0}的属性{1}使用了不支持的C++属性类型{2}", typeName, p.DisplayName, p.ValueTypeName);
+                        continue;
+                    }
+                    propertyType = ret.Item1;
+                    defaultValue = ret.Item2;
+                }
+                MyPropertyDescriptor pds = new MyPropertyDescriptor(p.TypeID, p.Category, p.DisplayName, p.Order, p.Description, propertyType, defaultValue, itemsSource);
+                try
+                {
+                    PropertyGridData.Data.Add(pds.DisplayName, pds);
+                }
+                catch(Exception)
+                {
+                    ViewModel.LogData.Add(LogLevel.Warn, "{0}注册了重复的属性名{1}，请检查插件代码", typeName, p.DisplayName);
+                }
+
             }
         }
 
-        public String Name
+        public string Type { get { return _typeName; } }
+        public PackIconKind IconType { get { return _iconType; } }
+
+        public string Name
         {
             get { return _name; }
             set { _name = value; }
@@ -77,13 +95,10 @@ namespace studio
         public bool Visibility
         {
             get { return _visibility; }
-            set
-            {
-                _visibility = value;
-            }
+            set { _visibility = value; }
         }
 
-        public NotifyProperyDescriptorCollection PropertyGridData = new NotifyProperyDescriptorCollection() { Data = new MyPropertyDescriptorCollection() };
+        public NotifyProperyDescriptorCollection PropertyGridData { get { return _propertyGridData; } }
 
         public NodeData GetChild(string name)
         {
@@ -117,10 +132,13 @@ namespace studio
         public ObservableCollection<NodeData> Children { get { return _children; } set { _children = value; } }
         private ObservableCollection<NodeData> _children = new ObservableCollection<NodeData>();
 
-        private String _type;
+        private string _typeName;
         private PackIconKind _iconType = PackIconKind.GlobeLight;
         private string _name;
         private bool _visibility = true;
+        private NotifyProperyDescriptorCollection _propertyGridData = new NotifyProperyDescriptorCollection() { Data = new MyPropertyDescriptorCollection() };
+
+        private NodeData() { }
     }
         
 }

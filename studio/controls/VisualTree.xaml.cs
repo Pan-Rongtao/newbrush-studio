@@ -110,10 +110,10 @@ namespace studio
         {
             foreach(Plugin plugin in ViewModel.Plugins)
             {
-                foreach(MetaObject m in plugin.MetaObjects)
+                foreach(var m in plugin.MetaClasses)
                 {
                     PackIcon icon = new PackIcon();
-                    icon.Kind = MetaObject.ClassDescriptor.TypeToIcon(m.Descriptor.Type);
+                    icon.Kind = m.Descriptor.Icon;
                     icon.Margin = new System.Windows.Thickness(5, 0, 0, 0);
                     MenuItem menuItem = new MenuItem();
                     menuItem.Header = m.Descriptor.DisplayName;
@@ -128,10 +128,10 @@ namespace studio
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            MetaObject metaObj = (sender as MenuItem).Tag as MetaObject;
+            var metaObj = (sender as MenuItem).Tag as MetaClass;
             AddNodeRequest request = new AddNodeRequest();
             request.Path = SelectItemPath;
-            request.ChildType = metaObj.Descriptor.Type;
+            request.ChildType = metaObj.Descriptor.TypeName;
             request.ChildName = metaObj.Descriptor.DisplayName;
             try
             {

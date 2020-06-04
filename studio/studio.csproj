@@ -234,6 +234,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data\CppCShapeTypeParser.cs" />
     <Compile Include="Data\Commands.cs" />
     <Compile Include="Data\BindingCoverters.cs" />
     <Compile Include="Data\LogData.cs" />
@@ -316,6 +317,7 @@
       <DependentUpon>StringListComboboxEditor.xaml</DependentUpon>
     </Compile>
     <Compile Include="StringCombox.cs" />
+    <Compile Include="Data\Win32Delegate.cs" />
     <Page Include="Controls\BooleanEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
