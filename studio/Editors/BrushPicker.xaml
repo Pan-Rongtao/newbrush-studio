@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="studio.BrushPicker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:studio"
+             mc:Ignorable="d" 
+            xmlns:tk="http://schemas.xceed.com/wpf/xaml/toolkit"
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             Height="20"
+             x:Name="self"
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <GridLength x:Key="ColWidth">20</GridLength>
+        <Style x:Key="btnStyle" TargetType="Button">
+            <Setter Property="Padding" Value="-10"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Width" Value="20"/>
+            <Setter Property="Height" Value="20"/>
+        </Style>
+        <local:BrushVisibilityConverter x:Key="converter"/>
+    </UserControl.Resources>
+
+    <Grid x:Name="grid" Background="Transparent" ContextMenuService.Placement="Bottom" MouseLeftButtonUp="grid_MouseLeftButtonUp"
+          PreviewMouseLeftButtonDown="grid_PreviewMouseLeftButtonDown">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="15"/>
+        </Grid.ColumnDefinitions>
+        
+        <Rectangle Grid.Column="0" Margin="3,1,3,1" Fill="{Binding Value, ElementName=self}" Stroke="#cccedb" StrokeThickness="1"/>
+        <TextBlock Grid.Column="0" Text="无画笔" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding Value, ElementName=self, Converter={StaticResource converter}}"/>
+
+        <local:Operator Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" ResetValue="Operator_ResetValue">
+
+        </local:Operator>
+        
+        <Popup x:Name="pop" StaysOpen="False">
+            <local:BrushPop/>
+        </Popup>
+        
+    </Grid>
+</UserControl>

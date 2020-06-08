@@ -10,7 +10,7 @@ using System.Collections;
 
 namespace studio
 {
-    class StringCombox : ComboBoxEditor
+    class StringComboxEditor : ComboBoxEditor
     {
         protected override IEnumerable CreateItemsSource(PropertyItem propertyItem)
         {

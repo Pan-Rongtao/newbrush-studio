@@ -234,6 +234,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Editors\BrushPop.xaml.cs">
+      <DependentUpon>BrushPop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\BrushPicker.xaml.cs">
+      <DependentUpon>BrushPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\BrushEditor.cs" />
     <Compile Include="Data\CppCShapeTypeParser.cs" />
     <Compile Include="Data\Commands.cs" />
     <Compile Include="Data\BindingCoverters.cs" />
@@ -316,8 +323,16 @@
     <Compile Include="Controls\StringListComboboxEditor.xaml.cs">
       <DependentUpon>StringListComboboxEditor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="StringCombox.cs" />
+    <Compile Include="Editors\StringComboxEditor.cs" />
     <Compile Include="Data\Win32Delegate.cs" />
+    <Page Include="Editors\BrushPop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\BrushPicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\BooleanEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -414,8 +429,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Editors\Operator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Editors\Operator.xaml.cs">
+      <DependentUpon>Operator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

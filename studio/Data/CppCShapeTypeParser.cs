@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using MaterialDesignThemes.Wpf;
+using System.Windows.Controls;
 
 namespace studio
 {
@@ -38,9 +39,13 @@ namespace studio
                 case "std::vector<int>":    return new Tuple<Type, object>(typeof(List<int>), new List<int>()); ;
                 case "std::vector<float>":  return new Tuple<Type, object>(typeof(List<float>), new List<float>());
                 case "std::vector<double>": return new Tuple<Type, object>(typeof(List<double>), new List<double>());
-                case "classnb::Thickness":  return new Tuple<Type, object>(typeof(Thickness), new Thickness());
+                case "classnb::Thickness":  return new Tuple<Type, object>(typeof(Thickness), new Thickness()); 
                 case "classstd::shared_ptr<classnb::Transform>":  return new Tuple<Type, object>(typeof(Transform), new TranslateTransform());
                 case "classstd::shared_ptr<classnb::ImageSource>": return new Tuple<Type, object>(typeof(ImageSource), new BitmapImage());
+                case "classstd::shared_ptr<classnb::Brush>":      return new Tuple<Type, object>(typeof(Brush), null);
+                case "classstd::shared_ptr<classnb::ControlTemplate>": return new Tuple<Type, object>(typeof(ControlTemplate), new ControlTemplate());
+                case "classstd::shared_ptr<classnb::Font>": return new Tuple<Type, object>(typeof(FontFamily), new FontFamily());
+                case "classstd::shared_ptr<classnb::UIElement>": return new Tuple<Type, object>(typeof(UIElement), new UIElement());
                 default:                    return null;
             }
         }
@@ -69,7 +74,7 @@ namespace studio
             { "nb::Window", PackIconKind.Airplay },
             { "nb::Line", PackIconKind.VectorLine },
             { "nb::Polyline", PackIconKind.VectorPolyline },
-            { "nb::Polygon", PackIconKind.VectorPolygon },
+            { "nb::Polygon", PackIconKind.PentagonOutline },
             { "nb::Path", PackIconKind.MapMarkerPath },
             { "nb::Rectangle", PackIconKind.RectangleOutline },
             { "nb::Ellipse", PackIconKind.EllipseOutline },

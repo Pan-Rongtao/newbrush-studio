@@ -10,12 +10,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <tk:PropertyGrid x:Name="propertyGrid" NameColumnWidth="150" ShowDescriptionByTooltip="True"
+        <tk:PropertyGrid x:Name="propertyGrid" NameColumnWidth="100" ShowDescriptionByTooltip="True"
                          PropertyValueChanged="propertyGrid_PropertyValueChanged" 
                          IsMiscCategoryLabelHidden="False"
                          ShowAdvancedOptions="False"
                          ShowPreview="True"
-                               ShowSummary="False" >
+                         ShowSummary="False" >
             
             <!--<tk:PropertyGrid.EditorDefinitions>
 

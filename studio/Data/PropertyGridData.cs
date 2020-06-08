@@ -138,10 +138,14 @@ namespace studio
             {
                 _editorType = typeof(TextBoxEditor);
             }
-            else if(propertyType == typeof(string[]))
+            else if (propertyType == typeof(string[]))
             {
-                _editorType = typeof(StringCombox);
+                _editorType = typeof(StringComboxEditor);
                 //_itemsSourceType = typeof(StringListCollection);
+            }
+            else if (propertyType == typeof(Brush))
+            {
+                _editorType = typeof(BrushEditor);
             }
             else
             {
