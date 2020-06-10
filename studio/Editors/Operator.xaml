@@ -14,7 +14,7 @@
             <Button.Template>
                 <ControlTemplate>
                     <Grid>
-                        <Rectangle x:Name="bk" Fill="Transparent"  Width="15" RadiusX="5" RadiusY="5"/>
+                        <Rectangle x:Name="bk" Fill="Transparent"  Width="15" RadiusX="2" RadiusY="2"/>
                         <Rectangle Stroke="Gray" StrokeThickness="1" Fill="Transparent"  Width="5" Height="5"/>
                     </Grid>
                     <ControlTemplate.Triggers>

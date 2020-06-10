@@ -290,6 +290,9 @@
     <Compile Include="Controls\SearchBox.xaml.cs">
       <DependentUpon>SearchBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\GradientBrushCtrl.xaml.cs">
+      <DependentUpon>GradientBrushCtrl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Grpc\Math.cs" />
     <Compile Include="Grpc\Node.cs" />
     <Compile Include="Grpc\NodeGrpc.cs" />
@@ -325,6 +328,9 @@
     </Compile>
     <Compile Include="Editors\StringComboxEditor.cs" />
     <Compile Include="Data\Win32Delegate.cs" />
+    <Compile Include="Controls\SolidColorCtrl.xaml.cs">
+      <DependentUpon>SolidColorCtrl.xaml</DependentUpon>
+    </Compile>
     <Page Include="Editors\BrushPop.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -369,6 +375,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\GradientBrushCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ImageBrushCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -376,6 +390,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\ImageBrushCtrl.xaml.cs">
+      <DependentUpon>ImageBrushCtrl.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -430,6 +447,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Editors\Operator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SolidColorCtrl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

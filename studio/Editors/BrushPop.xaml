@@ -8,6 +8,7 @@
             xmlns:tk="http://schemas.xceed.com/wpf/xaml/toolkit"
             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              x:Name="self"
+                xmlns:sys="clr-namespace:System;assembly=mscorlib"
              d:DesignHeight="300" d:DesignWidth="300">
 
     <UserControl.Resources>
@@ -17,7 +18,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type TabItem}">
                         <Grid>
-                            <Border  Name="Border"  Margin="0,0,0,0"  Background="Transparent"  BorderBrush="Black"   BorderThickness="1,1,1,1"  CornerRadius="0,10,0,0">
+                            <Border Name="Border" Margin="0,0,0,0" Background="Transparent" BorderBrush="DarkGray" BorderThickness="1,1,1,1" CornerRadius="0,10,0,0">
                                 <ContentPresenter x:Name="ContentSite"   VerticalAlignment="Center"   HorizontalAlignment="Center"  ContentSource="Header"  Margin="0"  RecognizesAccessKey="True">
                                     <ContentPresenter.LayoutTransform>
                                         <RotateTransform Angle="0" />
@@ -36,11 +37,12 @@
                                         </LinearGradientBrush>
                                     </Setter.Value>
                                 </Setter>
-                                <Setter TargetName="Border" Property="BorderThickness" Value="1,1,1,0" />
+                                <Setter TargetName="Border" Property="BorderThickness" Value="2,2,2,0" />
+                                <Setter TargetName="Border" Property="BorderBrush" Value="#FF09050F" />
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
                                 <Setter TargetName="Border" Property="Background" Value="Silver"/>
-                                <Setter TargetName="Border" Property="BorderBrush" Value="Black" />
+                                <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray" />
                                 <Setter Property="Foreground" Value="DarkGray" />
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -49,38 +51,33 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    
-    <Button>
-        <Button.Template>
-            <ControlTemplate>
-                <TabControl>
-                    <TabItem  Width="50">
-                        <TabItem.Header>
-                            <materialDesign:PackIcon Kind="PencilRemoveOutline"/>
-                        </TabItem.Header>
-                        <tk:ColorCanvas/>
-                    </TabItem>
-                    <TabItem  Width="50">
-                        <TabItem.Header>
-                            <materialDesign:PackIcon Kind="CardOutline"/>
-                        </TabItem.Header>
-                        <tk:ColorCanvas/>
-                    </TabItem>
-                    <TabItem  Width="50">
-                        <TabItem.Header>
-                            <materialDesign:PackIcon Kind="ImageOutline"/>
-                        </TabItem.Header>
-                        <tk:ColorCanvas/>
-                    </TabItem>
-                    <TabItem  Width="50">
-                        <TabItem.Header>
-                            <materialDesign:PackIcon Kind="Gradient"/>
-                        </TabItem.Header>
-                        <tk:ColorCanvas/>
-                    </TabItem>
-                </TabControl>
-            </ControlTemplate>
-        </Button.Template>
 
-    </Button>
+    <materialDesign:Card Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}">
+
+        <TabControl BorderThickness="2,1,2,2" BorderBrush="#FF09050F">
+            <TabControl.Resources>
+                <sys:Double x:Key="tabItemWidth">70</sys:Double>
+            </TabControl.Resources>
+            <TabItem Width="{StaticResource tabItemWidth}">
+                <TabItem.Header>
+                    <materialDesign:PackIcon Kind="CardOutline"/>
+                </TabItem.Header>
+                <local:SolidColorCtrl/>
+            </TabItem>
+            <TabItem Width="{StaticResource tabItemWidth}">
+                <TabItem.Header>
+                    <materialDesign:PackIcon Kind="Gradient"/>
+                </TabItem.Header>
+                <local:GradientBrushCtrl/>
+            </TabItem>
+            <TabItem Width="{StaticResource tabItemWidth}">
+                <TabItem.Header>
+                    <materialDesign:PackIcon Kind="ImageOutline"/>
+                </TabItem.Header>
+                <tk:ColorCanvas/>
+            </TabItem>
+        </TabControl>
+
+    </materialDesign:Card>
+    
 </UserControl>

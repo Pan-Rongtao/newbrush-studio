@@ -45,7 +45,7 @@ namespace studio
             try
             {
                 _process = Process.Start(path);
-                Thread.Sleep(500);
+                Thread.Sleep(1000);
                 System.Windows.Forms.PictureBox pb = new System.Windows.Forms.PictureBox();
                 form1.Child = pb;
                 Win32.SetParent(_process.MainWindowHandle, form1.Handle); //panel1.Handle为要显示外部程序的容器
