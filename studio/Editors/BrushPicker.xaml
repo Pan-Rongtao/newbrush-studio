@@ -38,7 +38,7 @@
 
         </local:Operator>
         
-        <Popup x:Name="pop" StaysOpen="False">
+        <Popup x:Name="pop" StaysOpen="False" Width="250">
             <local:BrushPop/>
         </Popup>
         

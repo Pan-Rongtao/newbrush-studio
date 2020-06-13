@@ -9,20 +9,51 @@
             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <Grid.Background>
-            <ImageBrush TileMode="FlipY" Stretch="Uniform"/>
-        </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="150"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Rectangle>
+        <Rectangle Width="200" >
             <Rectangle.Fill>
-                <ImageBrush ImageSource="f:/5.jpg" Stretch="Uniform" TileMode="Tile"
-                            Viewport="0,0,0.5,0.5"
+                <ImageBrush ImageSource="f:/5.jpg" TileMode="FlipY"
+                            Viewport="0, 0, 0.5, 0.5" Stretch="Uniform"
                             />
             </Rectangle.Fill>
         </Rectangle>
+
+        <Grid Grid.Row="1">
+            <Grid.Resources>
+                <Style x:Key="txtStyle" TargetType="TextBlock">
+                    <Setter Property="HorizontalAlignment" Value="Left"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Setter Property="Margin" Value="15,0,0,0"/>
+                </Style>
+                <GridLength x:Key="gridRowHeight">20</GridLength>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="{StaticResource gridRowHeight}"/>
+                <RowDefinition Height="{StaticResource gridRowHeight}"/>
+                <RowDefinition Height="{StaticResource gridRowHeight}"/>
+                <RowDefinition Height="{StaticResource gridRowHeight}"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="ImageSource" Style="{StaticResource txtStyle}"/>
+            <tk:AutoSelectTextBox Grid.Row="0" Grid.Column="1" />
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Stretch" Style="{StaticResource txtStyle}"/>
+            <tk:DoubleUpDown Grid.Row="1" Grid.Column="1" Value="1.0" Minimum="0" Maximum="1" Increment="0.1"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Opacity" Style="{StaticResource txtStyle}"/>
+            <tk:DoubleUpDown Grid.Row="2" Grid.Column="1"  Value="1.0" Minimum="0" Maximum="1" Increment="0.1"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="TileMode" Style="{StaticResource txtStyle}"/>
+            <tk:DoubleUpDown Grid.Row="3" Grid.Column="1"  Value="1.0" Minimum="0" Maximum="1" Increment="0.1"/>
+            <local:Operator Grid.Row="0" Grid.Column="2"/>
+            <local:Operator Grid.Row="1" Grid.Column="2"/>
+            <local:Operator Grid.Row="2" Grid.Column="2"/>
+            <local:Operator Grid.Row="3" Grid.Column="2"/>
+        </Grid>
     </Grid>
 </UserControl>

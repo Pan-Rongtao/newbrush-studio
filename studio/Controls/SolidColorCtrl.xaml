@@ -28,7 +28,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <TextBlock Text="Opacity" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <tk:DoubleUpDown Grid.Column="1" Value="0" Minimum="0" Maximum="1" Increment="0.1"/>
+            <tk:DoubleUpDown Grid.Column="1" Value="1.0" Minimum="0" Maximum="1" Increment="0.1"/>
         </Grid>
         <local:Operator Grid.Row="1" Grid.Column="1"/>
         

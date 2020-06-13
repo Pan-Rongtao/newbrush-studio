@@ -56,25 +56,26 @@
 
         <TabControl BorderThickness="2,1,2,2" BorderBrush="#FF09050F">
             <TabControl.Resources>
-                <sys:Double x:Key="tabItemWidth">70</sys:Double>
+                <sys:Double x:Key="tabItemHeadWidth">70</sys:Double>
+                <sys:Double x:Key="tabItemWidth">200</sys:Double>
             </TabControl.Resources>
-            <TabItem Width="{StaticResource tabItemWidth}">
+            <TabItem Width="{StaticResource tabItemHeadWidth}">
                 <TabItem.Header>
                     <materialDesign:PackIcon Kind="CardOutline"/>
                 </TabItem.Header>
                 <local:SolidColorCtrl/>
             </TabItem>
-            <TabItem Width="{StaticResource tabItemWidth}">
+            <TabItem Width="{StaticResource tabItemHeadWidth}">
                 <TabItem.Header>
                     <materialDesign:PackIcon Kind="Gradient"/>
                 </TabItem.Header>
                 <local:GradientBrushCtrl/>
             </TabItem>
-            <TabItem Width="{StaticResource tabItemWidth}">
+            <TabItem Width="{StaticResource tabItemHeadWidth}">
                 <TabItem.Header>
                     <materialDesign:PackIcon Kind="ImageOutline"/>
                 </TabItem.Header>
-                <tk:ColorCanvas/>
+                <local:ImageBrushCtrl/>
             </TabItem>
         </TabControl>
 
