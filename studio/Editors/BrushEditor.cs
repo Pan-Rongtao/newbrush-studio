@@ -26,7 +26,7 @@ namespace studio
         }
         protected override void SetValueDependencyProperty()
         {
-            ValueProperty = ColorPicker.SelectedColorProperty;
+            ValueProperty = BrushPicker.BrushProperty;
         }
     }
 

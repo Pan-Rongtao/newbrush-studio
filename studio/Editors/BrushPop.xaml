@@ -54,7 +54,7 @@
 
     <materialDesign:Card Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}">
 
-        <TabControl BorderThickness="2,1,2,2" BorderBrush="#FF09050F">
+        <TabControl x:Name="tab" BorderThickness="2,1,2,2" BorderBrush="#FF09050F" SelectionChanged="TabControl_SelectionChanged">
             <TabControl.Resources>
                 <sys:Double x:Key="tabItemHeadWidth">70</sys:Double>
                 <sys:Double x:Key="tabItemWidth">200</sys:Double>
@@ -63,19 +63,19 @@
                 <TabItem.Header>
                     <materialDesign:PackIcon Kind="CardOutline"/>
                 </TabItem.Header>
-                <local:SolidColorCtrl/>
+                <local:SolidColorCtrl x:Name="solidColorCtrl"/>
             </TabItem>
             <TabItem Width="{StaticResource tabItemHeadWidth}">
                 <TabItem.Header>
                     <materialDesign:PackIcon Kind="Gradient"/>
                 </TabItem.Header>
-                <local:GradientBrushCtrl/>
+                <local:GradientBrushCtrl x:Name="gradientBrushCtrl"/>
             </TabItem>
             <TabItem Width="{StaticResource tabItemHeadWidth}">
                 <TabItem.Header>
                     <materialDesign:PackIcon Kind="ImageOutline"/>
                 </TabItem.Header>
-                <local:ImageBrushCtrl/>
+                <local:ImageBrushCtrl x:Name="imageBrushCtrl"/>
             </TabItem>
         </TabControl>
 

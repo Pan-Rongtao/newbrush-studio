@@ -13,6 +13,38 @@ namespace studio
 {
     class CppCShapeTypeParser
     {
+        static private Dictionary<string, Type> typeMap = new Dictionary<string, Type>
+        {
+            { "bool", typeof(bool)},
+            { "char", typeof(char)},
+            { "signedchar", typeof(sbyte)},
+            { "unsignedchar", typeof(byte)},
+            { "wchar", typeof(short)},
+            { "short", typeof(short)},
+            { "unsignedshort", typeof(ushort)},
+            { "int", typeof(int)},
+            { "unsignedint", typeof(uint)},
+            { "long", typeof(long)},
+            { "unsignedlong", typeof(ulong)},
+            { "__int64", typeof(Int64)},
+            { "unsigned__int64", typeof(UInt64)},
+            { "float", typeof(float)},
+            { "double", typeof(double)},
+            { "longdouble", typeof(decimal)},
+            { "std::string", typeof(string)},
+            { "std::vector<bool>", typeof(List<bool>)},
+            { "std::vector<int>", typeof(List<int>)},
+            { "std::vector<float>", typeof(List<float>)},
+            { "std::vector<double>", typeof(List<double>)},
+            { "classnb::Thickness", typeof(Thickness)},
+            { "classstd::shared_ptr<classnb::Transform>", typeof(Transform)},
+            { "classstd::shared_ptr<classnb::ImageSource>", typeof(ImageSource)},
+            { "classstd::shared_ptr<classnb::Brush>", typeof(Brush)},
+            { "classstd::shared_ptr<classnb::ControlTemplate>", typeof(ControlTemplate)},
+            { "classstd::shared_ptr<classnb::Font>", typeof(FontFamily)},
+            { "classstd::shared_ptr<classnb::UIElement>", typeof(UIElement)},
+        };
+
         //返回<类型, 默认值>
         static public Tuple<Type, object> ValueTypeCppToShape(string typeName)
         {
@@ -33,7 +65,7 @@ namespace studio
                 case "unsigned__int64":     return new Tuple<Type, object>(typeof(UInt64), new UInt64());
                 case "float":               return new Tuple<Type, object>(typeof(float), new float());
                 case "double":              return new Tuple<Type, object>(typeof(double), new double());
-                case "longdouble":          return new Tuple<Type, object>(typeof(Decimal), new Decimal());
+                case "longdouble":          return new Tuple<Type, object>(typeof(decimal), new decimal());
                 case "std::string":         return new Tuple<Type, object>(typeof(string), string.Empty);
                 case "std::vector<bool>":   return new Tuple<Type, object>(typeof(List<bool>), new List<bool>());
                 case "std::vector<int>":    return new Tuple<Type, object>(typeof(List<int>), new List<int>()); ;
@@ -48,6 +80,12 @@ namespace studio
                 case "classstd::shared_ptr<classnb::UIElement>": return new Tuple<Type, object>(typeof(UIElement), new UIElement());
                 default:                    return null;
             }
+        }
+
+        static public string ValueTypeCShapeToCpp(Type t)
+        {
+            if (t == typeof(bool)) return "bool";
+            else return "none";
         }
         
         static public PackIconKind TypeNameToIcon(string typeName)

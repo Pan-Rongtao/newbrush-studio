@@ -24,62 +24,45 @@ namespace studio
         public BrushPicker()
         {
             InitializeComponent();
-
-            //cp.SelectedColorChanged += Cp_SelectedColorChanged;
+            
         }
 
-        private void Cp_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
+        public static readonly DependencyProperty BrushProperty = DependencyProperty.Register("Brush", typeof(Brush),
+            typeof(BrushPicker), new PropertyMetadata(null, onValueChanged));
+
+        static void onValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            Color? c = e.NewValue;
-            if(c != null)
-            {
-                Value = new SolidColorBrush(c.Value);
-            }
+        //        Console.WriteLine("BrushPicker::onBrushChanged:{0}", e.NewValue as Brush);
         }
 
-        public static readonly DependencyProperty ValueProperty = DependencyProperty.Register("Value", typeof(Brush),
-            typeof(BrushPicker), new PropertyMetadata(null, null));
-
-        public Brush Value
+        public Brush Brush
         {
-            get { return (Brush)GetValue(ValueProperty); }
-            set { SetValue(ValueProperty, value); }
-        }
-        
-        private void clearBrush_Click(object sender, RoutedEventArgs e)
-        {
-            Value = null;
+            get { return (Brush)GetValue(BrushProperty); }
+            set { SetValue(BrushProperty, value); }
         }
 
-        private void solidBrush_Click(object sender, RoutedEventArgs e)
-        {
-            //cp.IsOpen = true;
-        }
-
-        private void gradentBrush_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void imageBrush_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Operator_ResetValue(object sender, RoutedEventArgs e)
-        {
-
-        }
-        
         private void grid_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             if (!_PopIsOpenBeforeGridPressed)
+            {
                 pop.IsOpen = true;
+            }
         }
         
         private void grid_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             _PopIsOpenBeforeGridPressed = pop.IsOpen;
+        }
+
+        private void Operator_ResetValue(object sender, RoutedEventArgs e)
+        {
+            brushPop.Reset();
+        }
+
+        private void brushPop_BrushChanged(object sender, RoutedEventArgs e)
+        {
+            Brush brush = (sender as BrushPop).Brush;
+            Brush = brush;
         }
     }
 }

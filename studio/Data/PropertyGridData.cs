@@ -43,6 +43,7 @@ namespace studio
         }
 
         public UInt64 PropertyID { get; }
+        public string CppTypeName { get; }
         private string _category;
         private string _displayName;
         private int _order;

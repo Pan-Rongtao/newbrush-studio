@@ -18,21 +18,21 @@
             <ad:LayoutRoot x:Name="layoutRoot">
                 <ad:LayoutPanel>
 
-                    <ad:LayoutPanel Orientation="Vertical">
+                    <ad:LayoutPanel Orientation="Vertical" DockWidth="800">
                         <ad:LayoutAnchorablePane DockWidth="*">
                             <ad:LayoutAnchorable x:Name="PreviewLayout" Title="预览">
                                 <local:Preview x:Name="pv"/>
                             </ad:LayoutAnchorable>
                         </ad:LayoutAnchorablePane>
-                        <ad:LayoutAnchorablePane DockHeight="200">
+                        <ad:LayoutAnchorablePane DockHeight="200" DockWidth="200">
                             <ad:LayoutAnchorable Title="输出">
                                 <local:OutputPanel />
                             </ad:LayoutAnchorable>
                         </ad:LayoutAnchorablePane>
                     </ad:LayoutPanel>
 
-                    <ad:LayoutPanel Orientation="Vertical" DockWidth="460">
-                        <ad:LayoutAnchorablePane>
+                    <ad:LayoutDocumentPaneGroup Orientation="Vertical">
+                        <ad:LayoutDocumentPane>
                             <ad:LayoutAnchorable x:Name="visualTreeLayout" Title="工程">
                                 <local:VisualTree Margin="0,3,0,3"/>
                             </ad:LayoutAnchorable>
@@ -42,8 +42,8 @@
                             <ad:LayoutAnchorable Title="材质">
                                 <local:MaterialEditor/>
                             </ad:LayoutAnchorable>
-                        </ad:LayoutAnchorablePane>
-                    </ad:LayoutPanel>
+                        </ad:LayoutDocumentPane>
+                    </ad:LayoutDocumentPaneGroup>
 
                     <ad:LayoutAnchorablePane DockWidth="400" >
                         <ad:LayoutAnchorable x:Name="ProperiesLayout" Title="属性">
