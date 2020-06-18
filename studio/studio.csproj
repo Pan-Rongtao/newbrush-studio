@@ -241,7 +241,7 @@
       <DependentUpon>BrushPicker.xaml</DependentUpon>
     </Compile>
     <Compile Include="Editors\BrushEditor.cs" />
-    <Compile Include="Data\CppCShapeTypeParser.cs" />
+    <Compile Include="Data\CppCShapeTypeMapping.cs" />
     <Compile Include="Data\Commands.cs" />
     <Compile Include="Data\BindingCoverters.cs" />
     <Compile Include="Data\LogData.cs" />

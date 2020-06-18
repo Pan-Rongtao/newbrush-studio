@@ -48,23 +48,32 @@ namespace studio
             PropertyItem item = e.OriginalSource as PropertyItem;
             //PropertyGrid嵌套PropertyGrid的情况，父PropertyGrid也会收到changed消息
             //这里过滤子PropertyGrid的情况
-            var itemPropertyDescriptor = item.PropertyDescriptor;
-            if (itemPropertyDescriptor is MyPropertyDescriptor == false)
+            MyPropertyDescriptor itemPropertyDescriptor = item.PropertyDescriptor as MyPropertyDescriptor;
+            if (itemPropertyDescriptor == null)
             {
                 return;
             }
             
             Type propertyType = item.PropertyType;
             object propertyValue = item.Value;
+
             var request = new SetPropertyRequest();
             request.Path = VisualTree.SelectItemPath;
-            request.PropertyID = (itemPropertyDescriptor as MyPropertyDescriptor).PropertyID;
-            request.PropertyType = "";
-            request.PropertyValue = "";
-            
-            string s= new System.Windows.Media.Color().ToString();
-
-            CommonReply reply = Rpc.NodeClient.SetProperty(request);
+            request.PropertyID = itemPropertyDescriptor.ID;
+            request.PropertyType = itemPropertyDescriptor.TypeName;
+            request.PropertyValue = CppCShapeTypeMapping.ConverToString(propertyValue);
+            try
+            {
+                var reply = Rpc.NodeClient.SetProperty(request);
+                if (!reply.Success)
+                {
+                    ViewModel.LogData.Add(LogLevel.Error, reply.Msg);
+                }
+            }
+            catch(Exception ex)
+            {
+                ViewModel.LogData.Add(LogLevel.Error, ex.Message);
+            }
         }
 
     }

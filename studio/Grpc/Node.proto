@@ -33,5 +33,5 @@ message SetPropertyRequest
 	string path = 1;
 	uint64 propertyID = 2;
 	string propertyType = 3;
-	string propertyValue = 4;
+	bytes propertyValue = 4;
 }

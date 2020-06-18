@@ -11,6 +11,7 @@
     MinHeight="200"
     WindowStartupLocation="CenterScreen" 
     WindowState="Maximized"
+    
              xmlns:system="clr-namespace:System;assembly=mscorlib"
     >
 

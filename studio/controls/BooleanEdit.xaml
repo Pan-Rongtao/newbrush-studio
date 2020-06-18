@@ -9,5 +9,6 @@
     <Grid>
         <ToggleButton x:Name="tb" Style="{StaticResource MaterialDesignSwitchLightToggleButton}" ToolTip="MaterialDesignSwitchLightToggleButton" 
                       IsChecked="{Binding Path=Value, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:BooleanEdit}}, Mode=TwoWay}" />
+
     </Grid>
 </UserControl>

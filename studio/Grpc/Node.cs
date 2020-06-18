@@ -31,7 +31,7 @@ namespace Nbrpc {
             "BHBhdGgYASABKAkSFAoMY2hpbGRPbGROYW1lGAIgASgJEhQKDGNoaWxkTmV3",
             "TmFtZRgDIAEoCSJjChJTZXRQcm9wZXJ0eVJlcXVlc3QSDAoEcGF0aBgBIAEo",
             "CRISCgpwcm9wZXJ0eUlEGAIgASgEEhQKDHByb3BlcnR5VHlwZRgDIAEoCRIV",
-            "Cg1wcm9wZXJ0eVZhbHVlGAQgASgJMv0BCgdOb2RlUnBjEjYKB0FkZE5vZGUS",
+            "Cg1wcm9wZXJ0eVZhbHVlGAQgASgMMv0BCgdOb2RlUnBjEjYKB0FkZE5vZGUS",
             "FS5uYnJwYy5BZGROb2RlUmVxdWVzdBoSLm5icnBjLkNvbW1vblJlcGx5IgAS",
             "PAoKUmVtb3ZlTm9kZRIYLm5icnBjLlJlbW92ZU5vZGVSZXF1ZXN0GhIubmJy",
             "cGMuQ29tbW9uUmVwbHkiABI8CgpSZW5hbWVOb2RlEhgubmJycGMuUmVuYW1l",
@@ -650,9 +650,9 @@ namespace Nbrpc {
 
     /// <summary>Field number for the "propertyValue" field.</summary>
     public const int PropertyValueFieldNumber = 4;
-    private string propertyValue_ = "";
+    private pb::ByteString propertyValue_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string PropertyValue {
+    public pb::ByteString PropertyValue {
       get { return propertyValue_; }
       set {
         propertyValue_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
@@ -713,7 +713,7 @@ namespace Nbrpc {
       }
       if (PropertyValue.Length != 0) {
         output.WriteRawTag(34);
-        output.WriteString(PropertyValue);
+        output.WriteBytes(PropertyValue);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -733,7 +733,7 @@ namespace Nbrpc {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(PropertyType);
       }
       if (PropertyValue.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(PropertyValue);
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(PropertyValue);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -782,7 +782,7 @@ namespace Nbrpc {
             break;
           }
           case 34: {
-            PropertyValue = input.ReadString();
+            PropertyValue = input.ReadBytes();
             break;
           }
         }

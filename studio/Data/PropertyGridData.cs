@@ -27,10 +27,12 @@ namespace studio
     //定义自己的属性描述
     public class MyPropertyDescriptor : PropertyDescriptor
     {
-        public MyPropertyDescriptor(UInt64 propertyID, string category, string displayName, int order, string description, Type propertyType, object defaultValue, ArrayList itemsSource)
+        public MyPropertyDescriptor(UInt64 id, string typeName, string category, string displayName, int order, string description, 
+            Type propertyType, object defaultValue, ArrayList itemsSource)
             : base(displayName, new Attribute[0])
         {
-            PropertyID = propertyID;
+            ID = id;
+            TypeName = typeName;
             _category = category;
             _displayName = displayName;
             _order = order;
@@ -42,8 +44,8 @@ namespace studio
             Affirm(propertyType);
         }
 
-        public UInt64 PropertyID { get; }
-        public string CppTypeName { get; }
+        public UInt64 ID { get; }
+        public string TypeName { get; }
         private string _category;
         private string _displayName;
         private int _order;

@@ -15,7 +15,7 @@ namespace studio
         {
             _typeName = typeName;
             _name = name;
-            _iconType = CppCShapeTypeParser.TypeNameToIcon(typeName);
+            _iconType = CppCShapeTypeMapping.TypeNameToIcon(typeName);
             InitPropertyGridData(typeName);
         }
 
@@ -61,16 +61,16 @@ namespace studio
                 }
                 else
                 {
-                    Tuple<Type, object> ret = CppCShapeTypeParser.ValueTypeCppToShape(p.ValueTypeName);
+                    Tuple<Type, object> ret = CppCShapeTypeMapping.ValueTypeCppToShape(p.TypeName);
                     if (ret == null)
                     {
-                        ViewModel.LogData.Add(LogLevel.Warn, "元件{0}的属性{1}使用了不支持的C++属性类型{2}", typeName, p.DisplayName, p.ValueTypeName);
+                        ViewModel.LogData.Add(LogLevel.Warn, "元件{0}的属性{1}使用了不支持的C++属性类型{2}", typeName, p.DisplayName, p.TypeName);
                         continue;
                     }
                     propertyType = ret.Item1;
                     defaultValue = ret.Item2;
                 }
-                MyPropertyDescriptor pds = new MyPropertyDescriptor(p.TypeID, p.Category, p.DisplayName, p.Order, p.Description, propertyType, defaultValue, itemsSource);
+                MyPropertyDescriptor pds = new MyPropertyDescriptor(p.TypeID, p.TypeName, p.Category, p.DisplayName, p.Order, p.Description, propertyType, defaultValue, itemsSource);
                 try
                 {
                     PropertyGridData.Data.Add(pds.DisplayName, pds);

@@ -17,39 +17,6 @@
                          ShowPreview="True"
                          ShowSummary="False" >
             
-            <!--<tk:PropertyGrid.EditorDefinitions>
-
-                --><!--<tk:EditorTemplateDefinition >
-                    <tk:EditorTemplateDefinition.TargetProperties>
-                    <tk:TargetPropertyType Type="{x:Type sys:Boolean}" />
-                    <tk:TargetPropertyType Type="{x:Type HorizontalAlignment}" />
-                    <tk:TargetPropertyType Type="{x:Type FontFamily}" />
-                </tk:EditorTemplateDefinition.TargetProperties>
-                
-                    <tk:EditorTemplateDefinition.EditingTemplate>
-                        <DataTemplate>
-                            <ComboBox ItemsSource="{Binding Value}"/>
-                        </DataTemplate>
-                    </tk:EditorTemplateDefinition.EditingTemplate>
-
-                    </tk:EditorTemplateDefinition >-->
-                        <!--
-                <tk:EditorTemplateDefinition TargetProperties="Opacity">
-                    <tk:EditorTemplateDefinition.EditingTemplate>
-                        <DataTemplate>
-                            <TextBlock Background="Yellow" Text="{Binding Value}" />
-                        </DataTemplate>
-                    </tk:EditorTemplateDefinition.EditingTemplate>
-                </tk:EditorTemplateDefinition>
-            -->
-                <!--<tk:EditorTemplateDefinition TargetProperties="Visibility">
-                    <tk:EditorTemplateDefinition.EditingTemplate>
-                        <DataTemplate>
-                            <local:StringListComboboxEditor />
-                        </DataTemplate>
-                    </tk:EditorTemplateDefinition.EditingTemplate>
-                </tk:EditorTemplateDefinition>--><!--
-            </tk:PropertyGrid.EditorDefinitions>-->
         </tk:PropertyGrid>
     </Grid>
 </UserControl>

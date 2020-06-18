@@ -50,17 +50,17 @@ namespace studio
     public class MetaPropertyDescriptor
     {
         public UInt64 TypeID { get; }
-        public string ValueTypeName { get; }
+        public string TypeName { get; }
         public string Category { get; }
         public string DisplayName { get; }
         public int Order { get; }
         public string Description { get; }
         public string EnumSource { get; }
 
-        public MetaPropertyDescriptor(UInt64 typeName, string valueTypeName, string category, string displayName, int order, string description, string enumSource)
+        public MetaPropertyDescriptor(UInt64 typeID, string typeName, string category, string displayName, int order, string description, string enumSource)
         {
-            TypeID = typeName;
-            ValueTypeName = valueTypeName;
+            TypeID = typeID;
+            TypeName = typeName;
             Category = category;
             DisplayName = displayName;
             Order = order;
@@ -183,7 +183,7 @@ namespace studio
                 IntPtr p = new IntPtr(buffer.ToInt64() + Marshal.SizeOf(typeof(CClassInfo)) * i);
                 metaDatas[i] = (CClassInfo)Marshal.PtrToStructure(p, typeof(CClassInfo));
 
-                var classDescriptor = new MetaClassDescriptor(metaDatas[i].TypeName, metaDatas[i].Category, metaDatas[i].DisplayName, metaDatas[i].Description, CppCShapeTypeParser.TypeNameToIcon(metaDatas[i].TypeName));
+                var classDescriptor = new MetaClassDescriptor(metaDatas[i].TypeName, metaDatas[i].Category, metaDatas[i].DisplayName, metaDatas[i].Description, CppCShapeTypeMapping.TypeNameToIcon(metaDatas[i].TypeName));
                 var properties = new List<MetaPropertyDescriptor>();
                 foreach (var pd in metaDatas[i].PropertyData)
                 {
