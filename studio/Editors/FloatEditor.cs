@@ -3,19 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xceed.Wpf.Toolkit;
 using Xceed.Wpf.Toolkit.PropertyGrid;
 using Xceed.Wpf.Toolkit.PropertyGrid.Editors;
-using System.Windows;
-using System.Windows.Controls;
 
 namespace studio
 {
-    public class BrushEditor : TypeEditor<BrushPickerCtrl>
+    class FloatEditor : TypeEditor<FloatBindingCtrl>
     {
-        protected override BrushPickerCtrl CreateEditor()
+        protected override FloatBindingCtrl CreateEditor()
         {
-            return new BrushPickerCtrl();
+            return new FloatBindingCtrl();
         }
 
         protected override void SetControlProperties(PropertyItem propertyItem)
@@ -26,8 +23,7 @@ namespace studio
         }
         protected override void SetValueDependencyProperty()
         {
-            ValueProperty = BrushPickerCtrl.BrushProperty;
+            ValueProperty = FloatBindingCtrl.ValueProperty;
         }
     }
-
 }

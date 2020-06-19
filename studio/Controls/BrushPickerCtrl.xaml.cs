@@ -18,17 +18,17 @@ namespace studio
     /// <summary>
     /// Brush.xaml 的交互逻辑
     /// </summary>
-    public partial class BrushPicker : UserControl
+    public partial class BrushPickerCtrl : UserControl
     {
         private bool _PopIsOpenBeforeGridPressed = false;
-        public BrushPicker()
+        public BrushPickerCtrl()
         {
             InitializeComponent();
             
         }
 
         public static readonly DependencyProperty BrushProperty = DependencyProperty.Register("Brush", typeof(Brush),
-            typeof(BrushPicker), new PropertyMetadata(null, onValueChanged));
+            typeof(BrushPickerCtrl), new PropertyMetadata(null, onValueChanged));
 
         static void onValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -61,7 +61,7 @@ namespace studio
 
         private void brushPop_BrushChanged(object sender, RoutedEventArgs e)
         {
-            Brush brush = (sender as BrushPop).Brush;
+            Brush brush = (sender as BrushCtrl).Brush;
             Brush = brush;
         }
     }

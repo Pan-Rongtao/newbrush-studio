@@ -104,7 +104,8 @@ namespace studio
             }
             else
             {
-                throw new Exception("ConverToString");
+                //throw new Exception("ConverToString");
+                ret = Google.Protobuf.ByteString.CopyFromUtf8("");
             }
             return ret;
         }
@@ -127,7 +128,7 @@ namespace studio
                 case "unsignedlong":        return new Tuple<Type, object>(typeof(ulong), new ulong());
                 case "__int64":             return new Tuple<Type, object>(typeof(Int64), new Int64());
                 case "unsigned__int64":     return new Tuple<Type, object>(typeof(UInt64), new UInt64());
-                case "float":               return new Tuple<Type, object>(typeof(float), new float());
+                case "float":               return new Tuple<Type, object>(typeof(double), new double());
                 case "double":              return new Tuple<Type, object>(typeof(double), new double());
                 case "longdouble":          return new Tuple<Type, object>(typeof(decimal), new decimal());
                 case "std::string":         return new Tuple<Type, object>(typeof(string), string.Empty);

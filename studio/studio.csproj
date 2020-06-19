@@ -234,11 +234,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Editors\BrushPop.xaml.cs">
-      <DependentUpon>BrushPop.xaml</DependentUpon>
+    <Compile Include="Controls\BrushCtrl.xaml.cs">
+      <DependentUpon>BrushCtrl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Editors\BrushPicker.xaml.cs">
-      <DependentUpon>BrushPicker.xaml</DependentUpon>
+    <Compile Include="Controls\BrushPickerCtrl.xaml.cs">
+      <DependentUpon>BrushPickerCtrl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Editors\BrushEditor.cs" />
     <Compile Include="Data\CppCShapeTypeMapping.cs" />
@@ -323,11 +323,11 @@
     <Compile Include="Controls\SolidColorCtrl.xaml.cs">
       <DependentUpon>SolidColorCtrl.xaml</DependentUpon>
     </Compile>
-    <Page Include="Editors\BrushPop.xaml">
+    <Page Include="Controls\BrushCtrl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Editors\BrushPicker.xaml">
+    <Page Include="Controls\BrushPickerCtrl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -375,6 +375,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\FloatBindingCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -385,6 +389,10 @@
     </Compile>
     <Compile Include="Controls\ImageBrushCtrl.xaml.cs">
       <DependentUpon>ImageBrushCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\FloatEditor.cs" />
+    <Compile Include="Controls\FloatBindingCtrl.xaml.cs">
+      <DependentUpon>FloatBindingCtrl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Grpc\Node.cs" />
     <Compile Include="Grpc\NodeGrpc.cs" />

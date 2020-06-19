@@ -14,7 +14,7 @@ namespace studio
 
         static public NodeRpc.NodeRpcClient NodeClient { get { return _nodeClient; } }
 
-        static private Channel _channel = new Channel("127.0.0.1:8888", ChannelCredentials.Insecure);
+        static public Channel _channel = new Channel("127.0.0.1:8888", ChannelCredentials.Insecure);
         static private ShaderRpc.ShaderRpcClient _shaderClient = new ShaderRpc.ShaderRpcClient(_channel);
         static private NodeRpc.NodeRpcClient _nodeClient = new NodeRpc.NodeRpcClient(_channel);
 

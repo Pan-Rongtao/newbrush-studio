@@ -42,8 +42,8 @@ namespace studio
         {
             propertyGrid.SelectedObject = e;
         }
-        
-        private void propertyGrid_PropertyValueChanged(object sender, Xceed.Wpf.Toolkit.PropertyGrid.PropertyValueChangedEventArgs e)
+
+        private async void propertyGrid_PropertyValueChanged(object sender, Xceed.Wpf.Toolkit.PropertyGrid.PropertyValueChangedEventArgs e)
         {
             PropertyItem item = e.OriginalSource as PropertyItem;
             //PropertyGrid嵌套PropertyGrid的情况，父PropertyGrid也会收到changed消息
@@ -64,7 +64,8 @@ namespace studio
             request.PropertyValue = CppCShapeTypeMapping.ConverToString(propertyValue);
             try
             {
-                var reply = Rpc.NodeClient.SetProperty(request);
+                var s = Rpc._channel.State;
+                var reply = await Rpc.NodeClient.SetPropertyAsync(request);
                 if (!reply.Success)
                 {
                     ViewModel.LogData.Add(LogLevel.Error, reply.Msg);

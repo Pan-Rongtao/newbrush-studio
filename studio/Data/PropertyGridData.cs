@@ -71,11 +71,11 @@ namespace studio
             }
             else if (propertyType == typeof(double) || propertyType == typeof(double?))
             {
-                _editorType = typeof(DoubleUpDownEditor);
+                _editorType = typeof(FloatEditor);
             }
             else if (propertyType == typeof(int) || propertyType == typeof(int?))
             {
-                _editorType = typeof(DoubleUpDownEditor);
+                _editorType = typeof(FloatEditor);
             }
             else if (propertyType == typeof(short) || propertyType == typeof(short?))
             {
@@ -87,7 +87,7 @@ namespace studio
             }
             else if (propertyType == typeof(float) || propertyType == typeof(float?))
             {
-                _editorType = typeof(SingleUpDownEditor);
+                _editorType = typeof(FloatEditor);
             }
             else if (propertyType == typeof(byte) || propertyType == typeof(byte?))
             {

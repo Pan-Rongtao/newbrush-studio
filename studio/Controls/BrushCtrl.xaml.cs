@@ -18,21 +18,21 @@ namespace studio
     /// <summary>
     /// BrushPop.xaml 的交互逻辑
     /// </summary>
-    public partial class BrushPop : UserControl
+    public partial class BrushCtrl : UserControl
     {
-        public BrushPop()
+        public BrushCtrl()
         {
             InitializeComponent();
             
         }
         
         public static readonly DependencyProperty BrushProperty = DependencyProperty.Register("Brush", typeof(Brush),
-            typeof(BrushPop), new PropertyMetadata(null, onValueChanged));
+            typeof(BrushCtrl), new PropertyMetadata(null, onValueChanged));
 
         static void onValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             //    Console.WriteLine("BrushPop::onBrushChanged:{0}", e.NewValue as Brush);
-            BrushPop ctrl = d as BrushPop;
+            BrushCtrl ctrl = d as BrushCtrl;
             RoutedEventArgs args = new RoutedEventArgs(BrushChangedEvent, ctrl);
             ctrl.RaiseEvent(args);
         }
