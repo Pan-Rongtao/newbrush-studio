@@ -25,12 +25,12 @@ namespace studio
             InitializeComponent();
         }
 
-        public static readonly DependencyProperty ValueProperty = DependencyProperty.Register("Value", typeof(Double?),
-            typeof(FloatBindingCtrl), new PropertyMetadata(0.0, onValueChanged));
+        public static readonly DependencyProperty ValueProperty = DependencyProperty.Register("Value", 
+            typeof(float), typeof(FloatBindingCtrl), new PropertyMetadata(0.0F, onValueChanged));
 
-        public Double? Value
+        public float Value
         {
-            get { return (Double?)GetValue(ValueProperty); }
+            get { return (float)GetValue(ValueProperty); }
             set { SetValue(ValueProperty, value); }
         }
 

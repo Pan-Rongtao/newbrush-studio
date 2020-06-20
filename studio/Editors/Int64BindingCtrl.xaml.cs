@@ -16,22 +16,16 @@ using System.Windows.Shapes;
 namespace studio
 {
     /// <summary>
-    /// BoolBindingCtrl.xaml 的交互逻辑
+    /// Int64BindingCtrl.xaml 的交互逻辑
     /// </summary>
-    public partial class BoolBindingCtrl : UserControl
+    public partial class Int64BindingCtrl : UserControl
     {
-        public BoolBindingCtrl()
+        public Int64BindingCtrl()
         {
             InitializeComponent();
         }
 
-        public static readonly DependencyProperty ValueProperty = DependencyProperty.Register("Value", typeof(bool),
-            typeof(BoolBindingCtrl), new PropertyMetadata(false, null));
-
-        public bool Value
-        {
-            get { return (bool)GetValue(ValueProperty); }
-            set { SetValue(ValueProperty, value); }
-        }
+        public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
+            "Value", typeof(Int64), typeof(Int64BindingCtrl), new PropertyMetadata((Int64)0, null));
     }
 }

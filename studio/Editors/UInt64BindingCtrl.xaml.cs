@@ -16,22 +16,16 @@ using System.Windows.Shapes;
 namespace studio
 {
     /// <summary>
-    /// BooleanBar.xaml 的交互逻辑
+    /// UInt64BindingCtrl.xaml 的交互逻辑
     /// </summary>
-    public partial class BooleanEdit : UserControl
+    public partial class UInt64BindingCtrl : UserControl
     {
-        public BooleanEdit()
+        public UInt64BindingCtrl()
         {
             InitializeComponent();
         }
 
-        public static readonly DependencyProperty ValueProperty = DependencyProperty.Register("Value", typeof(bool), typeof(BooleanEdit), new PropertyMetadata(true, null));
-        
-        public bool Value
-        {
-            get { return (bool)GetValue(ValueProperty); }
-            set { SetValue(ValueProperty, value); }
-        }
-        
+        public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
+            "Value", typeof(UInt64), typeof(UInt64BindingCtrl), new PropertyMetadata((UInt64)0, null));
     }
 }

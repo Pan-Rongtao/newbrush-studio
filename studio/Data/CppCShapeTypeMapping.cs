@@ -115,11 +115,11 @@ namespace studio
         {
             switch(typeName)
             {
-                case "bool":                return new Tuple<Type, object>(typeof(bool), false);
-                case "char":                return new Tuple<Type, object>(typeof(char), new char());
+                case "bool":                return new Tuple<Type, object>(typeof(bool), new bool());
+                case "char":                return new Tuple<Type, object>(typeof(byte), new byte());   //当作int8来处理
                 case "signedchar":          return new Tuple<Type, object>(typeof(sbyte), new sbyte());
                 case "unsignedchar":        return new Tuple<Type, object>(typeof(byte), new byte());
-                case "wchar":               return new Tuple<Type, object>(typeof(char), new char());
+                case "wchar":               return new Tuple<Type, object>(typeof(char), new char());   //当作int16来处理
                 case "short":               return new Tuple<Type, object>(typeof(short), new short());
                 case "unsignedshort":       return new Tuple<Type, object>(typeof(ushort), new ushort());
                 case "int":                 return new Tuple<Type, object>(typeof(int), new int());
@@ -128,10 +128,11 @@ namespace studio
                 case "unsignedlong":        return new Tuple<Type, object>(typeof(ulong), new ulong());
                 case "__int64":             return new Tuple<Type, object>(typeof(Int64), new Int64());
                 case "unsigned__int64":     return new Tuple<Type, object>(typeof(UInt64), new UInt64());
-                case "float":               return new Tuple<Type, object>(typeof(double), new double());
+                case "float":               return new Tuple<Type, object>(typeof(float), new float());
                 case "double":              return new Tuple<Type, object>(typeof(double), new double());
                 case "longdouble":          return new Tuple<Type, object>(typeof(decimal), new decimal());
                 case "std::string":         return new Tuple<Type, object>(typeof(string), string.Empty);
+
                 case "std::vector<bool>":   return new Tuple<Type, object>(typeof(List<bool>), new List<bool>());
                 case "std::vector<int>":    return new Tuple<Type, object>(typeof(List<int>), new List<int>()); ;
                 case "std::vector<float>":  return new Tuple<Type, object>(typeof(List<float>), new List<float>());

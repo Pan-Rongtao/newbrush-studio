@@ -59,7 +59,7 @@ namespace studio
         {
             if (propertyType == typeof(string))
             {
-                _editorType = typeof(TextBoxEditor);
+                _editorType = typeof(StringEditor);
             }
             else if (propertyType == typeof(bool) || propertyType == typeof(bool?))
             {
@@ -67,23 +67,23 @@ namespace studio
             }
             else if (propertyType == typeof(decimal) || propertyType == typeof(decimal?))
             {
-                _editorType = typeof(DecimalUpDownEditor);
+                _editorType = typeof(DecimalEditor);
             }
             else if (propertyType == typeof(double) || propertyType == typeof(double?))
             {
-                _editorType = typeof(FloatEditor);
+                _editorType = typeof(DoubleEditor);
             }
-            else if (propertyType == typeof(int) || propertyType == typeof(int?))
+            else if (propertyType == typeof(Int32) || propertyType == typeof(Int32?))
             {
-                _editorType = typeof(FloatEditor);
+                _editorType = typeof(Int32Editor);
             }
             else if (propertyType == typeof(short) || propertyType == typeof(short?))
             {
-                _editorType = typeof(ShortUpDownEditor);
+                _editorType = typeof(Int16Editor);
             }
-            else if (propertyType == typeof(long) || propertyType == typeof(long?))
+            else if (propertyType == typeof(Int64) || propertyType == typeof(Int64?))
             {
-                _editorType = typeof(LongUpDownEditor);
+                _editorType = typeof(Int64Editor);
             }
             else if (propertyType == typeof(float) || propertyType == typeof(float?))
             {
@@ -91,23 +91,23 @@ namespace studio
             }
             else if (propertyType == typeof(byte) || propertyType == typeof(byte?))
             {
-                _editorType = typeof(ByteUpDownEditor);
+                _editorType = typeof(ByteEditor);
             }
             else if (propertyType == typeof(sbyte) || propertyType == typeof(sbyte?))
             {
                 //_editorType = typeof(SByteUpDownEditor);
             }
-            else if (propertyType == typeof(uint) || propertyType == typeof(uint?))
+            else if (propertyType == typeof(UInt32) || propertyType == typeof(UInt32?))
             {
-                //_editorType = typeof(UIntegerUpDownEditor);
+                _editorType = typeof(UInt32Editor);
             }
-            else if (propertyType == typeof(ulong) || propertyType == typeof(ulong?))
+            else if (propertyType == typeof(UInt64) || propertyType == typeof(UInt64?))
             {
-                //_editorType = typeof(UShortUpDownEditor);
+                _editorType = typeof(UInt64Editor);
             }
             else if (propertyType == typeof(ushort) || propertyType == typeof(ushort?))
             {
-                //_editorType = typeof(UShortUpDownEditor);
+                _editorType = typeof(UInt16Editor);
             }
             else if (propertyType == typeof(DateTime) || propertyType == typeof(DateTime?))
             {

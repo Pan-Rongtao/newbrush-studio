@@ -75,6 +75,7 @@ namespace studio
             {
                 ViewModel.LogData.Add(LogLevel.Error, ex.Message);
             }
+            ViewModel.LogData.Add(LogLevel.Info, "{0} changed to {1}", itemPropertyDescriptor.DisplayName, propertyValue);
         }
 
     }

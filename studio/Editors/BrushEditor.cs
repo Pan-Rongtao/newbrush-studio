@@ -20,9 +20,7 @@ namespace studio
 
         protected override void SetControlProperties(PropertyItem propertyItem)
         {
-            //Editor.Height = 18;
-            //   Editor.BorderThickness = new System.Windows.Thickness(0);
-            //   Editor.DisplayColorAndName = true;
+            Editor.Height = 20;
         }
         protected override void SetValueDependencyProperty()
         {

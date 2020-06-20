@@ -5,29 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 using Xceed.Wpf.Toolkit.PropertyGrid;
 using Xceed.Wpf.Toolkit.PropertyGrid.Editors;
-using System.Windows.Controls;
-using System.Windows;
 
 namespace studio
 {
-    class FloatEditor : TypeEditor<FloatBindingCtrl>
+    class Int32Editor : TypeEditor<Int32BindingCtrl>
     {
-        protected override FloatBindingCtrl CreateEditor()
+        protected override Int32BindingCtrl CreateEditor()
         {
-            return new FloatBindingCtrl();
+            return new Int32BindingCtrl();
         }
 
         protected override void SetControlProperties(PropertyItem propertyItem)
         {
             Editor.Height = 20;
         }
-        //public override FrameworkElement ResolveEditor(PropertyItem propertyItem)
-        //{
-        //    return null;
-        //}
+
         protected override void SetValueDependencyProperty()
         {
-            ValueProperty = FloatBindingCtrl.ValueProperty;
+            ValueProperty = Int32BindingCtrl.ValueProperty;
         }
     }
 }

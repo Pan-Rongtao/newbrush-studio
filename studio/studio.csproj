@@ -234,8 +234,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Editors\DecimalBindingCtrl.xaml.cs">
+      <DependentUpon>DecimalBindingCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\DecimalEditor.cs" />
+    <Compile Include="Editors\SByteEdito.cs" />
+    <Compile Include="Editors\DoubleBindingCtrl.xaml.cs">
+      <DependentUpon>DoubleBindingCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Int64Editor.cs" />
+    <Compile Include="Editors\DoubleEditor.cs" />
+    <Compile Include="Editors\UInt64Editor.cs" />
+    <Compile Include="Editors\UInt32Editor.cs" />
+    <Compile Include="Editors\UInt32BindingCtrl.xaml.cs">
+      <DependentUpon>UInt32BindingCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Int32Editor.cs" />
+    <Compile Include="Editors\UInt16Editor.cs" />
+    <Compile Include="Editors\StringEditor.cs" />
+    <Compile Include="Editors\ByteBindingCtrl.xaml.cs">
+      <DependentUpon>ByteBindingCtrl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Editors\BoolEditor.cs" />
-    <Compile Include="Controls\BoolBindingCtrl.xaml.cs">
+    <Compile Include="Editors\BoolBindingCtrl.xaml.cs">
       <DependentUpon>BoolBindingCtrl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\BrushCtrl.xaml.cs">
@@ -327,7 +348,31 @@
     <Compile Include="Controls\SolidColorCtrl.xaml.cs">
       <DependentUpon>SolidColorCtrl.xaml</DependentUpon>
     </Compile>
-    <Page Include="Controls\BoolBindingCtrl.xaml">
+    <Compile Include="Editors\SByteBindingCtrl.xaml.cs">
+      <DependentUpon>SByteBindingCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\StringBindingCtrl.xaml.cs">
+      <DependentUpon>StringBindingCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\UInt16BindingCtrl.xaml.cs">
+      <DependentUpon>UInt16BindingCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\UInt64BindingCtrl.xaml.cs">
+      <DependentUpon>UInt64BindingCtrl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Editors\DecimalBindingCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\DoubleBindingCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\ByteBindingCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\BoolBindingCtrl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -383,7 +428,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\FloatBindingCtrl.xaml">
+    <Page Include="Editors\FloatBindingCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\Int16BindingCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\UInt32BindingCtrl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Editors\Int32BindingCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\Int64BindingCtrl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -399,7 +460,7 @@
       <DependentUpon>ImageBrushCtrl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Editors\FloatEditor.cs" />
-    <Compile Include="Controls\FloatBindingCtrl.xaml.cs">
+    <Compile Include="Editors\FloatBindingCtrl.xaml.cs">
       <DependentUpon>FloatBindingCtrl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Grpc\Node.cs" />
@@ -409,6 +470,17 @@
     <Compile Include="Grpc\Shader.cs" />
     <Compile Include="Grpc\ShaderGrpc.cs" />
     <Compile Include="Grpc\Types.cs" />
+    <Compile Include="Editors\Int16BindingCtrl.xaml.cs">
+      <DependentUpon>Int16BindingCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Int16Editor.cs" />
+    <Compile Include="Editors\Int32BindingCtrl.xaml.cs">
+      <DependentUpon>Int32BindingCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Int64BindingCtrl.xaml.cs">
+      <DependentUpon>Int64BindingCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\ByteEditor.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -466,6 +538,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\SolidColorCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\SByteBindingCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\StringBindingCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\UInt16BindingCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\UInt64BindingCtrl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

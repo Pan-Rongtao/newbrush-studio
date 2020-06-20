@@ -19,7 +19,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
-        
+
         <tk:ColorCanvas Background="Transparent" Grid.Row="0" Grid.Column="0"
                         SelectedColorChanged="ColorCanvas_SelectedColorChanged"
                         SelectedColor="{Binding ElementName=self, Path=Value.Color, Mode=TwoWay}"
@@ -32,10 +32,11 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <TextBlock Text="Opacity" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <tk:DoubleUpDown Grid.Column="1" Value="{Binding ElementName=self, Path=Value.Opacity}" Minimum="0" Maximum="1" Increment="0.1"/>
+            <tk:DoubleUpDown Grid.Column="1" Value="{Binding ElementName=self, Path=Value.Opacity}" 
+                             FormatString="P0" Minimum="0" Maximum="1" Increment="0.05" Background="White"/>
         </Grid>
         <local:Operator Grid.Row="1" Grid.Column="1"/>
-        
+
     </Grid>
-    
+
 </UserControl>
