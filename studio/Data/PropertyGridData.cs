@@ -63,7 +63,7 @@ namespace studio
             }
             else if (propertyType == typeof(bool) || propertyType == typeof(bool?))
             {
-                _editorType = typeof(CheckBoxEditor);
+                _editorType = typeof(BoolEditor);
             }
             else if (propertyType == typeof(decimal) || propertyType == typeof(decimal?))
             {
@@ -144,7 +144,6 @@ namespace studio
             else if (propertyType == typeof(string[]))
             {
                 _editorType = typeof(StringComboxEditor);
-                //_itemsSourceType = typeof(StringListCollection);
             }
             else if (propertyType == typeof(Brush))
             {
