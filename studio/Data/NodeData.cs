@@ -15,7 +15,7 @@ namespace studio
         {
             _typeName = typeName;
             _name = name;
-            _iconType = CppCShapeTypeMapping.TypeNameToIcon(typeName);
+            _iconType = TypeMapping.GetIcon(typeName);
             InitPropertyGridData(typeName);
         }
 
@@ -45,32 +45,7 @@ namespace studio
 
             foreach (var p in mc.Properties)
             {
-                Type propertyType = null;
-                object defaultValue = null;
-                ArrayList itemsSource = null;
-                if (p.IsEnumType())
-                {
-                    var strs = p.EnumSource.Split('|');
-                    ArrayList items = new ArrayList();
-                    foreach (string s in strs)
-                        items.Add(s);
-
-                    defaultValue = strs[0];
-                    itemsSource = items;
-                    propertyType = typeof(string[]);
-                }
-                else
-                {
-                    Tuple<Type, object> ret = CppCShapeTypeMapping.ValueTypeCppToShape(p.TypeName);
-                    if (ret == null)
-                    {
-                        ViewModel.LogData.Add(LogLevel.Warn, "元件{0}的属性{1}使用了不支持的C++属性类型{2}", typeName, p.DisplayName, p.TypeName);
-                        continue;
-                    }
-                    propertyType = ret.Item1;
-                    defaultValue = ret.Item2;
-                }
-                MyPropertyDescriptor pds = new MyPropertyDescriptor(p.TypeID, p.TypeName, p.Category, p.DisplayName, p.Order, p.Description, propertyType, defaultValue, itemsSource);
+                MyPropertyDescriptor pds = new MyPropertyDescriptor(p);
                 try
                 {
                     PropertyGridData.Data.Add(pds.DisplayName, pds);

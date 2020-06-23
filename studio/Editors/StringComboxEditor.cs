@@ -14,7 +14,7 @@ namespace studio
     {
         protected override IEnumerable CreateItemsSource(PropertyItem propertyItem)
         {
-            return (propertyItem.PropertyDescriptor as MyPropertyDescriptor).ItemsSource;
+            return (propertyItem.PropertyDescriptor as MyPropertyDescriptor).MetaPropertyDescriptor.EnumSource;
         }
     }
 }

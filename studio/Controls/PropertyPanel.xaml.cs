@@ -43,6 +43,59 @@ namespace studio
             propertyGrid.SelectedObject = e;
         }
 
+        static public Google.Protobuf.ByteString ValueToString(object value)
+        {
+            Google.Protobuf.ByteString ret;
+            if (value is bool || value is char || value is sbyte || value is byte || value is short || value is ushort || value is int || value is uint
+                 || value is long || value is ulong || value is Int64 || value is UInt64 || value is float || value is double || value is decimal || value is string
+                 || value is Point || value is System.Windows.Media.Color || value is System.Windows.Thickness)
+            {
+                ret = Google.Protobuf.ByteString.CopyFromUtf8(value.ToString());
+            }
+            else if (value is System.Windows.Media.Color)
+            {
+                var c = (System.Windows.Media.Color)value;
+                ret = Google.Protobuf.ByteString.CopyFromUtf8(string.Format("{0},{1},{2},{3}", c.R, c.G, c.B, c.A));
+            }
+            else if (value is ImageSource)
+            {
+                var bm = value as BitmapImage;
+                string path = bm.UriSource.AbsolutePath;
+                FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
+                byte[] bytes = new byte[fs.Length];
+                fs.Read(bytes, 0, bytes.Length);
+
+                ret = Google.Protobuf.ByteString.CopyFrom(bytes);
+            }
+            else if (value is SolidColorBrush)
+            {
+                var c = (value as SolidColorBrush).Color;
+                ret = Google.Protobuf.ByteString.CopyFromUtf8(string.Format("{0},{1},{2},{3}", c.R, c.G, c.B, c.A));
+            }
+            else if (value is ImageBrush)
+            {
+                ImageBrush imgBrush = value as ImageBrush;
+                var bm = imgBrush.ImageSource as BitmapImage;
+                string path = bm.UriSource.AbsolutePath;
+                FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
+                byte[] bytes = new byte[fs.Length];
+                fs.Read(bytes, 0, bytes.Length);
+
+                ret = Google.Protobuf.ByteString.CopyFrom(bytes);
+            }
+            else if (value is List<bool> || value is List<int> || value is List<float> || value is List<double>)
+            {
+                ret = Google.Protobuf.ByteString.CopyFromUtf8(value.ToString());
+            }
+            else
+            {
+                //throw new Exception("ConverToString");
+                ret = Google.Protobuf.ByteString.CopyFromUtf8("");
+            }
+            return ret;
+        }
+
+
         private async void propertyGrid_PropertyValueChanged(object sender, Xceed.Wpf.Toolkit.PropertyGrid.PropertyValueChangedEventArgs e)
         {
             PropertyItem item = e.OriginalSource as PropertyItem;
@@ -59,9 +112,9 @@ namespace studio
 
             var request = new SetPropertyRequest();
             request.Path = VisualTree.SelectItemPath;
-            request.PropertyID = itemPropertyDescriptor.ID;
-            request.PropertyType = itemPropertyDescriptor.TypeName;
-            request.PropertyValue = CppCShapeTypeMapping.ConverToString(propertyValue);
+            request.PropertyID = itemPropertyDescriptor.MetaPropertyDescriptor.CppTypeID;
+            request.PropertyType = itemPropertyDescriptor.MetaPropertyDescriptor.CppTypeName;
+            request.PropertyValue = ValueToString(propertyValue);
             try
             {
                 var s = Rpc._channel.State;

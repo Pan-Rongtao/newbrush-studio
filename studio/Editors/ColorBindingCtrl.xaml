@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="studio.Int64BindingCtrl"
+﻿<UserControl x:Class="studio.ColorBindingCtrl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -14,7 +14,8 @@
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
 
-        <tk:LongUpDown ShowButtonSpinner="False" Value="{Binding Value, ElementName=self}"/>
+        <tk:ColorPicker ShowDropDownButton="False" 
+                        SelectedColor="{Binding Value, ElementName=self}"/>
         <local:Operator Grid.Column="1"/>
     </Grid>
 </UserControl>

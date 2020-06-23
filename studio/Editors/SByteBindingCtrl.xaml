@@ -14,7 +14,7 @@
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
 
-        <tk:SByteUpDown Value="{Binding Value, ElementName=self}"/>
+        <tk:SByteUpDown ShowButtonSpinner="False" Value="{Binding Value, ElementName=self}"/>
         <local:Operator Grid.Column="1"/>
     </Grid>
 </UserControl>

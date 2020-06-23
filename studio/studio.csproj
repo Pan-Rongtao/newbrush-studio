@@ -234,6 +234,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Editors\EnumEditor.cs" />
+    <Compile Include="Editors\ImageSourceEditor.cs" />
+    <Compile Include="Editors\ThicknessEditor.cs" />
+    <Compile Include="Editors\ColorEditor.cs" />
+    <Compile Include="Editors\ColorBindingCtrl.xaml.cs">
+      <DependentUpon>ColorBindingCtrl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Editors\DecimalBindingCtrl.xaml.cs">
       <DependentUpon>DecimalBindingCtrl.xaml</DependentUpon>
     </Compile>
@@ -244,6 +251,7 @@
     </Compile>
     <Compile Include="Editors\Int64Editor.cs" />
     <Compile Include="Editors\DoubleEditor.cs" />
+    <Compile Include="Editors\PointEditor.cs" />
     <Compile Include="Editors\UInt64Editor.cs" />
     <Compile Include="Editors\UInt32Editor.cs" />
     <Compile Include="Editors\UInt32BindingCtrl.xaml.cs">
@@ -360,6 +368,16 @@
     <Compile Include="Editors\UInt64BindingCtrl.xaml.cs">
       <DependentUpon>UInt64BindingCtrl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Editors\ThicknessBindingCtrl.xaml.cs">
+      <DependentUpon>ThicknessBindingCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\TransformBindingCtrl.xaml.cs">
+      <DependentUpon>TransformBindingCtrl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Editors\ColorBindingCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Editors\DecimalBindingCtrl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -448,6 +466,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Editors\ImageSourceBindingCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\EnumBindingCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -462,6 +488,9 @@
     <Compile Include="Editors\FloatEditor.cs" />
     <Compile Include="Editors\FloatBindingCtrl.xaml.cs">
       <DependentUpon>FloatBindingCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\EnumBindingCtrl.xaml.cs">
+      <DependentUpon>EnumBindingCtrl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Grpc\Node.cs" />
     <Compile Include="Grpc\NodeGrpc.cs" />
@@ -481,6 +510,9 @@
       <DependentUpon>Int64BindingCtrl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Editors\ByteEditor.cs" />
+    <Compile Include="Editors\ImageSourceBindingCtrl.xaml.cs">
+      <DependentUpon>ImageSourceBindingCtrl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -557,10 +589,25 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Editors\ThicknessBindingCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\PointBindingCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\TransformBindingCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Editors\Operator.xaml.cs">
       <DependentUpon>Operator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\PointBindingCtrl.xaml.cs">
+      <DependentUpon>PointBindingCtrl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

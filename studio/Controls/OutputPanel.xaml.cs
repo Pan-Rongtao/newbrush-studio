@@ -52,6 +52,8 @@ namespace studio
             run.Foreground = new SolidColorBrush(c);
             this.pg.Inlines.Add(run);
             this.pg.Inlines.Add(new LineBreak());
+
+            rt.ScrollToEnd(); 
         }
         
     }

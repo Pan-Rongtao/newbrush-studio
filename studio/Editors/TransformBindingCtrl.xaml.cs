@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace studio
 {
     /// <summary>
-    /// FloatBindingCtrl.xaml 的交互逻辑
+    /// TransformBindingCtrl.xaml 的交互逻辑
     /// </summary>
-    public partial class FloatBindingCtrl : UserControl
+    public partial class TransformBindingCtrl : UserControl
     {
-        public FloatBindingCtrl()
+        public TransformBindingCtrl()
         {
             InitializeComponent();
         }
-
-        public static readonly DependencyProperty ValueProperty = DependencyProperty.Register("Value", 
-            typeof(float), typeof(FloatBindingCtrl), new PropertyMetadata(0.0F, null));
-        
-        
     }
 }

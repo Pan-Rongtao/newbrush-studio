@@ -23,162 +23,42 @@ namespace studio
         }
         private MyPropertyDescriptorCollection _data;
     }
-    
+
     //定义自己的属性描述
     public class MyPropertyDescriptor : PropertyDescriptor
     {
-        public MyPropertyDescriptor(UInt64 id, string typeName, string category, string displayName, int order, string description, 
-            Type propertyType, object defaultValue, ArrayList itemsSource)
-            : base(displayName, new Attribute[0])
+        public MyPropertyDescriptor(MetaPropertyDescriptor p)
+            : base(p.DisplayName, new Attribute[0])
         {
-            ID = id;
-            TypeName = typeName;
-            _category = category;
-            _displayName = displayName;
-            _order = order;
-            _description = description;
-            _value = defaultValue;
-            _propertyType = propertyType;
-            ItemsSource = itemsSource;
-
-            Affirm(propertyType);
+            MetaPropertyDescriptor = p;
         }
 
-        public UInt64 ID { get; }
-        public string TypeName { get; }
-        private string _category;
-        private string _displayName;
-        private int _order;
-        private string _description;
-        private object _value;
-        private Type _propertyType;
-        private Type _editorType;
-        public ArrayList ItemsSource { get; }
-
-        private void Affirm(Type propertyType)
-        {
-            if (propertyType == typeof(string))
-            {
-                _editorType = typeof(StringEditor);
-            }
-            else if (propertyType == typeof(bool) || propertyType == typeof(bool?))
-            {
-                _editorType = typeof(BoolEditor);
-            }
-            else if (propertyType == typeof(decimal) || propertyType == typeof(decimal?))
-            {
-                _editorType = typeof(DecimalEditor);
-            }
-            else if (propertyType == typeof(double) || propertyType == typeof(double?))
-            {
-                _editorType = typeof(DoubleEditor);
-            }
-            else if (propertyType == typeof(Int32) || propertyType == typeof(Int32?))
-            {
-                _editorType = typeof(Int32Editor);
-            }
-            else if (propertyType == typeof(short) || propertyType == typeof(short?))
-            {
-                _editorType = typeof(Int16Editor);
-            }
-            else if (propertyType == typeof(Int64) || propertyType == typeof(Int64?))
-            {
-                _editorType = typeof(Int64Editor);
-            }
-            else if (propertyType == typeof(float) || propertyType == typeof(float?))
-            {
-                _editorType = typeof(FloatEditor);
-            }
-            else if (propertyType == typeof(byte) || propertyType == typeof(byte?))
-            {
-                _editorType = typeof(ByteEditor);
-            }
-            else if (propertyType == typeof(sbyte) || propertyType == typeof(sbyte?))
-            {
-                //_editorType = typeof(SByteUpDownEditor);
-            }
-            else if (propertyType == typeof(UInt32) || propertyType == typeof(UInt32?))
-            {
-                _editorType = typeof(UInt32Editor);
-            }
-            else if (propertyType == typeof(UInt64) || propertyType == typeof(UInt64?))
-            {
-                _editorType = typeof(UInt64Editor);
-            }
-            else if (propertyType == typeof(ushort) || propertyType == typeof(ushort?))
-            {
-                _editorType = typeof(UInt16Editor);
-            }
-            else if (propertyType == typeof(DateTime) || propertyType == typeof(DateTime?))
-            {
-                _editorType = typeof(DateTimeUpDownEditor);
-            }
-            else if ((propertyType == typeof(Color)) || (propertyType == typeof(Color?)))
-            {
-                _editorType = typeof(ColorEditor);
-            }
-            else if (propertyType.IsEnum)
-            {
-                _editorType = typeof(EnumComboBoxEditor);
-            }
-            else if (propertyType == typeof(TimeSpan) || propertyType == typeof(TimeSpan?))
-            {
-                _editorType = typeof(TimeSpanUpDownEditor);
-            }
-            else if (propertyType == typeof(FontFamily) || propertyType == typeof(FontWeight) || propertyType == typeof(FontStyle) || propertyType == typeof(FontStretch))
-            {
-                _editorType = typeof(FontComboBoxEditor);
-            }
-            else if (propertyType == typeof(Guid) || propertyType == typeof(Guid?))
-            {
-                _editorType = typeof(MaskedTextBoxEditor);// { ValueDataType = propertyType, Mask = "AAAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA" };
-            }
-            else if (propertyType == typeof(char) || propertyType == typeof(char?))
-            {
-                _editorType = typeof(MaskedTextBoxEditor); //{ ValueDataType = propertyType, Mask = "&" };
-            }
-            else if (propertyType == typeof(object))
-            {
-                _editorType = typeof(TextBoxEditor);
-            }
-            else if (propertyType == typeof(string[]))
-            {
-                _editorType = typeof(StringComboxEditor);
-            }
-            else if (propertyType == typeof(Brush))
-            {
-                _editorType = typeof(BrushEditor);
-            }
-            else
-            {
-                //throw new Exception();
-            }
-
-        }
+        public MetaPropertyDescriptor MetaPropertyDescriptor { get;}
+        
 
         public override bool CanResetValue(object component){return true;}
 
-        public override object GetValue(object component) { return _value; }
+        public override object GetValue(object component) { return MetaPropertyDescriptor.Value; }
         public override void ResetValue(object component) { }
-        public override void SetValue(object component, object value) { _value = value; }
+        public override void SetValue(object component, object value) { MetaPropertyDescriptor.Value = value; }
 
         public override bool ShouldSerializeValue(object component) { return false; }
 
         public override Type ComponentType { get { return this.GetType(); } }
         public override bool IsReadOnly { get { return false; } }
-        public override Type PropertyType { get { return _propertyType; } }
+        public override Type PropertyType { get { return MetaPropertyDescriptor.CShapeType; } }
 
-        public override string Category { get { return _category; } }
-        public override string Description { get { return _description; } }
+        public override string Category { get { return MetaPropertyDescriptor.Category; } }
+        public override string Description { get { return MetaPropertyDescriptor.Category; } }
         
         protected override Attribute[] AttributeArray
         {
             get
             {
-                List<Attribute> ac = new List<Attribute>() { new PropertyOrderAttribute(_order) };
-                if (_editorType != null)
+                List<Attribute> ac = new List<Attribute>() { new PropertyOrderAttribute(MetaPropertyDescriptor.Order) };
+                if (MetaPropertyDescriptor.EditorType != null)
                 {
-                    ac.Add(new EditorAttribute(_editorType, _editorType));
+                    ac.Add(new EditorAttribute(MetaPropertyDescriptor.EditorType, MetaPropertyDescriptor.EditorType));
                 }
                 return ac.ToArray();
             }

@@ -29,6 +29,7 @@ namespace studio
 
     }
 
+    #region MetaClass类元数据
     public class MetaClassDescriptor
     {
         public MetaClassDescriptor(string typeName, string category, string displayname, string description, PackIconKind icon)
@@ -46,34 +47,91 @@ namespace studio
         public string Description { get; }
         public PackIconKind Icon { get; }
     }
+    #endregion
 
+    #region MetaPropertyDescriptor属性元数据
     public class MetaPropertyDescriptor
     {
-        public UInt64 TypeID { get; }
-        public string TypeName { get; }
+        public UInt64 CppTypeID { get; }
+        public string CppTypeName { get; }
         public string Category { get; }
         public string DisplayName { get; }
         public int Order { get; }
         public string Description { get; }
-        public string EnumSource { get; }
+        public string[] EnumSource { get; }
+        public bool IsEnum { get { return EnumSource.Length != 0; } }
+        public Type CShapeType { get; }
+        public Type EditorType { get; }
+        public object Value { get; set; }
 
-        public MetaPropertyDescriptor(UInt64 typeID, string typeName, string category, string displayName, int order, string description, string enumSource)
+        public MetaPropertyDescriptor(string cppTypeName, UInt64 cppTypeID, string category, string displayName, int order, string description, string[] enumSource,
+            Type cshapeType, Type editorType, object value)
         {
-            TypeID = typeID;
-            TypeName = typeName;
+            CppTypeName = cppTypeName;
+            CppTypeID = cppTypeID;
             Category = category;
             DisplayName = displayName;
             Order = order;
             Description = description;
             EnumSource = enumSource;
+            CShapeType = cshapeType;
+            EditorType = editorType;
+            Value = value;
         }
-
-        public bool IsEnumType()
+        
+        #region 根据cpp的属性值类型获取对应的CShape值类型，编辑格类型，默认值
+        static public Tuple<Type, Type, object> GetTupleInfo(string cppType, string[] enumSource)
         {
-            return !string.IsNullOrEmpty(EnumSource);
+            Tuple<Type, Type, object> ret = null;
+            if (enumSource.Length != 0)            //如果是枚举
+            {
+                ret = new Tuple<Type, Type, object>(typeof(string), typeof(EnumEditor), enumSource[0]);
+            }
+            else
+            {
+                try { ret = _typeMap[cppType];  }
+                catch (Exception) { }
+            }
+            return ret;
         }
-    }
+        
+        static private Dictionary<string, Tuple<Type, Type, object>> _typeMap = new Dictionary<string, Tuple<Type, Type, object>>
+        {
+            { "bool",                                       new Tuple<Type, Type, object>(typeof(Point), typeof(PointEditor), new Point())},
+            { "char",                                       new Tuple<Type, Type, object>(typeof(byte), typeof(ByteEditor), new byte())},          //当作int8来处理
+            { "signedchar",                                 new Tuple<Type, Type, object>(typeof(sbyte), typeof(SByteEditor), new sbyte())},
+            { "unsignedchar",                               new Tuple<Type, Type, object>(typeof(byte), typeof(ByteEditor), new byte())},
+            { "wchar",                                      new Tuple<Type, Type, object>(typeof(Int16), typeof(Int16Editor), new Int16())},       //当作int16来处理
+            { "short",                                      new Tuple<Type, Type, object>(typeof(Int16), typeof(Int16Editor), new Int16())},
+            { "unsignedshort",                              new Tuple<Type, Type, object>(typeof(UInt16), typeof(UInt16Editor), new UInt16())},
+            { "int",                                        new Tuple<Type, Type, object>(typeof(Int32), typeof(Int32Editor), new Int32())},
+            { "unsignedint",                                new Tuple<Type, Type, object>(typeof(UInt32), typeof(UInt32Editor), new UInt32())},
+            { "long",                                       new Tuple<Type, Type, object>(typeof(Int32), typeof(Int32Editor), new Int32())},
+            { "unsignedlong",                               new Tuple<Type, Type, object>(typeof(UInt32), typeof(UInt32Editor), new UInt32())},
+            { "__int64",                                    new Tuple<Type, Type, object>(typeof(Int64), typeof(Int64Editor), new Int64())},
+            { "unsigned__int64",                            new Tuple<Type, Type, object>(typeof(UInt64), typeof(UInt64Editor), new UInt64())},
+            { "float",                                      new Tuple<Type, Type, object>(typeof(float), typeof(FloatEditor), new float())},
+            { "double",                                     new Tuple<Type, Type, object>(typeof(double), typeof(DoubleEditor), new double())},
+            { "longdouble",                                 new Tuple<Type, Type, object>(typeof(decimal), typeof(DecimalEditor), new decimal())},
+            { "std::string",                                new Tuple<Type, Type, object>(typeof(string), typeof(StringEditor), string.Empty)},
 
+            { "classnb::Point",                             new Tuple<Type, Type, object>(typeof(Point), typeof(PointEditor), new Point())},
+            { "classnb::Color",                             new Tuple<Type, Type, object>(typeof(Color), typeof(ColorEditor), new Color())},
+            { "classnb::Thickness",                         new Tuple<Type, Type, object>(typeof(Thickness), typeof(ThicknessEditor), new Thickness())},
+
+            { "classstd::shared_ptr<classnb::Transform>",   new Tuple<Type, Type, object>(typeof(Transform), null, null) },
+            { "classstd::shared_ptr<classnb::ImageSource>", new Tuple<Type, Type, object>(typeof(ImageSource), typeof(ImageSourceEditor), null) },
+            { "classstd::shared_ptr<classnb::Brush>",       new Tuple<Type, Type, object>(typeof(Brush), typeof(BrushEditor), null)},
+            { "classstd::shared_ptr<classnb::Font>",        new Tuple<Type, Type, object>(typeof(FontFamily), null, new FontFamily())},
+            { "classstd::shared_ptr<classnb::UIElement>",   new Tuple<Type, Type, object>(typeof(UIElement), null, null)},
+            { "classstd::shared_ptr<classnb::ControlTemplate>", new Tuple<Type, Type, object>(typeof(FontFamily), null, null)},
+        };
+    }
+    #endregion
+
+    #endregion
+
+    #region 插件对象
     public class Plugin
     {
         [StructLayout(LayoutKind.Sequential)]
@@ -183,13 +241,21 @@ namespace studio
                 IntPtr p = new IntPtr(buffer.ToInt64() + Marshal.SizeOf(typeof(CClassInfo)) * i);
                 metaDatas[i] = (CClassInfo)Marshal.PtrToStructure(p, typeof(CClassInfo));
 
-                var classDescriptor = new MetaClassDescriptor(metaDatas[i].TypeName, metaDatas[i].Category, metaDatas[i].DisplayName, metaDatas[i].Description, CppCShapeTypeMapping.TypeNameToIcon(metaDatas[i].TypeName));
+                var classDescriptor = new MetaClassDescriptor(metaDatas[i].TypeName, metaDatas[i].Category, metaDatas[i].DisplayName, metaDatas[i].Description, TypeMapping.GetIcon(metaDatas[i].TypeName));
                 var properties = new List<MetaPropertyDescriptor>();
                 foreach (var pd in metaDatas[i].PropertyData)
                 {
+                    //如果ID为0表示这个属性信息为空
                     if (pd.TypeID != 0)
                     {
-                        properties.Add(new MetaPropertyDescriptor(pd.TypeID, pd.ValueTypeName, pd.Category, pd.DisplayName, pd.Order, pd.Description, pd.EnumSource));
+                        var enumSource = pd.EnumSource.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+                        var x = MetaPropertyDescriptor.GetTupleInfo(pd.ValueTypeName, enumSource);
+                        if (x == null)
+                        {
+                            ViewModel.LogData.Add(LogLevel.Warn, "元件{0}的属性{1}使用了不支持的C++属性类型{2}", classDescriptor.TypeName, pd.DisplayName, pd.ValueTypeName);
+                            continue;
+                        }
+                        properties.Add(new MetaPropertyDescriptor(pd.ValueTypeName, pd.TypeID, pd.Category, pd.DisplayName, pd.Order, pd.Description, enumSource, x.Item1, x.Item2, x.Item3));
                     }
                 }
                 _metaClasses.Add(new MetaClass(classDescriptor, properties));
@@ -198,6 +264,7 @@ namespace studio
             Marshal.FreeHGlobal(buffer);
         }
 
+        //更新CategoryOrders
         private void UpdateCategoryOrders(int dllHandle, string getCountMetho, string getInfoMetho)
         {
             Tuple<Delegate, Delegate> delegates = GetDelegate<Win32.GetCategoryOrderCountDelegate, Win32.GetCategoryOrdersDelegate>(dllHandle, getCountMetho, getInfoMetho);
@@ -220,4 +287,5 @@ namespace studio
         }
 
     }
+    #endregion
 }

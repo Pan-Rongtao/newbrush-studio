@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="studio.Int64BindingCtrl"
+﻿<UserControl x:Class="studio.EnumBindingCtrl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -13,8 +13,11 @@
             <ColumnDefinition />
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
+        <Grid.Resources>
+            <Style TargetType="ComboBox"/>
+        </Grid.Resources>
 
-        <tk:LongUpDown ShowButtonSpinner="False" Value="{Binding Value, ElementName=self}"/>
+        <ComboBox ItemsSource="{Binding Value, ElementName=self}" SelectedItem="{Binding SelectItem, ElementName=self}" SelectionChanged="ComboBox_SelectionChanged"/>
         <local:Operator Grid.Column="1"/>
     </Grid>
 </UserControl>
