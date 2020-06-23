@@ -234,8 +234,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Editors\DateTimeEditor.cs" />
+    <Compile Include="Editors\DateTimeBindingCtrl.xaml.cs">
+      <DependentUpon>DateTimeBindingCtrl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Editors\EnumEditor.cs" />
     <Compile Include="Editors\ImageSourceEditor.cs" />
+    <Compile Include="Editors\TimeSpanEditor.cs" />
     <Compile Include="Editors\ThicknessEditor.cs" />
     <Compile Include="Editors\ColorEditor.cs" />
     <Compile Include="Editors\ColorBindingCtrl.xaml.cs">
@@ -274,7 +279,6 @@
       <DependentUpon>BrushPickerCtrl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Editors\BrushEditor.cs" />
-    <Compile Include="Data\CppCShapeTypeMapping.cs" />
     <Compile Include="Data\Commands.cs" />
     <Compile Include="Data\BindingCoverters.cs" />
     <Compile Include="Data\LogData.cs" />
@@ -348,9 +352,6 @@
       <DependentUpon>WorkArea.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\ViewModel.cs" />
-    <Compile Include="Controls\StringListComboboxEditor.xaml.cs">
-      <DependentUpon>StringListComboboxEditor.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Editors\StringComboxEditor.cs" />
     <Compile Include="Data\Win32Delegate.cs" />
     <Compile Include="Controls\SolidColorCtrl.xaml.cs">
@@ -374,6 +375,13 @@
     <Compile Include="Editors\TransformBindingCtrl.xaml.cs">
       <DependentUpon>TransformBindingCtrl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Editors\TimeSpanBindingCtrl.xaml.cs">
+      <DependentUpon>TimeSpanBindingCtrl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Editors\DateTimeBindingCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Editors\ColorBindingCtrl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -561,10 +569,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\StringListComboboxEditor.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Editors\Operator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -598,6 +602,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Editors\TransformBindingCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\TimeSpanBindingCtrl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

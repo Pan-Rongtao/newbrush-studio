@@ -55,7 +55,17 @@ namespace studio
             else if (value is System.Windows.Media.Color)
             {
                 var c = (System.Windows.Media.Color)value;
-                ret = Google.Protobuf.ByteString.CopyFromUtf8(string.Format("{0},{1},{2},{3}", c.R, c.G, c.B, c.A));
+                ret = Google.Protobuf.ByteString.CopyFromUtf8(string.Format("{0},{1},{2},{3}", c.A, c.R, c.G, c.B));
+            }
+            else if(value is System.DateTime)
+            {
+                var dt = (System.DateTime)value;
+                ret = Google.Protobuf.ByteString.CopyFromUtf8(string.Format("{0},{1},{2},{3},{4},{5}", dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, dt.Second));
+            }
+            else if (value is System.TimeSpan)
+            {
+                var ts = (System.TimeSpan)value;
+                ret = Google.Protobuf.ByteString.CopyFromUtf8(string.Format("{0},{1},{2},{3},{4}", ts.Days, ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds));
             }
             else if (value is ImageSource)
             {
@@ -70,7 +80,7 @@ namespace studio
             else if (value is SolidColorBrush)
             {
                 var c = (value as SolidColorBrush).Color;
-                ret = Google.Protobuf.ByteString.CopyFromUtf8(string.Format("{0},{1},{2},{3}", c.R, c.G, c.B, c.A));
+                ret = Google.Protobuf.ByteString.CopyFromUtf8(string.Format("{0},{1},{2},{3}", c.A, c.R, c.G, c.B));
             }
             else if (value is ImageBrush)
             {

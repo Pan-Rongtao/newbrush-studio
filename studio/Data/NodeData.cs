@@ -15,7 +15,7 @@ namespace studio
         {
             _typeName = typeName;
             _name = name;
-            _iconType = TypeMapping.GetIcon(typeName);
+            _iconType = MetaClassDescriptor.GetIcon(typeName);
             InitPropertyGridData(typeName);
         }
 

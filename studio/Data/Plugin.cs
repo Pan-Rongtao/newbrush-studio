@@ -28,8 +28,7 @@ namespace studio
         }
 
     }
-
-    #region MetaClass类元数据
+    
     public class MetaClassDescriptor
     {
         public MetaClassDescriptor(string typeName, string category, string displayname, string description, PackIconKind icon)
@@ -46,8 +45,41 @@ namespace studio
         public string DisplayName { get; }
         public string Description { get; }
         public PackIconKind Icon { get; }
+
+        static private Dictionary<string, PackIconKind> _typeIconDictionary = new Dictionary<string, PackIconKind>
+        {
+            { "nb::Canvas", PackIconKind.DrawingBox },
+            { "nb::DockPanel", PackIconKind.ViewQuilt },
+            { "nb::WrapPanel", PackIconKind.FormatTextWrappingWrap },
+            { "nb::StackPanel", PackIconKind.ViewWeek },
+            { "nb::Grid", PackIconKind.Grid },
+            { "nb::UniformGrid", PackIconKind.GridLarge },
+            { "nb::Button", PackIconKind.AlphabetBBoxOutline },
+            { "nb::RepeatButton", PackIconKind.GestureTapButton },
+            { "nb::Window", PackIconKind.Airplay },
+            { "nb::Line", PackIconKind.VectorLine },
+            { "nb::Polyline", PackIconKind.VectorPolyline },
+            { "nb::Polygon", PackIconKind.PentagonOutline },
+            { "nb::Path", PackIconKind.MapMarkerPath },
+            { "nb::Rectangle", PackIconKind.RectangleOutline },
+            { "nb::Ellipse", PackIconKind.EllipseOutline },
+            { "nb::Image", PackIconKind.FileImageOutline },
+            { "nb::TextBlock", PackIconKind.FormatTextRotationNone },
+        };
+
+        static public PackIconKind GetIcon(string cppType)
+        {
+            PackIconKind icon = PackIconKind.GlobeLight;
+            try
+            {
+                icon = _typeIconDictionary[cppType];
+            }
+            catch (Exception) { }
+            return icon;
+        }
+
     }
-    #endregion
+
 
     #region MetaPropertyDescriptor属性元数据
     public class MetaPropertyDescriptor
@@ -97,7 +129,7 @@ namespace studio
         
         static private Dictionary<string, Tuple<Type, Type, object>> _typeMap = new Dictionary<string, Tuple<Type, Type, object>>
         {
-            { "bool",                                       new Tuple<Type, Type, object>(typeof(Point), typeof(PointEditor), new Point())},
+            { "bool",                                       new Tuple<Type, Type, object>(typeof(TimeSpan), typeof(TimeSpanEditor), new TimeSpan())},
             { "char",                                       new Tuple<Type, Type, object>(typeof(byte), typeof(ByteEditor), new byte())},          //当作int8来处理
             { "signedchar",                                 new Tuple<Type, Type, object>(typeof(sbyte), typeof(SByteEditor), new sbyte())},
             { "unsignedchar",                               new Tuple<Type, Type, object>(typeof(byte), typeof(ByteEditor), new byte())},
@@ -118,6 +150,8 @@ namespace studio
             { "classnb::Point",                             new Tuple<Type, Type, object>(typeof(Point), typeof(PointEditor), new Point())},
             { "classnb::Color",                             new Tuple<Type, Type, object>(typeof(Color), typeof(ColorEditor), new Color())},
             { "classnb::Thickness",                         new Tuple<Type, Type, object>(typeof(Thickness), typeof(ThicknessEditor), new Thickness())},
+            { "classnb::DateTime",                          new Tuple<Type, Type, object>(typeof(DateTime), typeof(DateTimeEditor), new DateTime())},
+            { "classnb::TimeSpan",                          new Tuple<Type, Type, object>(typeof(TimeSpan), typeof(TimeSpanEditor), new TimeSpan())},
 
             { "classstd::shared_ptr<classnb::Transform>",   new Tuple<Type, Type, object>(typeof(Transform), null, null) },
             { "classstd::shared_ptr<classnb::ImageSource>", new Tuple<Type, Type, object>(typeof(ImageSource), typeof(ImageSourceEditor), null) },
@@ -241,7 +275,7 @@ namespace studio
                 IntPtr p = new IntPtr(buffer.ToInt64() + Marshal.SizeOf(typeof(CClassInfo)) * i);
                 metaDatas[i] = (CClassInfo)Marshal.PtrToStructure(p, typeof(CClassInfo));
 
-                var classDescriptor = new MetaClassDescriptor(metaDatas[i].TypeName, metaDatas[i].Category, metaDatas[i].DisplayName, metaDatas[i].Description, TypeMapping.GetIcon(metaDatas[i].TypeName));
+                var classDescriptor = new MetaClassDescriptor(metaDatas[i].TypeName, metaDatas[i].Category, metaDatas[i].DisplayName, metaDatas[i].Description, MetaClassDescriptor.GetIcon(metaDatas[i].TypeName));
                 var properties = new List<MetaPropertyDescriptor>();
                 foreach (var pd in metaDatas[i].PropertyData)
                 {
