@@ -51,7 +51,14 @@ namespace studio
                 Win32.SetParent(_process.MainWindowHandle, form1.Handle); //panel1.Handle为要显示外部程序的容器
                 Win32.ShowWindow(_process.MainWindowHandle, 9);
             }
-            catch (Exception) { }
+            catch (System.ComponentModel.Win32Exception)
+            {
+                ViewModel.LogData.Add(LogLevel.Error, "无法找到[{0}]", System.IO.Path.GetFullPath(path));
+            }
+            catch(System.IO.FileNotFoundException)
+            {
+                //已经打开了
+            }
         }
         
         
