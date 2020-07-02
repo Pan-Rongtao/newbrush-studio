@@ -12,6 +12,7 @@ using System.Windows;
 using System.Reflection;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
+using Xceed.Wpf.Toolkit.PropertyGrid.Editors;
 using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
 
 namespace studio
@@ -80,8 +81,7 @@ namespace studio
 
     }
 
-
-    #region MetaPropertyDescriptor属性元数据
+    
     public class MetaPropertyDescriptor
     {
         public UInt64 CppTypeID { get; }
@@ -109,8 +109,9 @@ namespace studio
             CShapeType = cshapeType;
             EditorType = editorType;
             Value = value;
+            
         }
-        
+
         #region 根据cpp的属性值类型获取对应的CShape值类型，编辑格类型，默认值
         static public Tuple<Type, Type, object> GetTupleInfo(string cppType, string[] enumSource)
         {
@@ -126,7 +127,7 @@ namespace studio
             }
             return ret;
         }
-        
+
         static private Dictionary<string, Tuple<Type, Type, object>> _typeMap = new Dictionary<string, Tuple<Type, Type, object>>
         {
             { "bool",                                       new Tuple<Type, Type, object>(typeof(TimeSpan), typeof(TimeSpanEditor), new TimeSpan())},
@@ -159,11 +160,19 @@ namespace studio
             { "classstd::shared_ptr<classnb::Font>",        new Tuple<Type, Type, object>(typeof(FontFamily), null, new FontFamily())},
             { "classstd::shared_ptr<classnb::UIElement>",   new Tuple<Type, Type, object>(typeof(UIElement), null, null)},
             { "classstd::shared_ptr<classnb::ControlTemplate>", new Tuple<Type, Type, object>(typeof(FontFamily), null, null)},
+
+            { "std::vector<float>",                         new Tuple<Type, Type, object>(typeof(Collection<Float>), typeof(CollectionEditor), new Collection<Float>())},
+            { "classstd::vector<classnb::Point,classstd::allocator<classnb::Point> >",  new Tuple<Type, Type, object>(typeof(Collection<Point>), typeof(CollectionEditor), new Collection<Point>() {})},
+            
         };
+
     }
     #endregion
-
-    #endregion
+    
+    public class Float
+    {
+        public float Value { get; set; }
+    }
 
     #region 插件对象
     public class Plugin
